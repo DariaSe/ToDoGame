@@ -8,13 +8,13 @@
 import Foundation
 
 class TaskViewModelFactory {
-    var tasks: [TaskModel]
+    var tasks: [Task]
     
-    init(tasks: [TaskModel]) {
+    init(tasks: [Task]) {
         self.tasks = tasks
     }
     
-    func makeTaskViewModel(from task: TaskModel, date: Date) -> TaskViewModel? {
+    func makeTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
         guard task.recurrenceRule != nil else {
             return singleTaskViewModel(from: task, date: date)
         }
@@ -29,7 +29,7 @@ class TaskViewModelFactory {
         
     }
     
-    func singleTaskViewModel(from task: TaskModel, date: Date) -> TaskViewModel? {
+    func singleTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
         // if task is already executed
         if let executionDate = task.executionLog.first {
             return executionDate ==^ date ? task.viewModel(isDone: true, date: executionDate) : nil
@@ -40,7 +40,7 @@ class TaskViewModelFactory {
         }
     }
     
-    func recurrenceTaskViewModel(from task: TaskModel, date: Date) -> TaskViewModel? {
+    func recurrenceTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
         let startDate = task.startDate
         guard let recurrenceRule = task.recurrenceRule else { return nil }
         return date.matches(startDate: startDate, recurrenceRule: recurrenceRule) ? task.viewModel(isDone: false, date: date) : nil

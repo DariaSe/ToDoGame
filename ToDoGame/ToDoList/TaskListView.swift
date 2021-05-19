@@ -9,7 +9,7 @@ import UIKit
 
 class TaskListView: UIView {
     
-    var tasks: [TaskViewModel] = [TaskViewModel(id: 1, orderID: 1, title: "Task 1", isDone: true, date: Date()), TaskViewModel(id: 2, orderID: 2, title: "Task 2", isDone: false, date: Date())]
+    var taskViewModels: [TaskViewModel] = [TaskViewModel(id: 1, orderID: 1, title: "Task 1", isDone: true, date: Date()), TaskViewModel(id: 2, orderID: 2, title: "Task 2", isDone: false, date: Date())]
     
     weak var delegate: TableViewCellDelegate?
     
@@ -34,13 +34,13 @@ class TaskListView: UIView {
 
 extension TaskListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return taskViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as! TaskTableViewCell
         cell.delegate = self
-        let task = tasks[indexPath.row]
+        let task = taskViewModels[indexPath.row]
         cell.update(title: task.title, isDone: task.isDone)
         return cell
     }
@@ -48,7 +48,7 @@ extension TaskListView: UITableViewDataSource {
 
 extension TaskListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let task = tasks[indexPath.row]
+        let task = taskViewModels[indexPath.row]
     }
 }
 

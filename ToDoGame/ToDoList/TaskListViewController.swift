@@ -13,6 +13,8 @@ class TaskListViewController: UIViewController {
     
     weak var delegate: TableViewCellDelegate?
     
+    var taskViewModels: [TaskViewModel] = []
+    
     var toDoListView = TaskListView()
 
     override func viewDidLoad() {

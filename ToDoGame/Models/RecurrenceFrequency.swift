@@ -7,9 +7,11 @@
 
 import Foundation
 
-enum RecurrenceFrequency: Int {
+enum RecurrenceFrequency: Int, Codable {
+    
     case daily
     case weekly
     case monthly
     case yearly
+    
 }

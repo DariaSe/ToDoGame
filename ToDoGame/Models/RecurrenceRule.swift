@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct RecurrenceRule {
+struct RecurrenceRule: Codable {
+    
     var recurrenceFrequency: RecurrenceFrequency?
     var interval: Int?
     var weekdays: [Int]?
+    
 }
 

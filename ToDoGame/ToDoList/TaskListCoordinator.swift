@@ -9,9 +9,11 @@ import UIKit
 
 class TaskListCoordinator {
     
+    let storageManager = StorageManager()
+    
     let taskListVC = TaskListViewController()
     
-    lazy var singleToDoVC = ToDoViewController()
+    lazy var singleToDoVC = ViewController()
     
     func start() {
         taskListVC.coordinator = self
@@ -27,8 +29,7 @@ class TaskListCoordinator {
     }
     
     func showAddTaskScreen() {
-        let vc = UIViewController()
-        vc.view.backgroundColor = .red
+        let vc = SingleTaskViewController()
         taskListVC.present(vc, animated: true, completion: nil)
     }
     
