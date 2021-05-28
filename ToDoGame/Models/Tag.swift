@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Tag: Codable {
+struct Tag: Codable, Equatable {
     
+    var id: Int
     var title: String
     var color: Int
     
@@ -29,4 +30,5 @@ struct Tag: Codable {
         return try? propertyListDecoder.decode(Array<Tag>.self, from: retrievedTagsData)
     }
     
+    static var sample: [Tag] { [Tag(id: 1, title: "Work", color: 2), Tag(id: 2, title: "Entertainment", color: 7), Tag(id: 3, title: "Others", color: 5)]}
 }

@@ -97,3 +97,28 @@ extension UIView {
         self.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: multiplier).isActive = true
     }
 }
+
+extension UIView {
+    
+    var snapshot: UIImage {
+        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, UIScreen.main.scale)
+        self.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
+    }
+}
+
+extension UIView {
+    func maskRoundedCorners(cornerRadius: CGFloat) {
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height), cornerRadius: cornerRadius).cgPath
+        self.layer.mask = maskLayer
+    }
+    
+    func maskRoundedCorners(corners: UIRectCorner, cornerRadius: CGFloat) {
+        let maskLayer = CAShapeLayer()
+        maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height), byRoundingCorners: corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
+        self.layer.mask = maskLayer
+    }
+}

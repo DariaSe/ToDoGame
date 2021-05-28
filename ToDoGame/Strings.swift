@@ -9,11 +9,19 @@ import Foundation
 
 struct Strings {
     
-    static var arrowDown = "\u{25BC}"
-    static var arrowUp = "\u{25B2}"
-    static var cross = "\u{00D7}"
+    static let arrowDown = "\u{25BC}"
+    static let arrowUp = "\u{25B2}"
+    static let cross = "\u{00D7}"
+    static let glasses = "\u{1F60E}"
     
-    static var yes = "Yes".localized
-    static var no = "No".localized
+    static let yes = "Yes".localized
+    static let no = "No".localized
     
+    static let active = "Active".localized
+    static let completed = "Completed".localized
+    
+    static let taskDeletionTitle = "Do you want to delete this task?".localized
+    static let taskDeletionMessage = "All scheduled tasks will also be deleted.".localized
+    static let delete = "Delete".localized
+    static let cancel = "Cancel".localized
 }

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Artboard – 1.png",
+      "filename" : "Round - on.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Artboard – 1@2x.png",
+      "filename" : "Round - on@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Artboard – 1@3x.png",
+      "filename" : "Round - on@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

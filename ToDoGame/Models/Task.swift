@@ -16,7 +16,6 @@ struct Task: Codable {
     var dueTime: String?
     var recurrenceRule: RecurrenceRule?
     var executionLog: [Date] = []
-    var deleted: [Date] = []
     var isNotificationOn: Bool
     var notificationTime: String?
     var notes: String = ""
@@ -25,6 +24,8 @@ struct Task: Codable {
     func viewModel(isDone: Bool, date: Date) -> TaskViewModel {
         return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: dueTime, tags: tags)
     }
+    
+    static var sample: [Task] { [Task(id: 1, orderID: 1, title: "Task 1", startDate: Date(), isNotificationOn: false, tags: [Tag(id: 1, title: "Work", color: 2)]), Task(id: 2, orderID: 2, title: "Task 2", startDate: Date(), isNotificationOn: false), Task(id: 3, orderID: 3, title: "Task 3", startDate: Date(), isNotificationOn: false, tags: [Tag(id: 1, title: "Work", color: 2), Tag(id: 2, title: "Entertainment", color: 7)])] }
     
     //MARK: Decoding and encoding
     
@@ -42,4 +43,16 @@ struct Task: Codable {
         guard let retrievedTasksData = try? Data(contentsOf: archiveURL) else { return nil }
         return try? propertyListDecoder.decode(Array<Task>.self, from: retrievedTasksData)
     }
+}
+
+extension Task: Comparable {
+    
+    static func < (lhs: Task, rhs: Task) -> Bool {
+        return lhs.orderID < rhs.orderID
+    }
+    
+    static func == (lhs: Task, rhs: Task) -> Bool {
+        return lhs.id == rhs.id
+    }
+    
 }

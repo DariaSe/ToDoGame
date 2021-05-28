@@ -11,10 +11,8 @@ class TaskTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "ToDoListCell"
     
-    weak var delegate: TableViewCellDelegate?
-    
-    lazy var label = UILabel()
-    lazy var checkButton = UIButton()
+    let taskView = TaskCellView()
+    let placeholderView = UIView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,29 +24,20 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func initialSetup() {
-        contentView.setConstraints(on: label, margins: true, trailing: 70)
-        contentView.setConstraints(on: checkButton, margins: true, leading: nil)
-        checkButton.widthAnchor.constraint(equalTo: checkButton.heightAnchor).isActive = true
-        checkButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
+        contentView.backgroundColor = .clear
+        contentView.setConstraints(on: placeholderView, leading: 10, trailing: 10, top: 5, bottom: 5)
+        placeholderView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
+        placeholderView.layer.cornerRadius = 16
+        placeholderView.isHidden = true
+        contentView.setConstraints(on: taskView)
     }
     
-    func update(title: String, isDone: Bool) {
-        
-        self.label.text = title
-        let buttonImageName = isDone ? "Checked" : "Unchecked"
-        let buttonImage = UIImage(named: buttonImageName)
-        checkButton.setImage(buttonImage, for: .normal)
-        
-    }
-    
-    @objc func buttonPressed() {
-        delegate?.checkButtonPressed()
-    }
-
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        let view = UIView()
+        view.frame = contentView.bounds
+        view.backgroundColor = .clear
+        selectedBackgroundView = view
     }
 
 }

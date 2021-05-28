@@ -8,11 +8,6 @@
 import Foundation
 
 class TaskViewModelFactory {
-    var tasks: [Task]
-    
-    init(tasks: [Task]) {
-        self.tasks = tasks
-    }
     
     func makeTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
         guard task.recurrenceRule != nil else {

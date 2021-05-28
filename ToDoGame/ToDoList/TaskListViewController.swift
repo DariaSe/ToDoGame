@@ -11,19 +11,27 @@ class TaskListViewController: UIViewController {
     
     weak var coordinator: TaskListCoordinator?
     
-    weak var delegate: TableViewCellDelegate?
+    var tasks: [TaskViewModel] = [] {
+        didSet {
+            taskListView.tasks = tasks
+        }
+    }
     
-    var taskViewModels: [TaskViewModel] = []
-    
-    var toDoListView = TaskListView()
+    var emptyMessageView = UIView()
+    var taskListView = TaskListView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Tasks"
+        view.backgroundColor = UIColor.backgroundColor
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
-        view.backgroundColor = .yellow
-        view.setConstraints(on: toDoListView)
-        toDoListView.delegate = delegate
+        view.setConstraints(on: taskListView)
+        taskListView.setCompletedOrCancel = { [unowned self] taskID in
+            coordinator?.setCompletedOrCancel(taskID: taskID)
+        }
+        taskListView.deleteTask = { [unowned self] taskID in
+            coordinator?.askForDeletion(taskID: taskID)
+        }
     }
     
     @objc func addTask() {
