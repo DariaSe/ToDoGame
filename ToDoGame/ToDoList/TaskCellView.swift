@@ -16,10 +16,6 @@ class TaskCellView: UIView {
     let colorView = UIView()
     let label = UILabel()
     let checkButton = UIButton()
-    let tagsView = TagsView()
-    
-    var labelTopConstraint = NSLayoutConstraint()
-    var labelBottomConstraint = NSLayoutConstraint()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,26 +36,17 @@ class TaskCellView: UIView {
         roundedView.clipsToBounds = true
         
         colorView.backgroundColor = UIColor.tagColor(index: 2)
-        
-        tagsView.tagsSelected = []
-        tagsView.isUserInteractionEnabled = false
-        
+    
         checkButton.addTarget(self, action: #selector(checkButtonPressed), for: .touchUpInside)
     }
  
     func setupLayout() {
         setConstraints(on: roundedView, leading: 10, trailing: 10, top: 5, bottom: 5)
+        
         roundedView.setConstraints(on: colorView, trailing: nil)
         colorView.widthAnchor.constraint(equalToConstant: 16).isActive = true
     
-        roundedView.setConstraints(on: label, leading: 30, trailing: 70, top: nil, bottom: nil)
-        labelTopConstraint = label.topAnchor.constraint(equalTo: roundedView.topAnchor, constant: 20)
-        labelTopConstraint.isActive = true
-        labelBottomConstraint = label.bottomAnchor.constraint(equalTo: roundedView.bottomAnchor, constant: -50)
-        labelBottomConstraint.isActive = true
-        
-//        roundedView.setConstraints(on: tagsView, leading: 10, trailing: 70, top: nil, bottom: 4)
-//        tagsView.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        roundedView.setConstraints(on: label, leading: 30, trailing: 70, top: 24, bottom: 24)
         
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         roundedView.addSubview(checkButton)
@@ -69,34 +56,28 @@ class TaskCellView: UIView {
         checkButton.widthAnchor.constraint(equalTo: checkButton.heightAnchor).isActive = true
     }
     
-    func update(title: String, isDone: Bool, tags: [Tag]) {
+    func update(title: String, isDone: Bool, color: Int) {
         if isDone {
             let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.strikethroughStyle : 1])
             label.attributedText = titleString
             label.layer.opacity = 0.7
+            checkButton.tintColor = UIColor.lightGray
         }
         else {
             label.attributedText = NSAttributedString(string: title)
             label.layer.opacity = 1.0
+            checkButton.tintColor = UIColor.gray
         }
         label.textColor = UIColor.textColor
+        label.font = UIFont.normalTextFont
         
-        if tags.isEmpty {
-            tagsView.isHidden = true
-            labelTopConstraint.constant = 20
-            labelBottomConstraint.constant = -20
-        }
-        else {
-            tagsView.isHidden = false
-            tagsView.tags = tags
-            labelTopConstraint.constant = 20
-            labelBottomConstraint.constant = -50
-        }
-        
+        roundedView.backgroundColor = UIColor.tagColor(index: color).withAlphaComponent(0.1)
+        colorView.backgroundColor = UIColor.tagColor(index: color)
+
         let buttonImageName = isDone ? "Round - on" : "Round - off"
-        let buttonImage = UIImage(named: buttonImageName)
+        let buttonImage = UIImage(named: buttonImageName)?.withRenderingMode(.alwaysTemplate)
         checkButton.setImage(buttonImage, for: .normal)
-        checkButton.imageEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        checkButton.imageEdgeInsets = UIEdgeInsets(top: 7, left: 7, bottom: 7, right: 7)
     }
     
     

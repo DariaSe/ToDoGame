@@ -18,14 +18,19 @@ struct Task: Codable {
     var executionLog: [Date] = []
     var isNotificationOn: Bool
     var notificationTime: String?
+    var color: Int
     var notes: String = ""
-    var tags: [Tag] = []
     
     func viewModel(isDone: Bool, date: Date) -> TaskViewModel {
-        return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: dueTime, tags: tags)
+        return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: dueTime, color: color)
     }
     
-    static var sample: [Task] { [Task(id: 1, orderID: 1, title: "Task 1", startDate: Date(), isNotificationOn: false, tags: [Tag(id: 1, title: "Work", color: 2)]), Task(id: 2, orderID: 2, title: "Task 2", startDate: Date(), isNotificationOn: false), Task(id: 3, orderID: 3, title: "Task 3", startDate: Date(), isNotificationOn: false, tags: [Tag(id: 1, title: "Work", color: 2), Tag(id: 2, title: "Entertainment", color: 7)])] }
+    static var sample: [Task] { [
+        Task(id: 1, orderID: 1, title: "Task 1", startDate: Date(), recurrenceRule: RecurrenceRule.sample1,  isNotificationOn: false, color: 2),
+        Task(id: 2, orderID: 2, title: "Task 2", startDate: Date(), recurrenceRule: RecurrenceRule.sample2, isNotificationOn: false, color: 6),
+        Task(id: 3, orderID: 3, title: "Task 3", startDate: Date(), recurrenceRule: RecurrenceRule.sample3, isNotificationOn: false, color: 8),
+        Task(id: 4, orderID: 4, title: "Task 4", startDate: Date(), isNotificationOn: false, color: 2)
+    ] }
     
     //MARK: Decoding and encoding
     

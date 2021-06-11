@@ -15,10 +15,10 @@ class DropdownButton: UIButton {
         }
     }
     
-    let stackView = UIStackView()
+    private let stackView = UIStackView()
     
-    let label = UILabel()
-    let arrow = UILabel()
+    private let label = UILabel()
+    private let arrow = UILabel()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,14 +30,19 @@ class DropdownButton: UIButton {
     }
     
     private func initialSetup() {
-        setConstraints(on: stackView, margins: true)
+        setConstraints(on: stackView, margins: true, leading: 5, trailing: 5, top: 2, bottom: 2)
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(arrow)
+        stackView.isUserInteractionEnabled = false
+        label.text = text
         label.textColor = UIColor.buttonColor
+        label.font = UIFont.normalTextFont
+        label.isUserInteractionEnabled = false
         arrow.text = Strings.arrowDown
         arrow.textColor = UIColor.buttonColor
+        arrow.isUserInteractionEnabled = false
     }
 }

@@ -21,6 +21,7 @@ class AppTextView: UITextView {
     private func initialSetup() {
         backgroundColor = UIColor.textControlsBGColor
         layer.cornerRadius = SizeConstants.textFieldCornerRadius
-        layer.borderWidth = 1.0
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.borderColor.cgColor
     }
 }

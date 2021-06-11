@@ -29,7 +29,6 @@ class TagCollectionViewCell: UICollectionViewCell {
         label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         containerView.layer.cornerRadius = 10
         containerView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        label.font = UIFont.tagFont
         label.textColor = UIColor.white.withAlphaComponent(0.8)
     }
     

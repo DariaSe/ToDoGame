@@ -23,9 +23,9 @@ extension UIColor {
     
     static var textColor: UIColor = UIColor.darkGray
     
-    static var buttonColor: UIColor = UIColor.green
+    static var buttonColor: UIColor = UIColor.darkGray
     
-    static var textControlsBGColor = UIColor.lightGray
+    static var textControlsBGColor = UIColor(netHex: 0xF2F2F7)
     
     struct TagColors {
         //1

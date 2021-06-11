@@ -24,4 +24,21 @@ struct Strings {
     static let taskDeletionMessage = "All scheduled tasks will also be deleted.".localized
     static let delete = "Delete".localized
     static let cancel = "Cancel".localized
+    
+    static let newTask = "New task".localized
+    static let taskTitle = "Task title".localized
+    static let notes = "Notes".localized
+    static let date = "Date:".localized
+    static let startDate = "Start date:".localized
+    static let time = "Time:".localized
+    static let repeatt = "Repeat:".localized
+    
+    static let day = "day".localized
+    static let week = "week".localized
+    static let month = "month".localized
+    static let year = "year".localized
+    static let daysCount = "days_count"
+    
+    static let notification = "Notification:".localized
+    
 }

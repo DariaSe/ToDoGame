@@ -156,7 +156,7 @@ extension TaskListView: UITableViewDataSource {
         cell.taskView.buttonPressed = { [unowned self] in
             self.setCompletedOrCancel?(task.id)
         }
-        cell.taskView.update(title: task.title, isDone: task.isDone, tags: task.tags)
+        cell.taskView.update(title: task.title, isDone: task.isDone, color: task.color)
         cell.showsReorderControl = false
         cell.backgroundColor = .clear
         return cell

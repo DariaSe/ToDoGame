@@ -36,12 +36,16 @@ class DatePickerView: UIView {
     }
     
     private func initialSetup() {
-        setConstraints(on: stackView, margins: true)
+        setConstraints(on: stackView, margins: true, leading: 20, trailing: 20)
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.distribution = .equalSpacing
+        stackView.distribution = .fill
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(datePicker)
+        
+        label.font = UIFont.normalTextFont
+        label.textColor = UIColor.textColor
+        
         datePicker.datePickerMode = datePickerMode
         datePicker.date = Date()
     }

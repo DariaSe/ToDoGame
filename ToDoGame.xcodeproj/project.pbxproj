@@ -25,7 +25,6 @@
 		DA22F056265556FA00F6D4E9 /* LabelDropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F055265556FA00F6D4E9 /* LabelDropdownView.swift */; };
 		DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F05D265557CF00F6D4E9 /* DropdownView.swift */; };
 		DA22F07F26555AE600F6D4E9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA22F07D26555AE600F6D4E9 /* Localizable.strings */; };
-		DA22F08826555B9400F6D4E9 /* e_Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F08726555B9400F6D4E9 /* e_Strings.swift */; };
 		DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F08C26555BE900F6D4E9 /* Strings.swift */; };
 		DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F09126555E8000F6D4E9 /* DropdownButton.swift */; };
 		DA22F098265563E900F6D4E9 /* SizeConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F097265563E900F6D4E9 /* SizeConstants.swift */; };
@@ -55,6 +54,10 @@
 		DA22F11E265D11AD00F6D4E9 /* e_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F11D265D11AD00F6D4E9 /* e_Array.swift */; };
 		DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F122265D1D2B00F6D4E9 /* e_UIAlertController.swift */; };
 		DA22F12A265F941D00F6D4E9 /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F129265F941D00F6D4E9 /* TaskCellView.swift */; };
+		DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F1322661371300F6D4E9 /* TextViewContainer.swift */; };
+		DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F137266137F300F6D4E9 /* e_UITextView.swift */; };
+		DA22F1412662416C00F6D4E9 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = DA22F1432662416C00F6D4E9 /* Localizable.stringsdict */; };
+		DA22F1492662449900F6D4E9 /* e_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F1482662449900F6D4E9 /* e_String.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -102,7 +105,6 @@
 		DA22F0622655593D00F6D4E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		DA22F07E26555AE600F6D4E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DA22F08326555AF600F6D4E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		DA22F08726555B9400F6D4E9 /* e_Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Strings.swift; sourceTree = "<group>"; };
 		DA22F08C26555BE900F6D4E9 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		DA22F09126555E8000F6D4E9 /* DropdownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropdownButton.swift; sourceTree = "<group>"; };
 		DA22F097265563E900F6D4E9 /* SizeConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeConstants.swift; sourceTree = "<group>"; };
@@ -132,6 +134,11 @@
 		DA22F11D265D11AD00F6D4E9 /* e_Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Array.swift; sourceTree = "<group>"; };
 		DA22F122265D1D2B00F6D4E9 /* e_UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIAlertController.swift; sourceTree = "<group>"; };
 		DA22F129265F941D00F6D4E9 /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		DA22F1322661371300F6D4E9 /* TextViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewContainer.swift; sourceTree = "<group>"; };
+		DA22F137266137F300F6D4E9 /* e_UITextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UITextView.swift; sourceTree = "<group>"; };
+		DA22F1422662416C00F6D4E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		DA22F1472662417300F6D4E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
+		DA22F1482662449900F6D4E9 /* e_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_String.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -198,8 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				DA22EF9426344CA400F6D4E9 /* e_UIView.swift */,
+				DA22F137266137F300F6D4E9 /* e_UITextView.swift */,
 				DA22F00626529D8700F6D4E9 /* e_Date.swift */,
-				DA22F08726555B9400F6D4E9 /* e_Strings.swift */,
+				DA22F1482662449900F6D4E9 /* e_String.swift */,
 				DA22F11D265D11AD00F6D4E9 /* e_Array.swift */,
 				DA22F122265D1D2B00F6D4E9 /* e_UIAlertController.swift */,
 			);
@@ -223,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				DA22F0B326556D7400F6D4E9 /* AppTextView.swift */,
+				DA22F1322661371300F6D4E9 /* TextViewContainer.swift */,
 				DA22F0AE265569F100F6D4E9 /* DatePickerView.swift */,
 				DA22F055265556FA00F6D4E9 /* LabelDropdownView.swift */,
 				DA22F09126555E8000F6D4E9 /* DropdownButton.swift */,
@@ -302,6 +311,7 @@
 				DAF914A3262B4E1700ACF14D /* Info.plist */,
 				DA22F096265563D700F6D4E9 /* Design */,
 				DA22F08C26555BE900F6D4E9 /* Strings.swift */,
+				DA22F1432662416C00F6D4E9 /* Localizable.stringsdict */,
 				DA22F07D26555AE600F6D4E9 /* Localizable.strings */,
 				DA22EF9326344C9100F6D4E9 /* Extensions */,
 				DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */,
@@ -442,6 +452,7 @@
 				DA22F07F26555AE600F6D4E9 /* Localizable.strings in Resources */,
 				DA22F1002657A6BF00F6D4E9 /* Nunito-Light.ttf in Resources */,
 				DA22F0F82657A6BB00F6D4E9 /* Nunito-ExtraLightItalic.ttf in Resources */,
+				DA22F1412662416C00F6D4E9 /* Localizable.stringsdict in Resources */,
 				DA22F1082657A6C400F6D4E9 /* Nunito-Regular.ttf in Resources */,
 				DAF9149F262B4E1700ACF14D /* Assets.xcassets in Resources */,
 				DA22F0DB2657A69A00F6D4E9 /* Nunito-Black.ttf in Resources */,
@@ -472,19 +483,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA22F08826555B9400F6D4E9 /* e_Strings.swift in Sources */,
 				DA22EF9D263452DA00F6D4E9 /* TaskTableViewCell.swift in Sources */,
 				DA22F0BF26564F5900F6D4E9 /* TagsView.swift in Sources */,
 				DA22F0AF265569F100F6D4E9 /* DatePickerView.swift in Sources */,
 				DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */,
 				DA22F056265556FA00F6D4E9 /* LabelDropdownView.swift in Sources */,
 				DA22F0AA265565B200F6D4E9 /* p_KeyboardHandler.swift in Sources */,
+				DA22F1492662449900F6D4E9 /* e_String.swift in Sources */,
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
 				DA22EFA326455DFA00F6D4E9 /* TaskListCoordinator.swift in Sources */,
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
+				DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */,
 				DA22EFD92645A6DA00F6D4E9 /* RecurrenceRule.swift in Sources */,
 				DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */,
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
@@ -496,6 +508,7 @@
 				DA22EFF2265104A300F6D4E9 /* Tag.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
 				DA22F0B426556D7400F6D4E9 /* AppTextView.swift in Sources */,
+				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
 				DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */,
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
@@ -550,6 +563,15 @@
 				DA22F08326555AF600F6D4E9 /* ru */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		DA22F1432662416C00F6D4E9 /* Localizable.stringsdict */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA22F1422662416C00F6D4E9 /* en */,
+				DA22F1472662417300F6D4E9 /* ru */,
+			);
+			name = Localizable.stringsdict;
 			sourceTree = "<group>";
 		};
 		DAF914A0262B4E1700ACF14D /* LaunchScreen.storyboard */ = {

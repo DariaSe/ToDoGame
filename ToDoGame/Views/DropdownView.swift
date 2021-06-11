@@ -15,7 +15,7 @@ class DropdownView: UIView {
         }
     }
     
-    let options = [Strings.yes, Strings.no]
+    var options: [String] = DropdownOptions.yesOrNo
 
     let tableView = UITableView()
     
@@ -31,6 +31,8 @@ class DropdownView: UIView {
     }
     
     private func initialSetup() {
+        self.layer.cornerRadius = 10
+        self.clipsToBounds = true
         setConstraints(on: tableView)
         tableView.dataSource = self
         tableView.delegate = self
@@ -46,6 +48,8 @@ extension DropdownView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = options[indexPath.row]
+        cell.textLabel?.font = UIFont.normalTextFont
+        cell.textLabel?.textColor = UIColor.textColor
         if indexPath.row == selectedOption {
             cell.accessoryType = .checkmark
         }
@@ -66,4 +70,9 @@ extension DropdownView: UITableViewDelegate {
         selectedOption = indexPath.row
         didSelectOption?(selectedOption)
     }
+}
+
+struct DropdownOptions {
+    static let yesOrNo = [Strings.yes, Strings.no]
+    static let noIntervalRecurrence = [Strings.day, Strings.week, Strings.month, Strings.year]
 }
