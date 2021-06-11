@@ -25,7 +25,7 @@ class TaskListViewController: UIViewController {
         self.title = "Tasks"
         view.backgroundColor = UIColor.backgroundColor
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addTask))
-        view.setConstraints(on: taskListView)
+        view.pinToEdges(subview: taskListView)
         taskListView.setCompletedOrCancel = { [unowned self] taskID in
             coordinator?.setCompletedOrCancel(taskID: taskID)
         }

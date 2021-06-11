@@ -33,7 +33,7 @@ class DropdownView: UIView {
     private func initialSetup() {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
-        setConstraints(on: tableView)
+        self.pinToEdges(subview: tableView)
         tableView.dataSource = self
         tableView.delegate = self
     }

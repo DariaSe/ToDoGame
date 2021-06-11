@@ -41,7 +41,7 @@ class TaskListView: UIView {
     }
     
     private func initialSetup() {
-        self.setConstraints(on: tableView)
+        self.pinToEdges(subview: tableView)
         tableView.backgroundColor = .clear
         tableView.separatorStyle = .none
         tableView.dataSource = self

@@ -24,8 +24,8 @@ class TagCollectionViewCell: UICollectionViewCell {
     }
     
     func initialSetup() {
-        contentView.setConstraints(on: containerView, margins: false, leading: 2, trailing: 2, top: 7, bottom: 8)
-        containerView.setConstraints(on: label, margins: false, leading: 12, trailing: 12, top: nil, bottom: nil)
+        contentView.pinToEdges(subview: containerView, leading: 2, trailing: 2, top: 7, bottom: 8)
+        contentView.pinToEdges(subview: label, leading: 12, trailing: 12, top: nil, bottom: nil)
         label.centerYAnchor.constraint(equalTo: containerView.centerYAnchor).isActive = true
         containerView.layer.cornerRadius = 10
         containerView.heightAnchor.constraint(equalToConstant: 25).isActive = true

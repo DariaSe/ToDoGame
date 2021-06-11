@@ -30,7 +30,7 @@ class DropdownButton: UIButton {
     }
     
     private func initialSetup() {
-        setConstraints(on: stackView, margins: true, leading: 5, trailing: 5, top: 2, bottom: 2)
+        self.pinToLayoutMargins(subview: stackView, leading: 5, trailing: 5, top: 2, bottom: 2)
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill

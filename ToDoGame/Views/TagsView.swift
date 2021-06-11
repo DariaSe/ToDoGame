@@ -39,7 +39,7 @@ class TagsView: UIView {
     }
     
     private func initialSetup() {
-        collectionView.pinToEdges(to: self)
+        self.pinToEdges(subview: collectionView)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionViewLayout.scrollDirection = .horizontal

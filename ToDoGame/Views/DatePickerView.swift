@@ -36,7 +36,7 @@ class DatePickerView: UIView {
     }
     
     private func initialSetup() {
-        setConstraints(on: stackView, margins: true, leading: 20, trailing: 20)
+        self.pinToLayoutMargins(subview: stackView, leading: 20, trailing: 20)
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .fill

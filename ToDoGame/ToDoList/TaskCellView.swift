@@ -41,12 +41,12 @@ class TaskCellView: UIView {
     }
  
     func setupLayout() {
-        setConstraints(on: roundedView, leading: 10, trailing: 10, top: 5, bottom: 5)
+        self.pinToEdges(subview: roundedView, leading: 10, trailing: 10, top: 5, bottom: 5)
+        roundedView.pinToEdges(subview: colorView, trailing: nil)
         
-        roundedView.setConstraints(on: colorView, trailing: nil)
         colorView.widthAnchor.constraint(equalToConstant: 16).isActive = true
-    
-        roundedView.setConstraints(on: label, leading: 30, trailing: 70, top: 24, bottom: 24)
+        
+        roundedView.pinToEdges(subview: label, leading: 30, trailing: 70, top: 24, bottom: 24)
         
         checkButton.translatesAutoresizingMaskIntoConstraints = false
         roundedView.addSubview(checkButton)

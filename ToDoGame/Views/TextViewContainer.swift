@@ -51,7 +51,7 @@ class TextViewContainer: UIView {
     }
     
     func initialSetup() {
-        textView.pinToEdges(to: self)
+        self.pinToEdges(subview: textView)
         textView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         textView.delegate = self
         textView.isScrollEnabled = false

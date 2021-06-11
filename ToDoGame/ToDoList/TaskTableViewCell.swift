@@ -25,11 +25,11 @@ class TaskTableViewCell: UITableViewCell {
     
     private func initialSetup() {
         contentView.backgroundColor = .clear
-        contentView.setConstraints(on: placeholderView, leading: 10, trailing: 10, top: 5, bottom: 5)
+        contentView.pinToEdges(subview: placeholderView, leading: 10, trailing: 10, top: 5, bottom: 5)
         placeholderView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         placeholderView.layer.cornerRadius = 16
         placeholderView.isHidden = true
-        contentView.setConstraints(on: taskView)
+        contentView.pinToEdges(subview: taskView)
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

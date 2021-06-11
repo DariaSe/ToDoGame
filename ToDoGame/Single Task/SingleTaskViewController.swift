@@ -59,10 +59,10 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         view.backgroundColor = UIColor.backgroundColor
         registerForKeyboardNotifications(for: scrollView)
         
-        view.setConstraints(on: scrollView, margins: true, top: 10, bottom: 20)
-        view.setConstraints(on: topLabel, margins: true, top: 20, bottom: nil)
-        view.setConstraints(on: closeButton, margins: true, leading: nil, trailing: 2, top: 12, bottom: nil)
-        scrollView.setConstraints(on: commonStackView, top: 70)
+        view.pinToLayoutMargins(subview: scrollView, top: 10, bottom: 20)
+        view.pinToLayoutMargins(subview: topLabel, top: 20, bottom: nil)
+        view.pinToLayoutMargins(subview: closeButton, leading: nil, trailing: 2, top: 12, bottom: nil)
+        scrollView.pinToEdges(subview: commonStackView, top: 70)
         commonStackView.setWidth(equalTo: scrollView)
         
         commonStackView.axis = .vertical
@@ -76,7 +76,7 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         commonStackView.addArrangedSubview(notificationDropdownView)
         
         
-        shadowingView.pinToEdges(to: view)
+        view.pinToEdges(subview: shadowingView)
         shadowingView.isHidden = true
         shadowingView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
         
