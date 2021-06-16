@@ -12,6 +12,8 @@ class DropdownButton: UIButton {
     var text = Strings.no {
         didSet {
             label.text = text
+            widthConstraint.constant = widthWithText()
+            layoutIfNeeded()
         }
     }
     
@@ -19,6 +21,8 @@ class DropdownButton: UIButton {
     
     private let label = UILabel()
     private let arrow = UILabel()
+    
+    private var widthConstraint = NSLayoutConstraint()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -42,7 +46,21 @@ class DropdownButton: UIButton {
         label.font = UIFont.normalTextFont
         label.isUserInteractionEnabled = false
         arrow.text = Strings.arrowDown
+        arrow.font = UIFont.normalTextFont
         arrow.textColor = UIColor.buttonColor
         arrow.isUserInteractionEnabled = false
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.buttonColor.cgColor
+        layer.cornerRadius = SizeConstants.buttonCornerRadius
+        heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
+        widthConstraint = widthAnchor.constraint(equalToConstant: widthWithText())
+        widthConstraint.isActive = true
+    }
+    
+    func widthWithText() -> CGFloat {
+        let textWidth = text.width(withConstrainedHeight: UIFont.normalTextFont.lineHeight, font: UIFont.normalTextFont)
+        let arrowWidth = Strings.arrowDown.width(withConstrainedHeight: UIFont.normalTextFont.lineHeight, font: UIFont.normalTextFont)
+        let layoutMargins = self.layoutMargins.left + self.layoutMargins.right
+        return textWidth + arrowWidth + layoutMargins + 20
     }
 }

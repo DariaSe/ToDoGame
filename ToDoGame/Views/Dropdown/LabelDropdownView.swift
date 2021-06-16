@@ -46,11 +46,6 @@ class LabelDropdownView: UIView {
         stackView.addArrangedSubview(dropdownButton)
         label.font = UIFont.normalTextFont
         label.textColor = UIColor.textColor
-        dropdownButton.layer.borderWidth = 0.5
-        dropdownButton.layer.borderColor = UIColor.buttonColor.cgColor
-        dropdownButton.layer.cornerRadius = SizeConstants.buttonCornerRadius
-        dropdownButton.heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
-        dropdownButton.widthAnchor.constraint(equalToConstant: 100).isActive = true
         dropdownButton.addTarget(self, action: #selector(dropdownButtonPressed), for: .touchUpInside)
     }
     

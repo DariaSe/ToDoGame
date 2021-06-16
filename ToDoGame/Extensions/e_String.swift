@@ -12,7 +12,7 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
     
-    func localizedForCount(_ count: UInt) -> String {
+    func localizedForCount(_ count: Int) -> String {
         let formatString : String = NSLocalizedString(self, comment: "")
         let resultString : String = String.localizedStringWithFormat(formatString, count)
         return resultString

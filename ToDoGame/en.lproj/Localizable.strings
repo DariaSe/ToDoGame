@@ -25,10 +25,18 @@
 "Time:" = "Time:";
 "Repeat:" = "Repeat:";
 
+"Daily" = "Daily";
+"Weekly" = "Weekly";
+"Monthly" = "Monthly";
+"Yearly" = "Yearly";
+
+"Every" = "Every";
 "day" = "day";
 "week" = "week";
 "month" = "month";
 "year" = "year";
+
+"On weekdays:" = "On weekdays:";
 
 "Notification:" = "Notification:";
 

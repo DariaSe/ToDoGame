@@ -33,11 +33,23 @@ struct Strings {
     static let time = "Time:".localized
     static let repeatt = "Repeat:".localized
     
+    static let daily = "Daily".localized
+    static let weekly = "Weekly".localized
+    static let monthly = "Monthly".localized
+    static let yearly = "Yearly".localized
+    
+    static let every = "Every".localized
     static let day = "day".localized
     static let week = "week".localized
     static let month = "month".localized
     static let year = "year".localized
+    
     static let daysCount = "days_count"
+    static let weeksCount = "weeks_count"
+    static let monthsCount = "months_count"
+    static let yearsCount = "years_count"
+    
+    static let onWeekdays = "On weekdays:".localized
     
     static let notification = "Notification:".localized
     

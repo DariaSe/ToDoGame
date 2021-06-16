@@ -67,6 +67,12 @@
 		DA9597B6267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597B5267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift */; };
 		DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597BE267A191700D88CAC /* CheckboxView.swift */; };
 		DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597C3267A19E000D88CAC /* CheckboxButton.swift */; };
+		DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597D9267A27A300D88CAC /* RepeatWithIntervalView.swift */; };
+		DA9597DF267A5B7500D88CAC /* e_Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597DE267A5B7500D88CAC /* e_Int.swift */; };
+		DA9597E4267A636400D88CAC /* e_UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597E3267A636400D88CAC /* e_UITextField.swift */; };
+		DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597E8267A657100D88CAC /* WeekdaysView.swift */; };
+		DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597ED267A65BE00D88CAC /* WeekdayCollectionViewCell.swift */; };
+		DA9597F3267A67ED00D88CAC /* e_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597F2267A67ED00D88CAC /* e_Calendar.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -157,6 +163,12 @@
 		DA9597B5267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSwitchTableViewCell.swift; sourceTree = "<group>"; };
 		DA9597BE267A191700D88CAC /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
 		DA9597C3267A19E000D88CAC /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
+		DA9597D9267A27A300D88CAC /* RepeatWithIntervalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWithIntervalView.swift; sourceTree = "<group>"; };
+		DA9597DE267A5B7500D88CAC /* e_Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Int.swift; sourceTree = "<group>"; };
+		DA9597E3267A636400D88CAC /* e_UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UITextField.swift; sourceTree = "<group>"; };
+		DA9597E8267A657100D88CAC /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
+		DA9597ED267A65BE00D88CAC /* WeekdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA9597F2267A67ED00D88CAC /* e_Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Calendar.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -227,10 +239,13 @@
 			children = (
 				DA22EF9426344CA400F6D4E9 /* e_UIView.swift */,
 				DA22F137266137F300F6D4E9 /* e_UITextView.swift */,
+				DA9597E3267A636400D88CAC /* e_UITextField.swift */,
 				DA22F00626529D8700F6D4E9 /* e_Date.swift */,
+				DA9597F2267A67ED00D88CAC /* e_Calendar.swift */,
 				DA22F1482662449900F6D4E9 /* e_String.swift */,
 				DA22F11D265D11AD00F6D4E9 /* e_Array.swift */,
 				DA22F122265D1D2B00F6D4E9 /* e_UIAlertController.swift */,
+				DA9597DE267A5B7500D88CAC /* e_Int.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -298,6 +313,9 @@
 			children = (
 				DA95979626767A0C00D88CAC /* RepeatComposedView.swift */,
 				DA9597AB267A0C3100D88CAC /* RepeatChoiceView.swift */,
+				DA9597D9267A27A300D88CAC /* RepeatWithIntervalView.swift */,
+				DA9597E8267A657100D88CAC /* WeekdaysView.swift */,
+				DA9597ED267A65BE00D88CAC /* WeekdayCollectionViewCell.swift */,
 			);
 			path = Repeat;
 			sourceTree = "<group>";
@@ -553,6 +571,7 @@
 				DA22EF9D263452DA00F6D4E9 /* TaskTableViewCell.swift in Sources */,
 				DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */,
 				DA22F0BF26564F5900F6D4E9 /* TagsView.swift in Sources */,
+				DA9597E4267A636400D88CAC /* e_UITextField.swift in Sources */,
 				DA22F0AF265569F100F6D4E9 /* DatePickerView.swift in Sources */,
 				DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */,
 				DA22F056265556FA00F6D4E9 /* LabelDropdownView.swift in Sources */,
@@ -562,6 +581,7 @@
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
+				DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */,
 				DA22EFA326455DFA00F6D4E9 /* TaskListCoordinator.swift in Sources */,
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
@@ -571,6 +591,7 @@
 				DA22EFD92645A6DA00F6D4E9 /* RecurrenceRule.swift in Sources */,
 				DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */,
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
+				DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
 				DA22EFFD26528D3200F6D4E9 /* TaskViewModel.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
@@ -585,7 +606,9 @@
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
 				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
+				DA9597DF267A5B7500D88CAC /* e_Int.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
+				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA22F0C42656509400F6D4E9 /* TagCollectionViewCell.swift in Sources */,
 				DA22F0A02655642200F6D4E9 /* Colors.swift in Sources */,
@@ -595,6 +618,7 @@
 				DA22EFC92645772B00F6D4E9 /* StorageManager.swift in Sources */,
 				DA22F0A52655649A00F6D4E9 /* Fonts.swift in Sources */,
 				DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */,
+				DA9597F3267A67ED00D88CAC /* e_Calendar.swift in Sources */,
 				DA22F11E265D11AD00F6D4E9 /* e_Array.swift in Sources */,
 				DA22F12A265F941D00F6D4E9 /* TaskCellView.swift in Sources */,
 			);

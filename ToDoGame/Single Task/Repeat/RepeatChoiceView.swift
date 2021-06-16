@@ -9,9 +9,11 @@ import UIKit
 
 class RepeatChoiceView: RadioSwitchTableView {
     
-    let yesLabel = UILabel()
-    let noLabel = UILabel()
-    let maybeLabel = UILabel()
+    let firstOption = DropdownButton()
+    let secondOption = RepeatWithIntervalView()
+    let thirdOptionLabel = UILabel()
+    
+    var firstOptionWidthConstraint = NSLayoutConstraint()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,9 +26,12 @@ class RepeatChoiceView: RadioSwitchTableView {
     
     override func initialSetup() {
         super.initialSetup()
-        yesLabel.text = "Yes"
-        noLabel.text = "No"
-        maybeLabel.text = "Maybe"
-        options = [yesLabel, noLabel, maybeLabel]
+        firstOption.text = Strings.daily
+        thirdOptionLabel.text = Strings.onWeekdays
+        thirdOptionLabel.font = UIFont.normalTextFont
+        thirdOptionLabel.textColor = UIColor.textColor
+        let thirdOptionView = UIView()
+        thirdOptionView.pinToLayoutMargins(subview: thirdOptionLabel, leading: -10)
+        options = [firstOption, secondOption, thirdOptionView]
     }
 }
