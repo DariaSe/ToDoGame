@@ -58,7 +58,15 @@
 		DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F137266137F300F6D4E9 /* e_UITextView.swift */; };
 		DA22F1412662416C00F6D4E9 /* Localizable.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = DA22F1432662416C00F6D4E9 /* Localizable.stringsdict */; };
 		DA22F1492662449900F6D4E9 /* e_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F1482662449900F6D4E9 /* e_String.swift */; };
-		DABFA5AB26736161007C532F /* RadioSwitcherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DABFA5AA26736161007C532F /* RadioSwitcherView.swift */; };
+		DA95978326736B2500D88CAC /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95978226736B2500D88CAC /* RadioButton.swift */; };
+		DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95978C2676280A00D88CAC /* TimePickerView.swift */; };
+		DA95979226765D3800D88CAC /* TaskInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95979126765D3800D88CAC /* TaskInputView.swift */; };
+		DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95979626767A0C00D88CAC /* RepeatComposedView.swift */; };
+		DA9597AC267A0C3100D88CAC /* RepeatChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597AB267A0C3100D88CAC /* RepeatChoiceView.swift */; };
+		DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597B0267A0C8700D88CAC /* RadioSwitchTableView.swift */; };
+		DA9597B6267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597B5267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift */; };
+		DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597BE267A191700D88CAC /* CheckboxView.swift */; };
+		DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597C3267A19E000D88CAC /* CheckboxButton.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -140,7 +148,15 @@
 		DA22F1422662416C00F6D4E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = en; path = en.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		DA22F1472662417300F6D4E9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; name = ru; path = ru.lproj/Localizable.stringsdict; sourceTree = "<group>"; };
 		DA22F1482662449900F6D4E9 /* e_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_String.swift; sourceTree = "<group>"; };
-		DABFA5AA26736161007C532F /* RadioSwitcherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSwitcherView.swift; sourceTree = "<group>"; };
+		DA95978226736B2500D88CAC /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
+		DA95978C2676280A00D88CAC /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		DA95979126765D3800D88CAC /* TaskInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInputView.swift; sourceTree = "<group>"; };
+		DA95979626767A0C00D88CAC /* RepeatComposedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatComposedView.swift; sourceTree = "<group>"; };
+		DA9597AB267A0C3100D88CAC /* RepeatChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatChoiceView.swift; sourceTree = "<group>"; };
+		DA9597B0267A0C8700D88CAC /* RadioSwitchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSwitchTableView.swift; sourceTree = "<group>"; };
+		DA9597B5267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSwitchTableViewCell.swift; sourceTree = "<group>"; };
+		DA9597BE267A191700D88CAC /* CheckboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxView.swift; sourceTree = "<group>"; };
+		DA9597C3267A19E000D88CAC /* CheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxButton.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +215,9 @@
 			children = (
 				DA22EFB52645608C00F6D4E9 /* SingleTaskCoordinator.swift */,
 				DA22EFB02645606600F6D4E9 /* SingleTaskViewController.swift */,
+				DA95979126765D3800D88CAC /* TaskInputView.swift */,
+				DA95978C2676280A00D88CAC /* TimePickerView.swift */,
+				DA9597A026767A4200D88CAC /* Repeat */,
 			);
 			path = "Single Task";
 			sourceTree = "<group>";
@@ -234,13 +253,10 @@
 			children = (
 				DA22F0B326556D7400F6D4E9 /* AppTextView.swift */,
 				DA22F1322661371300F6D4E9 /* TextViewContainer.swift */,
-				DABFA5AA26736161007C532F /* RadioSwitcherView.swift */,
 				DA22F0AE265569F100F6D4E9 /* DatePickerView.swift */,
-				DA22F055265556FA00F6D4E9 /* LabelDropdownView.swift */,
-				DA22F09126555E8000F6D4E9 /* DropdownButton.swift */,
-				DA22F05D265557CF00F6D4E9 /* DropdownView.swift */,
-				DA22F0BE26564F5900F6D4E9 /* TagsView.swift */,
-				DA22F0C32656509400F6D4E9 /* TagCollectionViewCell.swift */,
+				DA9597D3267A225800D88CAC /* Checkbox */,
+				DA9597BA267A0F1000D88CAC /* RadioSwitch */,
+				DA9597D4267A226F00D88CAC /* Dropdown */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -275,6 +291,53 @@
 				DA22F0D22656A0D000F6D4E9 /* Nunito-SemiBoldItalic.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DA9597A026767A4200D88CAC /* Repeat */ = {
+			isa = PBXGroup;
+			children = (
+				DA95979626767A0C00D88CAC /* RepeatComposedView.swift */,
+				DA9597AB267A0C3100D88CAC /* RepeatChoiceView.swift */,
+			);
+			path = Repeat;
+			sourceTree = "<group>";
+		};
+		DA9597BA267A0F1000D88CAC /* RadioSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				DA9597B0267A0C8700D88CAC /* RadioSwitchTableView.swift */,
+				DA9597B5267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift */,
+				DA95978226736B2500D88CAC /* RadioButton.swift */,
+			);
+			path = RadioSwitch;
+			sourceTree = "<group>";
+		};
+		DA9597D3267A225800D88CAC /* Checkbox */ = {
+			isa = PBXGroup;
+			children = (
+				DA9597BE267A191700D88CAC /* CheckboxView.swift */,
+				DA9597C3267A19E000D88CAC /* CheckboxButton.swift */,
+			);
+			path = Checkbox;
+			sourceTree = "<group>";
+		};
+		DA9597D4267A226F00D88CAC /* Dropdown */ = {
+			isa = PBXGroup;
+			children = (
+				DA22F055265556FA00F6D4E9 /* LabelDropdownView.swift */,
+				DA22F09126555E8000F6D4E9 /* DropdownButton.swift */,
+				DA22F05D265557CF00F6D4E9 /* DropdownView.swift */,
+			);
+			path = Dropdown;
+			sourceTree = "<group>";
+		};
+		DA9597D5267A229000D88CAC /* Archive */ = {
+			isa = PBXGroup;
+			children = (
+				DA22F0BE26564F5900F6D4E9 /* TagsView.swift */,
+				DA22F0C32656509400F6D4E9 /* TagCollectionViewCell.swift */,
+			);
+			path = Archive;
 			sourceTree = "<group>";
 		};
 		DAF91486262B4E1500ACF14D = {
@@ -318,6 +381,7 @@
 				DA22F07D26555AE600F6D4E9 /* Localizable.strings */,
 				DA22EF9326344C9100F6D4E9 /* Extensions */,
 				DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */,
+				DA9597D5267A229000D88CAC /* Archive */,
 			);
 			path = ToDoGame;
 			sourceTree = "<group>";
@@ -487,12 +551,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA22EF9D263452DA00F6D4E9 /* TaskTableViewCell.swift in Sources */,
+				DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */,
 				DA22F0BF26564F5900F6D4E9 /* TagsView.swift in Sources */,
 				DA22F0AF265569F100F6D4E9 /* DatePickerView.swift in Sources */,
 				DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */,
 				DA22F056265556FA00F6D4E9 /* LabelDropdownView.swift in Sources */,
 				DA22F0AA265565B200F6D4E9 /* p_KeyboardHandler.swift in Sources */,
 				DA22F1492662449900F6D4E9 /* e_String.swift in Sources */,
+				DA95978326736B2500D88CAC /* RadioButton.swift in Sources */,
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
@@ -500,25 +566,31 @@
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
 				DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */,
+				DA9597AC267A0C3100D88CAC /* RepeatChoiceView.swift in Sources */,
+				DA95979226765D3800D88CAC /* TaskInputView.swift in Sources */,
 				DA22EFD92645A6DA00F6D4E9 /* RecurrenceRule.swift in Sources */,
 				DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */,
-				DABFA5AB26736161007C532F /* RadioSwitcherView.swift in Sources */,
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
 				DA22EFFD26528D3200F6D4E9 /* TaskViewModel.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
 				DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */,
+				DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */,
 				DA22EFF2265104A300F6D4E9 /* Tag.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
 				DA22F0B426556D7400F6D4E9 /* AppTextView.swift in Sources */,
 				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
 				DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */,
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
+				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
+				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
+				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA22F0C42656509400F6D4E9 /* TagCollectionViewCell.swift in Sources */,
 				DA22F0A02655642200F6D4E9 /* Colors.swift in Sources */,
 				DA22F098265563E900F6D4E9 /* SizeConstants.swift in Sources */,
+				DA9597B6267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift in Sources */,
 				DA22EFB62645608C00F6D4E9 /* SingleTaskCoordinator.swift in Sources */,
 				DA22EFC92645772B00F6D4E9 /* StorageManager.swift in Sources */,
 				DA22F0A52655649A00F6D4E9 /* Fonts.swift in Sources */,

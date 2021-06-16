@@ -14,44 +14,22 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
     var task: Task? {
         didSet {
             if let task = task {
-                titleTextViewContainer.text = task.title
-                datePickerView.datePicker.date = task.startDate
-                let isTimeSet = task.notificationTime != nil
-                timeDropdownView.buttonText = isTimeSet ? Strings.yes : Strings.no
-                timeDropdownOption = isTimeSet ? 1 : 0
-                timePickerView.isHidden = !isTimeSet
-                let isRepeating = task.recurrenceRule != nil
-                repeatDropdownView.buttonText = isRepeating ? Strings.yes : Strings.no
-                repeatDropdownOption = isRepeating ? 1 : 0
-                let isNotificationOn = task.isNotificationOn
-                notificationDropdownView.buttonText = isNotificationOn ? Strings.year : Strings.no
-                notificationDropdownOption = isNotificationOn ? 1 : 0
+                taskInputView.update(with: task)
             }
         }
     }
     
-    let scrollView = UIScrollView()
-    
-    let commonStackView = UIStackView()
-    
     let topLabel = UILabel()
     let closeButton = UIButton()
     
-    let titleTextViewContainer = TextViewContainer()
-    let datePickerView = DatePickerView()
-    let timeDropdownView = LabelDropdownView()
-    let timePickerView = DatePickerView()
-    let repeatDropdownView = LabelDropdownView()
-    let notificationDropdownView = LabelDropdownView()
+    let scrollView = UIScrollView()
     
+    let taskInputView = TaskInputView()
+
     let shadowingView = UIView()
     let dropdownMenu = DropdownView()
     
-    var timeDropdownOption: Int = 1
-    var repeatDropdownOption: Int = 1
-    var notificationDropdownOption: Int = 1
-    
-
+   
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -62,19 +40,8 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         view.pinToLayoutMargins(subview: scrollView, top: 10, bottom: 20)
         view.pinToLayoutMargins(subview: topLabel, top: 20, bottom: nil)
         view.pinToLayoutMargins(subview: closeButton, leading: nil, trailing: 2, top: 12, bottom: nil)
-        scrollView.pinToEdges(subview: commonStackView, top: 70)
-        commonStackView.setWidth(equalTo: scrollView)
-        
-        commonStackView.axis = .vertical
-        commonStackView.spacing = 20
-        commonStackView.addArrangedSubview(titleTextViewContainer)
-        commonStackView.addArrangedSubview(datePickerView)
-        commonStackView.addArrangedSubview(timeDropdownView)
-        commonStackView.addArrangedSubview(timePickerView)
-        commonStackView.addArrangedSubview(repeatDropdownView)
-        
-        commonStackView.addArrangedSubview(notificationDropdownView)
-        
+        scrollView.pinToEdges(subview: taskInputView, top: 70)
+        taskInputView.setWidth(equalTo: scrollView)
         
         view.pinToEdges(subview: shadowingView)
         shadowingView.isHidden = true
@@ -96,31 +63,9 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         closeButton.setImage(closeImage, for: .normal)
         closeButton.tintColor = UIColor.black
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
-        
-        titleTextViewContainer.heightAnchor.constraint(equalToConstant: SizeConstants.textFieldHeight).isActive = true
-        titleTextViewContainer.placeholder = Strings.taskTitle
-        
-        datePickerView.labelText = Strings.date
-        datePickerView.datePickerMode = .date
-        
-        timeDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        timeDropdownView.labelText = Strings.time
-        timeDropdownView.delegate = self
-        
-        timePickerView.datePicker.datePickerMode = .time
-        timePickerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-        repeatDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        repeatDropdownView.labelText = Strings.repeatt
-        repeatDropdownView.delegate = self
-        
-        setupEmptyTask()
+      
     }
     
-    func setupEmptyTask() {
-        titleTextViewContainer.text = ""
-        timePickerView.isHidden = true
-    }
     
     
     @objc func closeButtonPressed() {
@@ -145,47 +90,47 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
     }
 }
 
-extension SingleTaskViewController: DropdownDelegate {
-    
-    func showDropdown(sender: UIButton) {
-        shadowingView.isHidden = false
-        dropdownMenu.isHidden = false
-        var options: [String]
-        switch sender {
-        case timeDropdownView.dropdownButton:
-            options = DropdownOptions.yesOrNo
-            dropdownMenu.selectedOption = timeDropdownOption
-            dropdownMenu.didSelectOption = { [unowned self] option in
-                dismissMenu()
-                timeDropdownView.dropdownButton.text = options[option]
-                timeDropdownOption = option
-                timePickerView.isHidden = option == 1
-            }
-        case repeatDropdownView.dropdownButton:
-            options = DropdownOptions.yesOrNo
-            dropdownMenu.selectedOption = repeatDropdownOption
-            dropdownMenu.didSelectOption = { [unowned self] option in
-                dismissMenu()
-                repeatDropdownView.dropdownButton.text = options[option]
-                repeatDropdownOption = option
-            }
-        case notificationDropdownView.dropdownButton:
-            options = DropdownOptions.yesOrNo
-            dropdownMenu.selectedOption = notificationDropdownOption
-            dropdownMenu.didSelectOption = { [unowned self] option in
-                dismissMenu()
-                notificationDropdownView.dropdownButton.text = options[option]
-                notificationDropdownOption = option
-            }
-        default:
-            options = DropdownOptions.noIntervalRecurrence
-            dropdownMenu.didSelectOption = { [unowned self] option in
-                dismissMenu()
-                timeDropdownView.dropdownButton.text = options[option]
-            }
-        }
-        let frame = frameForDropdown(sender: sender, height: CGFloat(44 * options.count))
-        dropdownMenu.frame = frame
-        dropdownMenu.options = options
-    }
-}
+//extension SingleTaskViewController: DropdownDelegate {
+//
+//    func showDropdown(sender: UIButton) {
+//        shadowingView.isHidden = false
+//        dropdownMenu.isHidden = false
+//        var options: [String]
+//        switch sender {
+//        case timeDropdownView.dropdownButton:
+//            options = DropdownOptions.yesOrNo
+//            dropdownMenu.selectedOption = timeDropdownOption
+//            dropdownMenu.didSelectOption = { [unowned self] option in
+//                dismissMenu()
+//                timeDropdownView.dropdownButton.text = options[option]
+//                timeDropdownOption = option
+//                timePickerView.isHidden = option == 1
+//            }
+//        case repeatDropdownView.dropdownButton:
+//            options = DropdownOptions.yesOrNo
+//            dropdownMenu.selectedOption = repeatDropdownOption
+//            dropdownMenu.didSelectOption = { [unowned self] option in
+//                dismissMenu()
+//                repeatDropdownView.dropdownButton.text = options[option]
+//                repeatDropdownOption = option
+//            }
+//        case notificationDropdownView.dropdownButton:
+//            options = DropdownOptions.yesOrNo
+//            dropdownMenu.selectedOption = notificationDropdownOption
+//            dropdownMenu.didSelectOption = { [unowned self] option in
+//                dismissMenu()
+//                notificationDropdownView.dropdownButton.text = options[option]
+//                notificationDropdownOption = option
+//            }
+//        default:
+//            options = DropdownOptions.noIntervalRecurrence
+//            dropdownMenu.didSelectOption = { [unowned self] option in
+//                dismissMenu()
+//                timeDropdownView.dropdownButton.text = options[option]
+//            }
+//        }
+//        let frame = frameForDropdown(sender: sender, height: CGFloat(44 * options.count))
+//        dropdownMenu.frame = frame
+//        dropdownMenu.options = options
+//    }
+//}
