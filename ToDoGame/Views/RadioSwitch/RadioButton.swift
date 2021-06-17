@@ -32,6 +32,6 @@ class RadioButton: UIButton {
     private func initialSetup() {
         self.setImage(selectedImage?.withRenderingMode(.alwaysTemplate), for: .selected)
         self.setImage(deselectedImage?.withRenderingMode(.alwaysTemplate), for: .normal)
-        tintColor = UIColor.black
+        tintColor = UIColor.textColor
     }
 }

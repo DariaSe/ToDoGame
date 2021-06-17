@@ -9,7 +9,7 @@ import UIKit
 
 class TextViewContainer: UIView {
     
-    var textView = UITextView()
+    var textView = AppTextView()
     // to assign
     var text: String? {
         didSet {
@@ -18,7 +18,7 @@ class TextViewContainer: UIView {
         }
     }
     
-    var textViewBackgroundColor: UIColor = UIColor.textControlsBGColor
+    var textViewBackgroundColor: UIColor = UIColor.clear
     var textColor: UIColor = UIColor.textColor
     
     var placeholder: String = "" {
@@ -42,22 +42,12 @@ class TextViewContainer: UIView {
             placeholderTextColor : textColor
     }
     
-    func configureLayerAppearance() {
-        backgroundColor = .clear
-        textView.layer.borderWidth = 1.0
-        textView.layer.cornerRadius = 12
-        textView.backgroundColor = textViewBackgroundColor
-        textView.isEditable = true
-    }
     
     func initialSetup() {
         self.pinToEdges(subview: textView)
         textView.setContentCompressionResistancePriority(.defaultHigh, for: .vertical)
         textView.delegate = self
-        textView.isScrollEnabled = false
-        textView.font = UIFont.normalTextFont
-        textView.textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
-        configureLayerAppearance()
+        textView.isEditable = true
         configureTextAppearance()
 //        NotificationCenter.default.addObserver(self, selector: #selector(showInvalidTextView), name: Notification.Name(doneButtonNKey), object: nil)
     }

@@ -35,7 +35,8 @@ class WeekdaysView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: collectionView)
+        collectionView.center(in: self)
+        collectionView.setDimensions(width: 320, height: 40)
         collectionView.backgroundColor = .clear
         collectionView.isScrollEnabled = false
         collectionView.register(WeekdayCollectionViewCell.self, forCellWithReuseIdentifier: WeekdayCollectionViewCell.reuseIdentifier)

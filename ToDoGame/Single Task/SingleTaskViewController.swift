@@ -29,7 +29,6 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
     let shadowingView = UIView()
     let dropdownMenu = DropdownView()
     
-   
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -37,9 +36,9 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         view.backgroundColor = UIColor.backgroundColor
         registerForKeyboardNotifications(for: scrollView)
         
-        view.pinToLayoutMargins(subview: scrollView, top: 10, bottom: 20)
-        view.pinToLayoutMargins(subview: topLabel, top: 20, bottom: nil)
-        view.pinToLayoutMargins(subview: closeButton, leading: nil, trailing: 2, top: 12, bottom: nil)
+        view.pinToLayoutMargins(subview: scrollView)
+        scrollView.pinToLayoutMargins(subview: topLabel, top: 10, bottom: nil)
+        scrollView.pinToLayoutMargins(subview: closeButton, leading: nil, trailing: -10, top: 2, bottom: nil)
         scrollView.pinToEdges(subview: taskInputView, top: 70)
         taskInputView.setWidth(equalTo: scrollView)
         
@@ -50,6 +49,7 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         view.addSubview(dropdownMenu)
         dropdownMenu.isHidden = true
         
+        scrollView.delegate = self
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissMenu))
         shadowingView.addGestureRecognizer(tapRecognizer)
         
@@ -87,6 +87,12 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         else {
             return CGRect(x: senderOrigin.x, y: senderOrigin.y, width: width, height: height)
         }
+    }
+}
+
+extension SingleTaskViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }
 

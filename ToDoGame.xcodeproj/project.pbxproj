@@ -73,6 +73,12 @@
 		DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597E8267A657100D88CAC /* WeekdaysView.swift */; };
 		DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597ED267A65BE00D88CAC /* WeekdayCollectionViewCell.swift */; };
 		DA9597F3267A67ED00D88CAC /* e_Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597F2267A67ED00D88CAC /* e_Calendar.swift */; };
+		DA9597F8267A7F4400D88CAC /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597F7267A7F4400D88CAC /* AppTextField.swift */; };
+		DA9597FE267B4BAE00D88CAC /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9597FD267B4BAE00D88CAC /* CalendarHeaderView.swift */; };
+		DA959803267B4BCD00D88CAC /* CalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959802267B4BCD00D88CAC /* CalendarCollectionView.swift */; };
+		DA959808267B4BDA00D88CAC /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */; };
+		DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95980C267B543700D88CAC /* CalendarDay.swift */; };
+		DA959812267B658000D88CAC /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959811267B658000D88CAC /* CalendarService.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -169,6 +175,12 @@
 		DA9597E8267A657100D88CAC /* WeekdaysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaysView.swift; sourceTree = "<group>"; };
 		DA9597ED267A65BE00D88CAC /* WeekdayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdayCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA9597F2267A67ED00D88CAC /* e_Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_Calendar.swift; sourceTree = "<group>"; };
+		DA9597F7267A7F4400D88CAC /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		DA9597FD267B4BAE00D88CAC /* CalendarHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHeaderView.swift; sourceTree = "<group>"; };
+		DA959802267B4BCD00D88CAC /* CalendarCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionView.swift; sourceTree = "<group>"; };
+		DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA95980C267B543700D88CAC /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
+		DA959811267B658000D88CAC /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +271,7 @@
 				DA22EFD82645A6DA00F6D4E9 /* RecurrenceRule.swift */,
 				DA22EFE7265101E600F6D4E9 /* RecurrenceFrequency.swift */,
 				DA22EFF1265104A300F6D4E9 /* Tag.swift */,
+				DA95980C267B543700D88CAC /* CalendarDay.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -267,8 +280,10 @@
 			isa = PBXGroup;
 			children = (
 				DA22F0B326556D7400F6D4E9 /* AppTextView.swift */,
+				DA9597F7267A7F4400D88CAC /* AppTextField.swift */,
 				DA22F1322661371300F6D4E9 /* TextViewContainer.swift */,
 				DA22F0AE265569F100F6D4E9 /* DatePickerView.swift */,
+				DA9597FC267B4B8000D88CAC /* Calendar */,
 				DA9597D3267A225800D88CAC /* Checkbox */,
 				DA9597BA267A0F1000D88CAC /* RadioSwitch */,
 				DA9597D4267A226F00D88CAC /* Dropdown */,
@@ -356,6 +371,17 @@
 				DA22F0C32656509400F6D4E9 /* TagCollectionViewCell.swift */,
 			);
 			path = Archive;
+			sourceTree = "<group>";
+		};
+		DA9597FC267B4B8000D88CAC /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				DA9597FD267B4BAE00D88CAC /* CalendarHeaderView.swift */,
+				DA959802267B4BCD00D88CAC /* CalendarCollectionView.swift */,
+				DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */,
+				DA959811267B658000D88CAC /* CalendarService.swift */,
+			);
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		DAF91486262B4E1500ACF14D = {
@@ -600,21 +626,27 @@
 				DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */,
 				DA22EFF2265104A300F6D4E9 /* Tag.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
+				DA959803267B4BCD00D88CAC /* CalendarCollectionView.swift in Sources */,
 				DA22F0B426556D7400F6D4E9 /* AppTextView.swift in Sources */,
 				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
 				DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */,
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
 				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
+				DA9597FE267B4BAE00D88CAC /* CalendarHeaderView.swift in Sources */,
 				DA9597DF267A5B7500D88CAC /* e_Int.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
 				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
+				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
+				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,
 				DA22F0C42656509400F6D4E9 /* TagCollectionViewCell.swift in Sources */,
 				DA22F0A02655642200F6D4E9 /* Colors.swift in Sources */,
 				DA22F098265563E900F6D4E9 /* SizeConstants.swift in Sources */,
 				DA9597B6267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift in Sources */,
+				DA959808267B4BDA00D88CAC /* CalendarCollectionViewCell.swift in Sources */,
 				DA22EFB62645608C00F6D4E9 /* SingleTaskCoordinator.swift in Sources */,
+				DA9597F8267A7F4400D88CAC /* AppTextField.swift in Sources */,
 				DA22EFC92645772B00F6D4E9 /* StorageManager.swift in Sources */,
 				DA22F0A52655649A00F6D4E9 /* Fonts.swift in Sources */,
 				DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */,

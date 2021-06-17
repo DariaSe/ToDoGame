@@ -21,10 +21,12 @@ class RepeatWithIntervalView: UIView {
         }
     }
     
+    var textDidChange: (() -> ())?
+    
     let stackView = UIStackView()
     
     let label = UILabel()
-    let textField = UITextField()
+    let textField = AppTextField()
     let dropdownButton = DropdownButton()
 
     override init(frame: CGRect) {
@@ -47,10 +49,7 @@ class RepeatWithIntervalView: UIView {
         label.text = Strings.every
         label.font = UIFont.normalTextFont
         label.textColor = UIColor.textColor
-        textField.setDimensions(width: 60, height: SizeConstants.textFieldHeight)
-        textField.layer.cornerRadius = SizeConstants.textFieldCornerRadius
-        textField.layer.borderWidth = 1
-        textField.layer.borderColor = UIColor.borderColor.cgColor
+        textField.setDimensions(width: 60)
         textField.keyboardType = .decimalPad
         textField.setLeftPaddingPoints(16)
         textField.setRightPaddingPoints(16)
@@ -76,7 +75,9 @@ class RepeatWithIntervalView: UIView {
 }
 
 extension RepeatWithIntervalView: UITextFieldDelegate {
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        textDidChange?()
         if let text = textField.text, let count = Int(text) {
             interval = count
         }

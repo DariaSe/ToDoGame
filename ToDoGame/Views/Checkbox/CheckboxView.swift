@@ -42,6 +42,7 @@ class CheckboxView: UIView {
         checkboxButton.setDimensions(width: 40, height: 40)
         checkboxButton.addTarget(self, action: #selector(didToggleCheckbox), for: .touchUpInside)
         checkboxButton.isSelected = isCheckboxOn
+        label.font = UIFont.normalTextFont
         label.textColor = isCheckboxOn ? UIColor.textColor : UIColor.textColor.withAlphaComponent(0.5)
     }
     

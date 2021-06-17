@@ -21,6 +21,8 @@ class RadioSwitchTableView: UIView {
         }
     }
     
+    var didSelectOption: ((Int) -> ())?
+    
     let tableView = UITableView()
 
     override init(frame: CGRect) {
@@ -54,7 +56,7 @@ extension RadioSwitchTableView: UITableViewDataSource {
         let isSelected = (selectedOption == indexPath.row)
         cell.update(with: option, isSelected: isSelected)
         cell.didSelectOption = { [unowned self] in
-            selectedOption = indexPath.row
+            didSelectOption?(indexPath.row)
         }
         return cell
     }

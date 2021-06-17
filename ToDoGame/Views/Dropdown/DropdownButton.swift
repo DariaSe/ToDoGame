@@ -9,15 +9,15 @@ import UIKit
 
 class DropdownButton: UIButton {
     
-    var text = Strings.no {
+    var delegate: DropdownDelegate?
+    
+    var text = "No" {
         didSet {
             label.text = text
             widthConstraint.constant = widthWithText()
             layoutIfNeeded()
         }
     }
-    
-    private let stackView = UIStackView()
     
     private let label = UILabel()
     private let arrow = UILabel()
@@ -34,13 +34,9 @@ class DropdownButton: UIButton {
     }
     
     private func initialSetup() {
-        self.pinToLayoutMargins(subview: stackView, leading: 5, trailing: 5, top: 2, bottom: 2)
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.distribution = .fill
-        stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(arrow)
-        stackView.isUserInteractionEnabled = false
+        self.pinToLayoutMargins(subview: label, leading: 5, trailing: nil, top: 2, bottom: 2)
+        self.pinToLayoutMargins(subview: arrow, leading: nil, trailing: 5, top: 2, bottom: 2)
+        label.trailingAnchor.constraint(equalTo: arrow.leadingAnchor, constant: 10).isActive = true
         label.text = text
         label.textColor = UIColor.buttonColor
         label.font = UIFont.normalTextFont
@@ -63,4 +59,8 @@ class DropdownButton: UIButton {
         let layoutMargins = self.layoutMargins.left + self.layoutMargins.right
         return textWidth + arrowWidth + layoutMargins + 20
     }
+}
+
+protocol DropdownDelegate {
+    func showDropdown(sender: UIButton)
 }

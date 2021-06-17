@@ -9,9 +9,11 @@ import UIKit
 
 class RepeatChoiceView: RadioSwitchTableView {
     
-    let firstOption = DropdownButton()
-    let secondOption = RepeatWithIntervalView()
-    let thirdOptionLabel = UILabel()
+    var delegate: DropdownDelegate?
+    
+    let dailyOptionDropdown = DropdownButton()
+    let repeatWithIntervalOption = RepeatWithIntervalView()
+    let weekdaysOptionLabel = UILabel()
     
     var firstOptionWidthConstraint = NSLayoutConstraint()
 
@@ -26,12 +28,27 @@ class RepeatChoiceView: RadioSwitchTableView {
     
     override func initialSetup() {
         super.initialSetup()
-        firstOption.text = Strings.daily
-        thirdOptionLabel.text = Strings.onWeekdays
-        thirdOptionLabel.font = UIFont.normalTextFont
-        thirdOptionLabel.textColor = UIColor.textColor
-        let thirdOptionView = UIView()
-        thirdOptionView.pinToLayoutMargins(subview: thirdOptionLabel, leading: -10)
-        options = [firstOption, secondOption, thirdOptionView]
+        dailyOptionDropdown.text = Strings.daily
+        dailyOptionDropdown.addTarget(self, action: #selector(dailyOptionDropdownPressed), for: .touchUpInside)
+        repeatWithIntervalOption.dropdownButton.addTarget(self, action: #selector(intervalOptionDropdownPressed), for: .touchUpInside)
+        repeatWithIntervalOption.textDidChange = { [unowned self] in
+            didSelectOption?(1)
+        }
+        weekdaysOptionLabel.text = Strings.onWeekdays
+        weekdaysOptionLabel.font = UIFont.normalTextFont
+        weekdaysOptionLabel.textColor = UIColor.textColor
+        let weekdaysOptionView = UIView()
+        weekdaysOptionView.pinToLayoutMargins(subview: weekdaysOptionLabel, leading: -10)
+        options = [dailyOptionDropdown, repeatWithIntervalOption, weekdaysOptionView]
+    }
+    
+    @objc func dailyOptionDropdownPressed() {
+        didSelectOption?(0)
+        delegate?.showDropdown(sender: dailyOptionDropdown)
+    }
+    
+    @objc func intervalOptionDropdownPressed() {
+        didSelectOption?(1)
+        delegate?.showDropdown(sender: repeatWithIntervalOption.dropdownButton)
     }
 }

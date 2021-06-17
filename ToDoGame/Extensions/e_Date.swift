@@ -83,5 +83,29 @@ extension Date {
         }
         else { return false }
     }
+    
+    var tomorrow: Date {
+        Calendar.current.date(byAdding: .day, value: 1, to: self.dayStart)!
+    }
+    var yesterday: Date {
+        Calendar.current.date(byAdding: .day, value: -1, to: self.dayStart)!
+    }
+    func belongsToMonth(of date: Date) -> Bool {
+        let selfMonth = Calendar.current.component(.month, from: self)
+        let dateMonth = Calendar.current.component(.month, from: date)
+        return selfMonth == dateMonth
+    }
+    
+    var monthAndYear: String {
+        let month = Calendar.current.component(.month, from: self)
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateFormat = "YYYY"
+        let language = Locale.preferredLanguages.first
+        if let language = language {
+            formatter.locale = Locale(identifier: language)
+        }
+        return formatter.standaloneMonthSymbols[month - 1].capitalized + " " + formatter.string(from: self)
+    }
 }
 

@@ -54,6 +54,4 @@ class LabelDropdownView: UIView {
     }
 }
 
-protocol DropdownDelegate {
-    func showDropdown(sender: UIButton)
-}
+

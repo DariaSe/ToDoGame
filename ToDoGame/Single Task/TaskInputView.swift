@@ -11,7 +11,6 @@ class TaskInputView: UIView {
     
     let commonStackView = UIStackView()
     
-   
     let titleTextViewContainer = TextViewContainer()
     let datePickerView = DatePickerView()
     let timeDropdownView = LabelDropdownView()
@@ -79,7 +78,7 @@ class TaskInputView: UIView {
         let isRepeating = task.recurrenceRule != nil
         repeatDropdownOption = isRepeating ? 1 : 0
         let isNotificationOn = task.isNotificationOn
-        notificationDropdownView.buttonText = isNotificationOn ? Strings.year : Strings.no
+        notificationDropdownView.buttonText = isNotificationOn ? Strings.yes : Strings.no
         notificationDropdownOption = isNotificationOn ? 1 : 0
     }
 }

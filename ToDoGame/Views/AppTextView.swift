@@ -19,9 +19,12 @@ class AppTextView: UITextView {
     }
     
     private func initialSetup() {
-        backgroundColor = UIColor.textControlsBGColor
         layer.cornerRadius = SizeConstants.textFieldCornerRadius
-        layer.borderWidth = 0.5
+        layer.borderWidth = 1.0
         layer.borderColor = UIColor.borderColor.cgColor
+        font = UIFont.normalTextFont
+        textColor = UIColor.textColor
+//        textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        isScrollEnabled = false
     }
 }
