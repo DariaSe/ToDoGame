@@ -9,7 +9,7 @@ import UIKit
 
 class CheckboxView: UIView {
     
-    var isCheckboxOn: Bool = true {
+    var isCheckboxOn: Bool = false {
         didSet {
             checkboxButton.isSelected = isCheckboxOn
             label.textColor = isCheckboxOn ? UIColor.textColor : UIColor.textColor.withAlphaComponent(0.5)
@@ -33,12 +33,9 @@ class CheckboxView: UIView {
     }
     
     func initialSetup() {
-        self.pinToLayoutMargins(subview: stackView)
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.spacing = 20
-        stackView.addArrangedSubview(checkboxButton)
-        stackView.addArrangedSubview(label)
+        self.pinToLayoutMargins(subview: checkboxButton, trailing: nil, bottom: 0)
+        self.pinToLayoutMargins(subview: label, leading: 60, trailing: nil, top: nil, bottom: nil)
+        label.centerYAnchor.constraint(equalTo: checkboxButton.centerYAnchor).isActive = true
         checkboxButton.setDimensions(width: 40, height: 40)
         checkboxButton.addTarget(self, action: #selector(didToggleCheckbox), for: .touchUpInside)
         checkboxButton.isSelected = isCheckboxOn
@@ -47,7 +44,6 @@ class CheckboxView: UIView {
     }
     
     @objc func didToggleCheckbox() {
-//        isCheckboxOn = !isCheckboxOn
         checkboxToggled?()
     }
 }

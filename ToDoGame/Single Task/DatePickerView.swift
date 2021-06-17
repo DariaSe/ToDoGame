@@ -61,6 +61,7 @@ class DatePickerView: UIView {
         headerHeightConstraint = calendarHeaderView.heightAnchor.constraint(equalToConstant: 0)
         headerHeightConstraint.isActive = true
         calendarHeaderView.alpha = 0.0
+//        calendarHeaderView.isHidden = true
         self.pinToEdges(subview: calendarView, leading: nil, trailing: nil, top: nil, bottom: 10)
         calendarView.topAnchor.constraint(equalTo: calendarHeaderView.bottomAnchor, constant: 10).isActive = true
         calendarView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -68,6 +69,7 @@ class DatePickerView: UIView {
         calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant: 0)
         calendarHeightConstraint.isActive = true
         calendarView.alpha = 0.0
+//        calendarView.isHidden = true
         
         label.font = UIFont.normalTextFont
         label.textColor = UIColor.textColor

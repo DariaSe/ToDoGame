@@ -13,10 +13,8 @@ class TaskInputView: UIView {
     
     let titleTextViewContainer = TextViewContainer()
     let datePickerView = DatePickerView()
-    let timeDropdownView = LabelDropdownView()
-    let timePickerView = DatePickerView()
+    let timePickerView = TimePickerView()
     let repeatView = RepeatComposedView()
-    let notificationDropdownView = LabelDropdownView()
     
     var timeDropdownOption: Int = 1
     var repeatDropdownOption: Int = 1
@@ -37,31 +35,18 @@ class TaskInputView: UIView {
         commonStackView.spacing = 20
         commonStackView.addArrangedSubview(titleTextViewContainer)
         commonStackView.addArrangedSubview(datePickerView)
-        commonStackView.addArrangedSubview(timeDropdownView)
         commonStackView.addArrangedSubview(timePickerView)
         commonStackView.addArrangedSubview(repeatView)
-        
-        commonStackView.addArrangedSubview(notificationDropdownView)
+
         
         titleTextViewContainer.heightAnchor.constraint(equalToConstant: SizeConstants.textFieldHeight).isActive = true
         titleTextViewContainer.placeholder = Strings.taskTitle
-        
-        timeDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        timeDropdownView.labelText = Strings.time
-//        timeDropdownView.delegate = self
-        
-//        timePickerView.datePicker.datePickerMode = .time
-        timePickerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-        
-//        repeatDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
-//        repeatDropdownView.delegate = self
         
         setupEmptyTask()
     }
     
     func setupEmptyTask() {
         titleTextViewContainer.text = ""
-        timePickerView.isHidden = true
     }
     
     
@@ -69,13 +54,13 @@ class TaskInputView: UIView {
         titleTextViewContainer.text = task.title
 //        datePickerView.datePicker.date = task.startDate
         let isTimeSet = task.notificationTime != nil
-        timeDropdownView.buttonText = isTimeSet ? Strings.yes : Strings.no
+//        timeDropdownView.buttonText = isTimeSet ? Strings.yes : Strings.no
         timeDropdownOption = isTimeSet ? 1 : 0
         timePickerView.isHidden = !isTimeSet
         let isRepeating = task.recurrenceRule != nil
         repeatDropdownOption = isRepeating ? 1 : 0
         let isNotificationOn = task.isNotificationOn
-        notificationDropdownView.buttonText = isNotificationOn ? Strings.yes : Strings.no
+//        notificationDropdownView.buttonText = isNotificationOn ? Strings.yes : Strings.no
         notificationDropdownOption = isNotificationOn ? 1 : 0
     }
 }
