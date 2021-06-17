@@ -90,6 +90,7 @@ extension Date {
     var yesterday: Date {
         Calendar.current.date(byAdding: .day, value: -1, to: self.dayStart)!
     }
+    
     func belongsToMonth(of date: Date) -> Bool {
         let selfMonth = Calendar.current.component(.month, from: self)
         let dateMonth = Calendar.current.component(.month, from: date)
@@ -106,6 +107,24 @@ extension Date {
             formatter.locale = Locale(identifier: language)
         }
         return formatter.standaloneMonthSymbols[month - 1].capitalized + " " + formatter.string(from: self)
+    }
+    
+    var formattedForHeader: String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .none
+        formatter.dateStyle = .medium
+        if self ==^ Date() {
+            return Strings.today + ", " + formatter.string(from: self)
+        }
+        else if self == Date().yesterday {
+            return Strings.yesterday + ", " + formatter.string(from: self)
+        }
+        else if self == Date().tomorrow {
+            return Strings.tomorrow + ", " + formatter.string(from: self)
+        }
+        else {
+            return formatter.string(from: self)
+        }
     }
 }
 

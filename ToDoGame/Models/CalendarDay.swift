@@ -8,7 +8,7 @@
 import Foundation
 
 struct CalendarDay {
-    var number: Int
+    var date: Date
     var belongsToMonth: Bool
     var isSelected: Bool
 }

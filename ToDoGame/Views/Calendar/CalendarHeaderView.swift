@@ -34,9 +34,9 @@ class CalendarHeaderView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToLayoutMargins(subview: leftButton, leading: 10, trailing: nil, top: nil, bottom: nil)
+        self.pinToLayoutMargins(subview: leftButton, trailing: nil, top: nil, bottom: nil)
         leftButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        self.pinToLayoutMargins(subview: rightButton, leading: nil, trailing: 10, top: nil, bottom: nil)
+        self.pinToLayoutMargins(subview: rightButton, leading: nil, top: nil, bottom: nil)
         rightButton.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         titleButton.center(in: self)
         leftButton.setDimensions(width: 40, height: 40)
@@ -49,13 +49,14 @@ class CalendarHeaderView: UIView {
         rightButton.tintColor = UIColor.textColor
         rightButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         
-        titleButton.tintColor = UIColor.textColor
         titleButton.titleLabel?.font = UIFont.normalTextFont
-        titleButton.setTitle("June 2021", for: .normal)
+        titleButton.titleLabel?.textAlignment = .center
+        titleButton.setTitleColor(UIColor.textColor, for: .normal)
+        titleButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
     }
     
     @objc func buttonPressed(sender: UIButton) {
-        UIView.animate(withDuration: 0.2, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             sender.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
         }) { _ in sender.transform = CGAffineTransform.identity }
         switch sender {

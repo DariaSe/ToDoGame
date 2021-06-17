@@ -22,7 +22,11 @@ class TaskListCoordinator {
         }
     }
     
-    var date: Date = Date()
+    var date: Date = Date() {
+        didSet {
+            taskListVC.tasks = tasks.compactMap { viewModelFactory.makeTaskViewModel(from: $0, date: date) }
+        }
+    }
     
     func start() {
         taskListVC.coordinator = self

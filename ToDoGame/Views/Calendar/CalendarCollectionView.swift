@@ -14,10 +14,12 @@ class CalendarCollectionView: UIView {
             collectionView.reloadData()
         }
     }
-    var didSelectItemAtIndex: ((Int) -> ())?
+    var didSelectDate: ((Date) -> ())?
     
+    
+    let weekdaySymbolsView = WeekdaySymbolsView()
     lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
-    var collectionViewLayout = UICollectionViewFlowLayout()
+    let collectionViewLayout = UICollectionViewFlowLayout()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +31,9 @@ class CalendarCollectionView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: collectionView)
+        self.pinToEdges(subview: weekdaySymbolsView, bottom: nil)
+        self.pinToEdges(subview: collectionView, top: 12)
+        weekdaySymbolsView.setDimensions(height: 12)
         collectionView.backgroundColor = .clear
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
@@ -45,7 +49,9 @@ extension CalendarCollectionView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier, for: indexPath) as! CalendarCollectionViewCell
+        let day = dataSource[indexPath.row]
+        cell.update(with: day)
         return cell
     }
 }
@@ -73,6 +79,7 @@ extension CalendarCollectionView: UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectItemAtIndex?(indexPath.row)
+        let day = dataSource[indexPath.row]
+        didSelectDate?(day.date)
     }
 }

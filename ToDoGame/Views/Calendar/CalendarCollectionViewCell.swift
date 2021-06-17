@@ -32,9 +32,13 @@ class CalendarCollectionViewCell: UICollectionViewCell {
     }
     
     func update(with calendarDay: CalendarDay) {
+        let number = Calendar.current.component(.day, from: calendarDay.date)
+        label.text = number.string
         circle.isHidden = !calendarDay.isSelected
         if calendarDay.isSelected {
+            label.isHidden = false
             label.textColor = UIColor.white
+            return
         }
         if calendarDay.belongsToMonth {
             label.isHidden = false

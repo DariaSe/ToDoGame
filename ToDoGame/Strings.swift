@@ -14,6 +14,10 @@ struct Strings {
     static let cross = "\u{00D7}"
     static let glasses = "\u{1F60E}"
     
+    static let today = "Today".localized
+    static let yesterday = "Yesterday".localized
+    static let tomorrow = "Tomorrow".localized
+    
     static let yes = "Yes".localized
     static let no = "No".localized
     

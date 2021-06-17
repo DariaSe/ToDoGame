@@ -79,6 +79,7 @@
 		DA959808267B4BDA00D88CAC /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */; };
 		DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95980C267B543700D88CAC /* CalendarDay.swift */; };
 		DA959812267B658000D88CAC /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959811267B658000D88CAC /* CalendarService.swift */; };
+		DA959817267BAE9A00D88CAC /* WeekdaySymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA959816267BAE9A00D88CAC /* WeekdaySymbolsView.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -181,6 +182,7 @@
 		DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA95980C267B543700D88CAC /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		DA959811267B658000D88CAC /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		DA959816267BAE9A00D88CAC /* WeekdaySymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaySymbolsView.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				DA9597FD267B4BAE00D88CAC /* CalendarHeaderView.swift */,
+				DA959816267BAE9A00D88CAC /* WeekdaySymbolsView.swift */,
 				DA959802267B4BCD00D88CAC /* CalendarCollectionView.swift */,
 				DA959807267B4BDA00D88CAC /* CalendarCollectionViewCell.swift */,
 				DA959811267B658000D88CAC /* CalendarService.swift */,
@@ -647,6 +650,7 @@
 				DA959808267B4BDA00D88CAC /* CalendarCollectionViewCell.swift in Sources */,
 				DA22EFB62645608C00F6D4E9 /* SingleTaskCoordinator.swift in Sources */,
 				DA9597F8267A7F4400D88CAC /* AppTextField.swift in Sources */,
+				DA959817267BAE9A00D88CAC /* WeekdaySymbolsView.swift in Sources */,
 				DA22EFC92645772B00F6D4E9 /* StorageManager.swift in Sources */,
 				DA22F0A52655649A00F6D4E9 /* Fonts.swift in Sources */,
 				DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */,

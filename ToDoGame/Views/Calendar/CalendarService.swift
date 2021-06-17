@@ -9,14 +9,18 @@ import Foundation
 
 class CalendarService {
     
-    static func makeCalendarDays(containing date: Date) -> [CalendarDay] {
+    static func makeCalendarDays(containing date: Date, selected: Bool) -> [CalendarDay] {
         let dates = Calendar.current.extendedMonth(containing: date)
-        let calendarDates = dates.map { (arrayDate) -> CalendarDay in
-            let number = Calendar.current.component(.day, from: arrayDate)
+        let calendarDays = dates.map { (arrayDate) -> CalendarDay in
             let belongsToMonth = arrayDate.belongsToMonth(of: date)
-            let isSelected = arrayDate.dayStart == date.dayStart
-            return CalendarDay(number: number, belongsToMonth: belongsToMonth, isSelected: isSelected)
+            let isSelected = (arrayDate.dayStart == date.dayStart) && selected
+            return CalendarDay(date: arrayDate, belongsToMonth: belongsToMonth, isSelected: isSelected)
         }
-        return calendarDates
+        return calendarDays
+    }
+    
+    static func numberOfWeeksInMonth(containing date: Date) -> Int {
+        let dates = Calendar.current.extendedMonth(containing: date)
+        return Int(ceil(Double(dates.count) / 7.0))
     }
 }
