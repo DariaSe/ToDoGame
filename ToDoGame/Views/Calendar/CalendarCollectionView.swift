@@ -32,7 +32,7 @@ class CalendarCollectionView: UIView {
     
     private func initialSetup() {
         self.pinToEdges(subview: weekdaySymbolsView, bottom: nil)
-        self.pinToEdges(subview: collectionView, top: 12)
+        self.pinToEdges(subview: collectionView, top: 16)
         weekdaySymbolsView.setDimensions(height: 12)
         collectionView.backgroundColor = .clear
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)

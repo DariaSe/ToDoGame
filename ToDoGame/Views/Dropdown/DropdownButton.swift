@@ -39,7 +39,7 @@ class DropdownButton: UIButton {
         label.trailingAnchor.constraint(equalTo: arrow.leadingAnchor, constant: 10).isActive = true
         label.text = text
         label.textColor = UIColor.buttonColor
-        label.font = UIFont.normalTextFont
+        label.font = UIFont.buttonFont
         label.isUserInteractionEnabled = false
         arrow.text = Strings.arrowDown
         arrow.font = UIFont.normalTextFont

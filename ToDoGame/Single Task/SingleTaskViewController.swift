@@ -61,7 +61,7 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         closeButton.heightAnchor.constraint(equalTo: closeButton.widthAnchor).isActive = true
         let closeImage = UIImage(named: "Cross")?.withRenderingMode(.alwaysTemplate)
         closeButton.setImage(closeImage, for: .normal)
-        closeButton.tintColor = UIColor.black
+        closeButton.tintColor = UIColor.buttonColor
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
       
     }

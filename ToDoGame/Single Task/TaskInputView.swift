@@ -46,14 +46,11 @@ class TaskInputView: UIView {
         titleTextViewContainer.heightAnchor.constraint(equalToConstant: SizeConstants.textFieldHeight).isActive = true
         titleTextViewContainer.placeholder = Strings.taskTitle
         
-        datePickerView.labelText = Strings.date
-        datePickerView.datePickerMode = .date
-        
         timeDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         timeDropdownView.labelText = Strings.time
 //        timeDropdownView.delegate = self
         
-        timePickerView.datePicker.datePickerMode = .time
+//        timePickerView.datePicker.datePickerMode = .time
         timePickerView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         
 //        repeatDropdownView.heightAnchor.constraint(equalToConstant: 60).isActive = true
@@ -70,7 +67,7 @@ class TaskInputView: UIView {
     
     func update(with task: Task) {
         titleTextViewContainer.text = task.title
-        datePickerView.datePicker.date = task.startDate
+//        datePickerView.datePicker.date = task.startDate
         let isTimeSet = task.notificationTime != nil
         timeDropdownView.buttonText = isTimeSet ? Strings.yes : Strings.no
         timeDropdownOption = isTimeSet ? 1 : 0

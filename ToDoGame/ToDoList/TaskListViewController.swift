@@ -65,14 +65,14 @@ class TaskListViewController: UIViewController {
         calendarView.widthAnchor.constraint(equalToConstant: 320).isActive = true
         calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant: 0)
         calendarHeightConstraint.isActive = true
-        calendarView.isHidden = true
+        calendarView.alpha = 0.0
         
         calendarHeaderView.delegate = self
         calendarHeaderView.title = date.formattedForHeader
         
         addButton.addTarget(self, action: #selector(addTask), for: .touchUpInside)
         addButton.setImage(plusImage, for: .normal)
-        addButton.tintColor = UIColor.textColor
+        addButton.tintColor = UIColor.buttonColor
         
         calendarView.didSelectDate = { [unowned self] newDate in
             date = newDate
@@ -111,7 +111,7 @@ class TaskListViewController: UIViewController {
     
     func adjustCalendarHeight() {
         let numberOfWeeks = CalendarService.numberOfWeeksInMonth(containing: temporaryDate)
-        let calendarHeight = CGFloat(40 * numberOfWeeks + 6 * (numberOfWeeks - 1) + 1 + 12)
+        let calendarHeight = CGFloat(40 * numberOfWeeks + 6 * (numberOfWeeks - 1) + 1 + 16)
         UIView.animate(withDuration: 0.2) {
             self.calendarHeightConstraint.constant = calendarHeight
             self.calendarView.alpha = 1.0

@@ -18,4 +18,5 @@ let nunitoSemiBold = "Nunito-SemiBold"
 extension UIFont {
     static let screenTitleFont = UIFont(name: nunitoSemiBold, size: 24)!
     static let normalTextFont = UIFont(name: nunitoRegular, size: 16)!
+    static let buttonFont = UIFont(name: nunitoSemiBold, size: 16)!
 }

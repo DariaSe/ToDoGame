@@ -43,15 +43,15 @@ class CalendarHeaderView: UIView {
         rightButton.setDimensions(width: 40, height: 40)
         
         leftButton.setImage(arrowLeft, for: .normal)
-        leftButton.tintColor = UIColor.textColor
+        leftButton.tintColor = UIColor.buttonColor
         leftButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         rightButton.setImage(arrowRight, for: .normal)
-        rightButton.tintColor = UIColor.textColor
+        rightButton.tintColor = UIColor.buttonColor
         rightButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         
-        titleButton.titleLabel?.font = UIFont.normalTextFont
+        titleButton.titleLabel?.font = UIFont.buttonFont
         titleButton.titleLabel?.textAlignment = .center
-        titleButton.setTitleColor(UIColor.textColor, for: .normal)
+        titleButton.setTitleColor(UIColor.buttonColor, for: .normal)
         titleButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
     }
     
