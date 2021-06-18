@@ -9,6 +9,12 @@ import UIKit
 
 class CalendarCollectionView: UIView {
     
+    var isCalendarShown: Bool = false {
+        didSet {
+            toggleConstraints()
+        }
+    }
+    
     var dataSource: [CalendarDay] = [] {
         didSet {
             collectionView.reloadData()
@@ -20,6 +26,9 @@ class CalendarCollectionView: UIView {
     let weekdaySymbolsView = WeekdaySymbolsView()
     lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
     let collectionViewLayout = UICollectionViewFlowLayout()
+    
+    var weekdaySymbolsHeightConstraint = NSLayoutConstraint()
+    var interSpacingConstraint = NSLayoutConstraint()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,12 +41,20 @@ class CalendarCollectionView: UIView {
     
     private func initialSetup() {
         self.pinToEdges(subview: weekdaySymbolsView, bottom: nil)
-        self.pinToEdges(subview: collectionView, top: 16)
-        weekdaySymbolsView.setDimensions(height: 12)
+        self.pinToEdges(subview: collectionView, top: nil)
+        interSpacingConstraint = weekdaySymbolsView.bottomAnchor.constraint(equalTo: collectionView.topAnchor, constant: 0)
+        interSpacingConstraint.isActive = true
+        weekdaySymbolsHeightConstraint = weekdaySymbolsView.heightAnchor.constraint(equalToConstant: 0)
+        weekdaySymbolsHeightConstraint.isActive = true
         collectionView.backgroundColor = .clear
         collectionView.register(CalendarCollectionViewCell.self, forCellWithReuseIdentifier: CalendarCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+    }
+    
+    func toggleConstraints() {
+        interSpacingConstraint.constant = isCalendarShown ? 4 : 0
+        weekdaySymbolsHeightConstraint.constant = isCalendarShown ? 12 : 0
     }
 
 }

@@ -34,9 +34,7 @@ class DropdownButton: UIButton {
     }
     
     private func initialSetup() {
-        self.pinToLayoutMargins(subview: label, leading: 5, trailing: nil, top: 2, bottom: 2)
-        self.pinToLayoutMargins(subview: arrow, leading: nil, trailing: 5, top: 2, bottom: 2)
-        label.trailingAnchor.constraint(equalTo: arrow.leadingAnchor, constant: 10).isActive = true
+        setupLayout()
         label.text = text
         label.textColor = UIColor.buttonColor
         label.font = UIFont.buttonFont
@@ -48,6 +46,12 @@ class DropdownButton: UIButton {
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.buttonColor.cgColor
         layer.cornerRadius = SizeConstants.buttonCornerRadius
+    }
+    
+    func setupLayout() {
+        self.pinToEdges(subview: label, leading: 15, trailing: nil, top: 12, bottom: 12)
+        self.pinToEdges(subview: arrow, leading: nil, trailing: 15, top: 12, bottom: 12)
+        label.trailingAnchor.constraint(equalTo: arrow.leadingAnchor, constant: 10).isActive = true
         heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
         widthConstraint = widthAnchor.constraint(equalToConstant: widthWithText())
         widthConstraint.isActive = true

@@ -25,9 +25,10 @@ extension KeyboardHandler {
     }
     
     func keyboardWasShown(for scrollView: UIScrollView, _ notification: Notification) {
+        print("was shown")
         let info = notification.userInfo!
         let keyboardSize = (info[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size
-        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize!.height - 100, right: 0)
+        let insets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize!.height, right: 0)
         scrollView.contentInset = insets
         scrollView.scrollIndicatorInsets = insets
     }

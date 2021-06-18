@@ -93,3 +93,13 @@ extension UIView {
         self.layer.mask = maskLayer
     }
 }
+
+extension UIView {
+    func animateScale(duration: Double, scale: CGFloat) {
+        UIView.animate(withDuration: duration) {
+            self.transform = CGAffineTransform(scaleX: scale, y: scale)
+        } completion: { (_) in
+            self.transform = CGAffineTransform.identity
+        }
+    }
+}

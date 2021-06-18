@@ -35,6 +35,7 @@ class TimeCheckboxView: CheckboxView {
         label.text = Strings.time
         timeButton.setTitleColor(UIColor.buttonColor, for: .normal)
         timeButton.titleLabel?.font = UIFont.buttonFont
+        timeButton.alpha = 0.0
         setTimeButtonTitle()
     }
     

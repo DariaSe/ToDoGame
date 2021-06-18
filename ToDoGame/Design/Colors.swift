@@ -27,6 +27,8 @@ extension UIColor {
     
     static var textControlsBGColor = UIColor(netHex: 0xF2F2F7)
     
+    static var destructiveColor = UIColor(netHex: 0xbe4c48)
+    
     struct TagColors {
         //1
         static let orange = UIColor(netHex: 0xf5932a)

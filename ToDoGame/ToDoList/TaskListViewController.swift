@@ -34,6 +34,7 @@ class TaskListViewController: UIViewController {
     
     var isCalendarShown: Bool = false {
         didSet {
+            calendarView.isCalendarShown = isCalendarShown
             isCalendarShown ? showCalendar() : hideCalendar()
         }
     }

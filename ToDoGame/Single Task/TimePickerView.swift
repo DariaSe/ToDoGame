@@ -9,10 +9,25 @@ import UIKit
 
 class TimePickerView: UIView {
     
+    var isTimeSet: Bool = false {
+        didSet {
+            checkboxView.isCheckboxOn = isTimeSet
+            UIView.animate(withDuration: 0.1) {
+                self.checkboxView.timeButton.alpha = self.isTimeSet ? 1.0 : 0.0
+            }
+            if isTimePickerShown {
+                isTimePickerShown = false
+            }
+        }
+    }
+    
     var isTimePickerShown: Bool = false {
         didSet {
             timePickerView.isHidden = !isTimePickerShown
-            timePickerHeightConstraint.constant = isTimePickerShown ? 216 : 0
+            UIView.animate(withDuration: 0.2) {
+                self.timePickerView.alpha = self.isTimePickerShown ? 1.0 : 0.0
+                self.timePickerHeightConstraint.constant = self.isTimePickerShown ? 216 : 0
+            }
         }
     }
     
@@ -32,13 +47,15 @@ class TimePickerView: UIView {
     
     private func initialSetup() {
         self.pinToEdges(subview: checkboxView, bottom: nil)
-        checkboxView.heightAnchor.constraint(equalToConstant: 60).isActive = true
         self.pinToEdges(subview: timePickerView, top: nil)
-        checkboxView.bottomAnchor.constraint(equalTo: timePickerView.topAnchor, constant: 10).isActive = true
+        checkboxView.bottomAnchor.constraint(equalTo: timePickerView.topAnchor).isActive = true
         timePickerHeightConstraint = timePickerView.heightAnchor.constraint(equalToConstant: 0)
         timePickerHeightConstraint.isActive = true
-        timePickerView.isHidden = true
+        timePickerView.alpha = 0.0
         checkboxView.timeButton.addTarget(self, action: #selector(timeButtonPressed), for: .touchUpInside)
+        checkboxView.checkboxToggled = { [unowned self] in
+            isTimeSet = !isTimeSet
+        }
         timePickerView.datePickerMode = .time
         if #available(iOS 13.4, *) {
             timePickerView.preferredDatePickerStyle = .wheels
@@ -48,6 +65,7 @@ class TimePickerView: UIView {
     }
     
     @objc func timeButtonPressed() {
+        checkboxView.timeButton.animateScale(duration: 0.1, scale: 1.1)
         isTimePickerShown = !isTimePickerShown
     }
     

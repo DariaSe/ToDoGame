@@ -19,7 +19,6 @@ class AppTextField: UITextField {
     }
     
     private func initialSetup() {
-        setDimensions(height: SizeConstants.textFieldHeight)
         layer.cornerRadius = SizeConstants.textFieldCornerRadius
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.borderColor.cgColor

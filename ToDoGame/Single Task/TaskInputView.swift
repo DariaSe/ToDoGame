@@ -8,13 +8,14 @@
 import UIKit
 
 class TaskInputView: UIView {
-    
-    let commonStackView = UIStackView()
-    
+   
     let titleTextViewContainer = TextViewContainer()
     let datePickerView = DatePickerView()
     let timePickerView = TimePickerView()
     let repeatView = RepeatComposedView()
+    let notificationView = NotificationView()
+    let colorView = ColorView()
+    let notesTextViewContainer = TextViewContainer()
     
     var timeDropdownOption: Int = 1
     var repeatDropdownOption: Int = 1
@@ -30,23 +31,29 @@ class TaskInputView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: commonStackView)
-        commonStackView.axis = .vertical
-        commonStackView.spacing = 20
-        commonStackView.addArrangedSubview(titleTextViewContainer)
-        commonStackView.addArrangedSubview(datePickerView)
-        commonStackView.addArrangedSubview(timePickerView)
-        commonStackView.addArrangedSubview(repeatView)
+        self.pinToEdges(subview: titleTextViewContainer, bottom: nil)
+        self.pinToEdges(subview: datePickerView, top: nil, bottom: nil)
+        self.pinToEdges(subview: timePickerView, top: nil, bottom: nil)
+        self.pinToEdges(subview: repeatView, top: nil, bottom: nil)
+        self.pinToEdges(subview: notificationView, top: nil, bottom: nil)
+        self.pinToEdges(subview: colorView, top: nil, bottom: nil)
+        self.pinToEdges(subview: notesTextViewContainer, top: nil)
 
+        titleTextViewContainer.bottomAnchor.constraint(equalTo: datePickerView.topAnchor, constant: -20).isActive = true
+        datePickerView.bottomAnchor.constraint(equalTo: timePickerView.topAnchor, constant: 0).isActive = true
+        timePickerView.bottomAnchor.constraint(equalTo: repeatView.topAnchor, constant: -10).isActive = true
+        repeatView.bottomAnchor.constraint(equalTo: notificationView.topAnchor, constant: -10).isActive = true
+        notificationView.bottomAnchor.constraint(equalTo: colorView.topAnchor, constant: -10).isActive = true
+        colorView.bottomAnchor.constraint(equalTo: notesTextViewContainer.topAnchor, constant: -20).isActive = true
         
-        titleTextViewContainer.heightAnchor.constraint(equalToConstant: SizeConstants.textFieldHeight).isActive = true
         titleTextViewContainer.placeholder = Strings.taskTitle
-        
+        notesTextViewContainer.placeholder = Strings.notes
         setupEmptyTask()
     }
     
     func setupEmptyTask() {
         titleTextViewContainer.text = ""
+        notesTextViewContainer.text = ""
     }
     
     

@@ -27,7 +27,6 @@ class RepeatComposedView: UIView {
         }
     }
     
-    let stackView = UIStackView()
     let repeatCheckboxView = CheckboxView()
     let repeatChoiceView = RepeatChoiceView()
     let weekdaysView = WeekdaysView()

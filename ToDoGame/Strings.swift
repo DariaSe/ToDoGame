@@ -32,10 +32,10 @@ struct Strings {
     static let newTask = "New task".localized
     static let taskTitle = "Task title".localized
     static let notes = "Notes".localized
-    static let date = "Date:".localized
-    static let startDate = "Start date:".localized
-    static let time = "Time:".localized
-    static let repeatt = "Repeat:".localized
+    static let date = "Date".localized
+    static let startDate = "Start date".localized
+    static let time = "Time".localized
+    static let repeatt = "Repeat".localized
     
     static let daily = "Daily".localized
     static let weekly = "Weekly".localized
@@ -55,6 +55,10 @@ struct Strings {
     
     static let onWeekdays = "On weekdays:".localized
     
-    static let notification = "Notification:".localized
+    static let notification = "Notification".localized
+    static let color = "Color".localized
+    
+    static let save = "Save".localized
+    static let deleteTask = "Delete task".localized
     
 }

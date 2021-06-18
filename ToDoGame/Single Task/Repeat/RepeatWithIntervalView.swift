@@ -23,8 +23,6 @@ class RepeatWithIntervalView: UIView {
     
     var textDidChange: (() -> ())?
     
-    let stackView = UIStackView()
-    
     let label = UILabel()
     let textField = AppTextField()
     let dropdownButton = DropdownButton()
@@ -39,13 +37,13 @@ class RepeatWithIntervalView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: stackView)
-        stackView.axis = .horizontal
-        stackView.alignment = .center
-        stackView.spacing = 20
-        stackView.addArrangedSubview(label)
-        stackView.addArrangedSubview(textField)
-        stackView.addArrangedSubview(dropdownButton)
+        self.pinToEdges(subview: label, trailing: nil, top: nil, bottom: nil)
+        self.pinToEdges(subview: textField, leading: nil, trailing: nil)
+        self.pinToEdges(subview: dropdownButton, leading: nil, trailing: nil)
+        label.trailingAnchor.constraint(equalTo: textField.leadingAnchor, constant: -20).isActive = true
+        label.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
+        textField.trailingAnchor.constraint(equalTo: dropdownButton.leadingAnchor, constant: -20).isActive = true
+        
         label.text = Strings.every
         label.font = UIFont.normalTextFont
         label.textColor = UIColor.textColor

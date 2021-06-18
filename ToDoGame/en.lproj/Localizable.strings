@@ -24,10 +24,10 @@
 "New task" = "New task";
 "Task title" = "Task title";
 "Notes" = "Notes";
-"Date:" = "Date:";
-"Start date:" = "Start date:";
-"Time:" = "Time:";
-"Repeat:" = "Repeat:";
+"Date" = "Date";
+"Start date" = "Start date";
+"Time" = "Time";
+"Repeat" = "Repeat";
 
 "Daily" = "Daily";
 "Weekly" = "Weekly";
@@ -42,5 +42,9 @@
 
 "On weekdays:" = "On weekdays:";
 
-"Notification:" = "Notification:";
+"Notification" = "Notification";
+"Color" = "Color";
+
+"Save" = "Save";
+"Delete task" = "Delete task";
 

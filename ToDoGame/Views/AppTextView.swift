@@ -24,7 +24,7 @@ class AppTextView: UITextView {
         layer.borderColor = UIColor.borderColor.cgColor
         font = UIFont.normalTextFont
         textColor = UIColor.textColor
-//        textContainerInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
+        textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 8, right: 10)
         isScrollEnabled = false
     }
 }

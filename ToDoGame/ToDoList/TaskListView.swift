@@ -199,7 +199,7 @@ extension TaskListView: UITableViewDelegate {
             }
             deleteTask?(task.id)
         }
-        deleteAction.backgroundColor = UIColor.TagColors.red
+        deleteAction.backgroundColor = UIColor.destructiveColor
         return [deleteAction]
     }
 }

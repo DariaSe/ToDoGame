@@ -49,7 +49,6 @@ class TextViewContainer: UIView {
         textView.delegate = self
         textView.isEditable = true
         configureTextAppearance()
-//        NotificationCenter.default.addObserver(self, selector: #selector(showInvalidTextView), name: Notification.Name(doneButtonNKey), object: nil)
     }
     
     @objc func showInvalidTextView() {
@@ -79,6 +78,7 @@ extension TextViewContainer: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         textChanged?(textView.text)
+        sizeToFit()
         if textView.text.last == "\n" {
             textView.text.removeLast()
             self.endEditing(true)

@@ -56,9 +56,7 @@ class CalendarHeaderView: UIView {
     }
     
     @objc func buttonPressed(sender: UIButton) {
-        UIView.animate(withDuration: 0.1, animations: {
-            sender.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
-        }) { _ in sender.transform = CGAffineTransform.identity }
+        sender.animateScale(duration: 0.1, scale: 1.1)
         switch sender {
         case leftButton: delegate?.setPrevious()
         case rightButton: delegate?.setNext()

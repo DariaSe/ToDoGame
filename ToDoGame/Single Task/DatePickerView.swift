@@ -25,13 +25,12 @@ class DatePickerView: UIView {
     
     var isCalendarShown: Bool = false {
         didSet {
+            calendarView.isCalendarShown = isCalendarShown
             isCalendarShown ? showCalendar() : hideCalendar()
         }
     }
     
     var didSelectDate: ((Date) -> ())?
-    
-    let stackView = UIStackView()
     
     let label = UILabel()
     let dateButton = UIButton()
@@ -51,25 +50,24 @@ class DatePickerView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: label, leading: 20, trailing: nil, top: 10, bottom: nil)
+        self.pinToEdges(subview: label, leading: 60, trailing: nil, top: 10, bottom: nil)
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(dateButton)
         dateButton.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
-        dateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 50).isActive = true
-        self.pinToEdges(subview: calendarHeaderView, leading: 40, trailing: 40, top: 40, bottom: nil)
+        dateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60).isActive = true
+        self.pinToEdges(subview: calendarHeaderView, leading: 40, trailing: 40, top: nil, bottom: nil)
+        calendarHeaderView.topAnchor.constraint(equalTo: dateButton.bottomAnchor, constant: 5).isActive = true
         calendarHeaderView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         headerHeightConstraint = calendarHeaderView.heightAnchor.constraint(equalToConstant: 0)
         headerHeightConstraint.isActive = true
         calendarHeaderView.alpha = 0.0
-//        calendarHeaderView.isHidden = true
-        self.pinToEdges(subview: calendarView, leading: nil, trailing: nil, top: nil, bottom: 10)
+        self.pinToEdges(subview: calendarView, leading: nil, trailing: nil, top: nil, bottom: 0)
         calendarView.topAnchor.constraint(equalTo: calendarHeaderView.bottomAnchor, constant: 10).isActive = true
         calendarView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         calendarView.widthAnchor.constraint(equalToConstant: 320).isActive = true
         calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant: 0)
         calendarHeightConstraint.isActive = true
         calendarView.alpha = 0.0
-//        calendarView.isHidden = true
         
         label.font = UIFont.normalTextFont
         label.textColor = UIColor.textColor
@@ -92,23 +90,21 @@ class DatePickerView: UIView {
     }
     
     @objc func dateButtonPressed() {
+        dateButton.animateScale(duration: 0.1, scale: 1.1)
         isCalendarShown = !isCalendarShown
     }
     
     func showCalendar() {
-        self.headerHeightConstraint.constant = 50
-        self.calendarHeaderView.alpha = 1.0
-        UIView.animate(withDuration: 0.2) {
-            
-        }
+        headerHeightConstraint.constant = 50
+        calendarHeaderView.alpha = 1.0
         adjustCalendarHeight()
         calendarHeaderView.title = date.monthAndYear
         calendarView.dataSource = CalendarService.makeCalendarDays(containing: date, selected: true)
     }
     
     func hideCalendar() {
-        self.headerHeightConstraint.constant = 0
-        self.calendarHeaderView.alpha = 0.0
+        headerHeightConstraint.constant = 0
+        calendarHeaderView.alpha = 0.0
         UIView.animate(withDuration: 0.2) {
             self.calendarHeightConstraint.constant = 0
             self.calendarView.alpha = 0.0
