@@ -30,6 +30,8 @@ class RepeatChoiceView: RadioSwitchTableView {
         super.initialSetup()
         dailyOptionDropdown.text = Strings.daily
         dailyOptionDropdown.addTarget(self, action: #selector(dailyOptionDropdownPressed), for: .touchUpInside)
+        let dailyDropdownContainer = UIView()
+        dailyDropdownContainer.pinToEdges(subview: dailyOptionDropdown, trailing: nil)
         repeatWithIntervalOption.dropdownButton.addTarget(self, action: #selector(intervalOptionDropdownPressed), for: .touchUpInside)
         repeatWithIntervalOption.textDidChange = { [unowned self] in
             didSelectOption?(1)
@@ -39,7 +41,8 @@ class RepeatChoiceView: RadioSwitchTableView {
         weekdaysOptionLabel.textColor = UIColor.textColor
         let weekdaysOptionView = UIView()
         weekdaysOptionView.pinToLayoutMargins(subview: weekdaysOptionLabel, leading: -10)
-        options = [dailyOptionDropdown, repeatWithIntervalOption, weekdaysOptionView]
+        
+        options = [dailyDropdownContainer, repeatWithIntervalOption, weekdaysOptionView]
     }
     
     @objc func dailyOptionDropdownPressed() {

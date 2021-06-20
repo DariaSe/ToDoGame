@@ -43,6 +43,13 @@
 "On weekdays:" = "On weekdays:";
 
 "Notification" = "Notification";
+"1 minute before" = "1 minute before";
+"5 minutes before" = "5 minutes before";
+"15 minutes before" = "15 minutes before";
+"30 minutes before" = "30 minutes before";
+"1 hour before" = "1 hour before";
+"2 hours before" = "2 hours before";
+
 "Color" = "Color";
 
 "Save" = "Save";

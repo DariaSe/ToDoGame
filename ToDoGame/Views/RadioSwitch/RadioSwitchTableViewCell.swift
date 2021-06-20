@@ -32,7 +32,7 @@ class RadioSwitchTableViewCell: UITableViewCell {
     
     func update(with view: UIView, isSelected: Bool) {
         radioButton.isSelected = isSelected
-        contentView.pinToLayoutMargins(subview: view, leading: 60, trailing: nil)
+        contentView.pinToLayoutMargins(subview: view, leading: 60, trailing: 0)
     }
     
     @objc func didSelectOption(sender: UIButton) {

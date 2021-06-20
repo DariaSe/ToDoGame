@@ -15,7 +15,11 @@ class DropdownView: UIView {
         }
     }
     
-    var options: [String] = DropdownOptions.yesOrNo
+    var options: [String] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     let tableView = UITableView()
     
@@ -42,7 +46,7 @@ class DropdownView: UIView {
 
 extension DropdownView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return options.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -73,6 +77,12 @@ extension DropdownView: UITableViewDelegate {
 }
 
 struct DropdownOptions {
-    static let yesOrNo = [Strings.yes, Strings.no]
-    static let noIntervalRecurrence = [Strings.day, Strings.week, Strings.month, Strings.year]
+    
+    static let noIntervalRecurrence = [Strings.daily, Strings.weekly, Strings.monthly, Strings.yearly]
+    
+    static func intervalRecurrence(interval: Int) -> [String] {
+        [Strings.daysCount.localizedForCount(interval), Strings.weeksCount.localizedForCount(interval), Strings.monthsCount.localizedForCount(interval), Strings.yearsCount.localizedForCount(interval)]
+    }
+    
+    static let notificationOptions = [Strings.oneMBefore, Strings.fiveMBefore, Strings.fifteenMBefore, Strings.thirtyMBefore, Strings.oneHBefore, Strings.twoHBefore]
 }

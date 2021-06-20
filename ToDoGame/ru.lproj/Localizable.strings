@@ -43,6 +43,13 @@
 "On weekdays:" = "По дням недели:";
 
 "Notification" = "Напоминание";
+"1 minute before" = "За 1 минуту";
+"5 minutes before" = "За 5 минут";
+"15 minutes before" = "За 15 минут";
+"30 minutes before" = "За 30 минут";
+"1 hour before" = "За 1 час";
+"2 hours before" = "За 2 часа";
+
 "Color" = "Цвет";
 
 "Save" = "Сохранить";

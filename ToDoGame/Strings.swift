@@ -56,6 +56,13 @@ struct Strings {
     static let onWeekdays = "On weekdays:".localized
     
     static let notification = "Notification".localized
+    static let oneMBefore = "1 minute before".localized
+    static let fiveMBefore = "5 minutes before".localized
+    static let fifteenMBefore = "15 minutes before".localized
+    static let thirtyMBefore = "30 minutes before".localized
+    static let oneHBefore = "1 hour before".localized
+    static let twoHBefore = "2 hours before".localized
+    
     static let color = "Color".localized
     
     static let save = "Save".localized
