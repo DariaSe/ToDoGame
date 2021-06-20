@@ -22,6 +22,7 @@ class TaskListView: UIView {
  
     var setCompletedOrCancel: ((Int) -> Void)?
     var deleteTask: ((Int) -> Void)?
+    var didSelectTask: ((Int) -> Void)?
     
     var tableView = UITableView(frame: CGRect.zero, style: .grouped)
     var snapshotView = UIImageView()
@@ -181,7 +182,14 @@ extension TaskListView: UITableViewDataSource {
 extension TaskListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        var task: TaskViewModel
+        if indexPath.section == 0 {
+            task = tasksManager.activeTasks[indexPath.row]
+        }
+        else {
+            task = tasksManager.completedTasks[indexPath.row]
+        }
+        didSelectTask?(task.id)
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

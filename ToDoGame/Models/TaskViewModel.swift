@@ -15,7 +15,7 @@ struct TaskViewModel {
     var isDone: Bool
     var date: Date
     var time: String?
-    var color: Int
+    var color: Int?
     
     static var sample: [TaskViewModel] { [
         TaskViewModel(id: 1, orderID: 1, title: "Task 1", isDone: true, date: Date(), color: 2),

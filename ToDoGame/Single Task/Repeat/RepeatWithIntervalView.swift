@@ -43,6 +43,7 @@ class RepeatWithIntervalView: UIView {
         label.trailingAnchor.constraint(equalTo: textField.leadingAnchor, constant: -20).isActive = true
         label.centerYAnchor.constraint(equalTo: textField.centerYAnchor).isActive = true
         textField.trailingAnchor.constraint(equalTo: dropdownButton.leadingAnchor, constant: -20).isActive = true
+        dropdownButton.heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
         
         label.text = Strings.every
         label.font = UIFont.normalTextFont

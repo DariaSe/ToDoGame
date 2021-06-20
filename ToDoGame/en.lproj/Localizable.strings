@@ -21,6 +21,7 @@
 "Delete" = "Delete";
 "Cancel" = "Cancel";
 
+"Task" = "Task";
 "New task" = "New task";
 "Task title" = "Task title";
 "Notes" = "Notes";
@@ -43,10 +44,10 @@
 "On weekdays:" = "On weekdays:";
 
 "Notification" = "Notification";
-"1 minute before" = "1 minute before";
-"5 minutes before" = "5 minutes before";
-"15 minutes before" = "15 minutes before";
-"30 minutes before" = "30 minutes before";
+"1 min before" = "1 min before";
+"5 min before" = "5 min before";
+"15 min before" = "15 min before";
+"30 min before" = "30 min before";
 "1 hour before" = "1 hour before";
 "2 hours before" = "2 hours before";
 

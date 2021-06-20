@@ -21,13 +21,23 @@ class TimePickerView: UIView {
         }
     }
     
+    var date: Date = Date() {
+        didSet {
+            checkboxView.date = date
+        }
+    }
+    
     var isTimePickerShown: Bool = false {
         didSet {
             timePickerView.isHidden = !isTimePickerShown
-            UIView.animate(withDuration: 0.2) {
-                self.timePickerView.alpha = self.isTimePickerShown ? 1.0 : 0.0
+            UIView.transition(with: timePickerView, duration: 0.2, options: [.transitionCrossDissolve]) {
+                self.timePickerView.isHidden = !self.isTimePickerShown
                 self.timePickerHeightConstraint.constant = self.isTimePickerShown ? 216 : 0
             }
+//            UIView.animate(withDuration: 0.2) {
+//                self.timePickerView.alpha = self.isTimePickerShown ? 1.0 : 0.0
+//                self.timePickerHeightConstraint.constant = self.isTimePickerShown ? 216 : 0
+//            }
         }
     }
     
@@ -51,7 +61,7 @@ class TimePickerView: UIView {
         checkboxView.bottomAnchor.constraint(equalTo: timePickerView.topAnchor).isActive = true
         timePickerHeightConstraint = timePickerView.heightAnchor.constraint(equalToConstant: 0)
         timePickerHeightConstraint.isActive = true
-        timePickerView.alpha = 0.0
+        timePickerView.isHidden = true
         checkboxView.timeButton.addTarget(self, action: #selector(timeButtonPressed), for: .touchUpInside)
         checkboxView.checkboxToggled = { [unowned self] in
             isTimeSet = !isTimeSet

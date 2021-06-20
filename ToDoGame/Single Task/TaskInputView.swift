@@ -14,12 +14,8 @@ class TaskInputView: UIView {
     let timePickerView = TimePickerView()
     let repeatView = RepeatComposedView()
     let notificationView = NotificationView()
-    let colorView = ColorView()
+    let colorView = ColorComposedView()
     let notesTextViewContainer = TextViewContainer()
-    
-    var timeDropdownOption: Int = 1
-    var repeatDropdownOption: Int = 1
-    var notificationDropdownOption: Int = 1
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,15 +55,32 @@ class TaskInputView: UIView {
     
     func update(with task: Task) {
         titleTextViewContainer.text = task.title
-//        datePickerView.datePicker.date = task.startDate
-        let isTimeSet = task.notificationTime != nil
-//        timeDropdownView.buttonText = isTimeSet ? Strings.yes : Strings.no
-        timeDropdownOption = isTimeSet ? 1 : 0
-        timePickerView.isHidden = !isTimeSet
-        let isRepeating = task.recurrenceRule != nil
-        repeatDropdownOption = isRepeating ? 1 : 0
-        let isNotificationOn = task.isNotificationOn
-//        notificationDropdownView.buttonText = isNotificationOn ? Strings.yes : Strings.no
-        notificationDropdownOption = isNotificationOn ? 1 : 0
+        datePickerView.date = task.startDate
+        timePickerView.isTimeSet = task.time != nil
+        timePickerView.date = task.time == nil ? task.startDate.midday : task.startDate
+        if let recurrenceRule = task.recurrenceRule {
+            repeatView.isRepeating = true
+            if let interval = recurrenceRule.interval, let frequency = recurrenceRule.recurrenceFrequency {
+                repeatView.selectedRepeatingOption = interval == 1 ? 0 : 1
+                repeatView.interval = interval
+                repeatView.recurrenceFrequency = frequency
+            }
+            else if let weekdays = recurrenceRule.weekdays {
+                repeatView.selectedRepeatingOption = 2
+                repeatView.selectedWeekdays = weekdays
+            }
+        }
+        else {
+            repeatView.isRepeating = false
+        }
+        if let notificationOption = task.notificationOption {
+            notificationView.isNotificationOn = true
+            notificationView.notificationOption = notificationOption
+        }
+        if let color = task.color {
+            colorView.isColorSet = true
+            colorView.color = color
+        }
+        notesTextViewContainer.text = task.notes
     }
 }

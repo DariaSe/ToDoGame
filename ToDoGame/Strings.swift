@@ -29,6 +29,7 @@ struct Strings {
     static let delete = "Delete".localized
     static let cancel = "Cancel".localized
     
+    static let task = "Task".localized
     static let newTask = "New task".localized
     static let taskTitle = "Task title".localized
     static let notes = "Notes".localized
@@ -56,10 +57,10 @@ struct Strings {
     static let onWeekdays = "On weekdays:".localized
     
     static let notification = "Notification".localized
-    static let oneMBefore = "1 minute before".localized
-    static let fiveMBefore = "5 minutes before".localized
-    static let fifteenMBefore = "15 minutes before".localized
-    static let thirtyMBefore = "30 minutes before".localized
+    static let oneMBefore = "1 min before".localized
+    static let fiveMBefore = "5 min before".localized
+    static let fifteenMBefore = "15 min before".localized
+    static let thirtyMBefore = "30 min before".localized
     static let oneHBefore = "1 hour before".localized
     static let twoHBefore = "2 hours before".localized
     

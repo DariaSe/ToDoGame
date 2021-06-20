@@ -89,6 +89,9 @@ class TaskListViewController: UIViewController {
         taskListView.deleteTask = { [unowned self] taskID in
             coordinator?.askForDeletion(taskID: taskID)
         }
+        taskListView.didSelectTask = { [unowned self] taskID in
+            coordinator?.openTask(id: taskID)
+        }
     }
     
     @objc func addTask() {

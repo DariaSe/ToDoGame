@@ -21,6 +21,24 @@ class RepeatComposedView: UIView {
         }
     }
     
+    var interval: Int? {
+        didSet {
+            repeatChoiceView.repeatWithIntervalOption.interval = interval ?? 0
+        }
+    }
+    
+    var recurrenceFrequency: RecurrenceFrequency? {
+        didSet {
+            guard let interval = interval, let frequency = recurrenceFrequency else { return }
+            if interval == 1 {
+                repeatChoiceView.noIntervalDropdownButton.text = DropdownOptions.noIntervalRecurrence[frequency.rawValue]
+            }
+            else {
+                repeatChoiceView.repeatWithIntervalOption.recurrenceFrequency = frequency
+            }
+        }
+    }
+    
     var selectedWeekdays: [Int] = [] {
         didSet {
             weekdaysView.selectedWeekdays = selectedWeekdays
@@ -28,7 +46,7 @@ class RepeatComposedView: UIView {
     }
     
     let repeatCheckboxView = CheckboxView()
-    let repeatChoiceView = RepeatChoiceView()
+    let repeatChoiceView = RepeatingChoiceView()
     let weekdaysView = WeekdaysView()
     
     var repeatChoiceViewHeightConstraint = NSLayoutConstraint()
@@ -68,19 +86,21 @@ class RepeatComposedView: UIView {
         self.pinToEdges(subview: repeatCheckboxView, bottom: nil)
         self.pinToEdges(subview: repeatChoiceView, top: nil, bottom: nil)
         repeatChoiceView.topAnchor.constraint(equalTo: repeatCheckboxView.bottomAnchor, constant: 10).isActive = true
-        repeatChoiceViewHeightConstraint = repeatChoiceView.heightAnchor.constraint(equalToConstant: 200)
+        repeatChoiceViewHeightConstraint = repeatChoiceView.heightAnchor.constraint(equalToConstant: 0)
         repeatChoiceViewHeightConstraint.isActive = true
         self.pinToEdges(subview: weekdaysView, top: nil)
         repeatChoiceView.bottomAnchor.constraint(equalTo: weekdaysView.topAnchor, constant: 10).isActive = true
-        weekdaysViewHeightConstraint = weekdaysView.heightAnchor.constraint(equalToConstant: 40)
+        weekdaysViewHeightConstraint = weekdaysView.heightAnchor.constraint(equalToConstant: 0)
         weekdaysViewHeightConstraint.isActive = true
+        repeatChoiceView.isHidden = true
+        weekdaysView.isHidden = true
     }
     
     func showHideUIElements() {
         repeatCheckboxView.isCheckboxOn = isRepeating
         repeatChoiceView.isHidden = !isRepeating
         weekdaysView.isHidden = !isRepeating
-        repeatChoiceViewHeightConstraint.constant = isRepeating ? 200 : 0
-        weekdaysViewHeightConstraint.constant = isRepeating ? 40 : 0
+        repeatChoiceViewHeightConstraint.constant = isRepeating ? 180 : 0
+        weekdaysViewHeightConstraint.constant = isRepeating ? 60 : 0
     }
 }

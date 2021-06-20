@@ -66,7 +66,10 @@ class TaskListCoordinator {
     }
     
     func openTask(id: Int) {
-        
+        guard let task = tasks.filter({ $0.id == id }).first else { return }
+        let vc = SingleTaskViewController()
+        vc.task = task
+        taskListVC.present(vc, animated: true, completion: nil)
     }
     
     func showAddTaskScreen() {

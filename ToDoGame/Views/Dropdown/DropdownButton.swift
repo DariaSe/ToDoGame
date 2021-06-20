@@ -9,9 +9,7 @@ import UIKit
 
 class DropdownButton: UIButton {
     
-    var delegate: DropdownDelegate?
-    
-    var text = "No" {
+    var text = "" {
         didSet {
             label.text = text
             widthConstraint.constant = widthWithText()
@@ -52,7 +50,6 @@ class DropdownButton: UIButton {
         self.pinToEdges(subview: label, leading: 15, trailing: nil, top: 12, bottom: 12)
         self.pinToEdges(subview: arrow, leading: nil, trailing: 15, top: 12, bottom: 12)
         label.trailingAnchor.constraint(equalTo: arrow.leadingAnchor, constant: 10).isActive = true
-        heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
         widthConstraint = widthAnchor.constraint(equalToConstant: widthWithText())
         widthConstraint.isActive = true
     }

@@ -84,6 +84,13 @@ extension Date {
         else { return false }
     }
     
+    var midday: Date {
+        var components = Calendar.current.dateComponents([.day, .month, .year], from: self)
+        components.hour = 12
+        components.minute = 0
+        return Calendar.current.date(from: components)!
+    }
+    
     var tomorrow: Date {
         Calendar.current.date(byAdding: .day, value: 1, to: self.dayStart)!
     }

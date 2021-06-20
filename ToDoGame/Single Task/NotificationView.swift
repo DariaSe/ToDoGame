@@ -9,6 +9,14 @@ import UIKit
 
 class NotificationView: CheckboxView {
     
+    var delegate: DropdownDelegate?
+    
+    var notificationOption: Int = 0 {
+        didSet {
+            dropdownButton.text = DropdownOptions.notificationOptions[notificationOption]
+        }
+    }
+    
     var isNotificationOn: Bool = false {
         didSet {
             isCheckboxOn = isNotificationOn
@@ -35,12 +43,18 @@ class NotificationView: CheckboxView {
         self.addSubview(dropdownButton)
         dropdownButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60).isActive = true
         dropdownButton.centerYAnchor.constraint(equalTo: checkboxButton.centerYAnchor).isActive = true
+        dropdownButton.heightAnchor.constraint(equalToConstant: SizeConstants.buttonHeight).isActive = true
         label.text = Strings.notification
         dropdownButton.alpha = 0.0
-        dropdownButton.text = "за 1 час"
+        dropdownButton.text = DropdownOptions.notificationOptions[0]
+        dropdownButton.addTarget(self, action: #selector(dropdownButtonPressed), for: .touchUpInside)
         checkboxToggled = {
             self.isNotificationOn = !self.isNotificationOn
         }
+    }
+    
+    @objc func dropdownButtonPressed() {
+        delegate?.showDropdown(sender: dropdownButton)
     }
 }
 

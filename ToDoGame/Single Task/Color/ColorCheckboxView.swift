@@ -1,14 +1,14 @@
 //
-//  ColorView.swift
+//  ColorCheckboxView.swift
 //  ToDoGame
 //
-//  Created by Дарья Селезнёва on 18.06.2021.
+//  Created by Дарья Селезнёва on 20.06.2021.
 //
 
 import UIKit
 
-class ColorView: CheckboxView {
-    
+class ColorCheckboxView: CheckboxView {
+
     var isColorSet: Bool = false {
         didSet {
             isCheckboxOn = isColorSet
@@ -25,9 +25,6 @@ class ColorView: CheckboxView {
     }
     
     let colorButton = UIButton()
-    
-    lazy var colorCollectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: colorCollectionViewLayout)
-    let colorCollectionViewLayout = UICollectionViewFlowLayout()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,8 +46,5 @@ class ColorView: CheckboxView {
         colorButton.layer.cornerRadius = 10
         colorButton.backgroundColor = UIColor.tagColor(index: color)
         colorButton.alpha = 0.0
-        checkboxToggled = {
-            self.isColorSet = !self.isColorSet
-        }
     }
 }

@@ -56,7 +56,7 @@ class TaskCellView: UIView {
         checkButton.widthAnchor.constraint(equalTo: checkButton.heightAnchor).isActive = true
     }
     
-    func update(title: String, isDone: Bool, color: Int) {
+    func update(title: String, isDone: Bool, color: Int?) {
         if isDone {
             let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.strikethroughStyle : 1])
             label.attributedText = titleString
@@ -71,8 +71,9 @@ class TaskCellView: UIView {
         label.textColor = UIColor.textColor
         label.font = UIFont.normalTextFont
         
-        roundedView.backgroundColor = UIColor.tagColor(index: color).withAlphaComponent(0.1)
-        colorView.backgroundColor = UIColor.tagColor(index: color)
+        if let color = color {
+            colorView.backgroundColor = UIColor.tagColor(index: color)
+        }
 
         let buttonImageName = isDone ? "Round - on" : "Round - off"
         let buttonImage = UIImage(named: buttonImageName)?.withRenderingMode(.alwaysTemplate)

@@ -14,6 +14,7 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
     var task: Task? {
         didSet {
             if let task = task {
+                topLabel.text = Strings.task
                 taskInputView.update(with: task)
             }
         }
@@ -32,6 +33,12 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
 
     let shadowingView = UIView()
     let dropdownMenu = DropdownView()
+    
+    var noIntervalDropdownOption: Int = 0
+    var intervalDropdownOption: Int = 0
+    var notificationDropdownOption: Int = 0
+    
+    let tap = UITapGestureRecognizer()
     
     override func viewDidLoad() {
         
@@ -93,14 +100,13 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         closeButton.tintColor = UIColor.buttonColor
         closeButton.addTarget(self, action: #selector(closeButtonPressed), for: .touchUpInside)
       
+        setupDelegates()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        view.endEditing(true)
+        // cash here unsaved task
     }
-    
-    
     
     @objc func closeButtonPressed() {
         self.dismiss(animated: true, completion: nil)
@@ -118,11 +124,70 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         dropdownMenu.isHidden = true
         shadowingView.isHidden = true
     }
+}
+
+extension SingleTaskViewController: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
+    }
+}
+
+extension SingleTaskViewController: DropdownDelegate {
+    
+    var noIntervalDropdown: DropdownButton { taskInputView.repeatView.repeatChoiceView.noIntervalDropdownButton }
+    
+    var intervalDropdown: DropdownButton { taskInputView.repeatView.repeatChoiceView.repeatWithIntervalOption.dropdownButton }
+    var interval: Int { taskInputView.repeatView.repeatChoiceView.repeatWithIntervalOption.interval}
+    
+    var notificationDropdown: DropdownButton {
+        taskInputView.notificationView.dropdownButton }
+    
+    func setupDelegates() {
+        taskInputView.repeatView.repeatChoiceView.delegate = self
+        taskInputView.notificationView.delegate = self
+    }
+
+    func showDropdown(sender: UIButton) {
+        shadowingView.isHidden = false
+        dropdownMenu.isHidden = false
+        var options: [String] = []
+        switch sender {
+        case noIntervalDropdown:
+            options = DropdownOptions.noIntervalRecurrence
+            dropdownMenu.selectedOption = noIntervalDropdownOption
+            dropdownMenu.didSelectOption = { [unowned self] option in
+                dismissMenu()
+                noIntervalDropdown.text = options[option]
+                noIntervalDropdownOption = option
+            }
+        case intervalDropdown:
+            options = DropdownOptions.intervalRecurrence(interval: interval)
+            dropdownMenu.selectedOption = intervalDropdownOption
+            dropdownMenu.didSelectOption = { [unowned self] option in
+                dismissMenu()
+                intervalDropdown.text = options[option]
+                intervalDropdownOption = option
+            }
+        case notificationDropdown:
+            options = DropdownOptions.notificationOptions
+            dropdownMenu.selectedOption = notificationDropdownOption
+            dropdownMenu.didSelectOption = { [unowned self] option in
+                dismissMenu()
+                notificationDropdown.text = options[option]
+                notificationDropdownOption = option
+            }
+        default:
+            break
+        }
+        let frame = frameForDropdown(sender: sender, height: CGFloat(44 * options.count))
+        dropdownMenu.frame = frame
+        dropdownMenu.options = options
+    }
     
     func frameForDropdown(sender: UIButton, height: CGFloat) -> CGRect {
         let senderOrigin = sender.convert(CGPoint.zero, to: self.view)
         let senderHeight = sender.frame.height
-        let width = sender.bounds.width
+        let width = sender.bounds.width + 30
         if (UIScreen.main.bounds.height - senderOrigin.y - 44) < height {
             return CGRect(x: senderOrigin.x, y: senderOrigin.y + senderHeight - height, width: width, height: height)
         }
@@ -131,57 +196,3 @@ class SingleTaskViewController: UIViewController, KeyboardHandler {
         }
     }
 }
-
-extension SingleTaskViewController: UIScrollViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        view.endEditing(true)
-    }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-}
-
-//extension SingleTaskViewController: DropdownDelegate {
-//
-//    func showDropdown(sender: UIButton) {
-//        shadowingView.isHidden = false
-//        dropdownMenu.isHidden = false
-//        var options: [String]
-//        switch sender {
-//        case timeDropdownView.dropdownButton:
-//            options = DropdownOptions.yesOrNo
-//            dropdownMenu.selectedOption = timeDropdownOption
-//            dropdownMenu.didSelectOption = { [unowned self] option in
-//                dismissMenu()
-//                timeDropdownView.dropdownButton.text = options[option]
-//                timeDropdownOption = option
-//                timePickerView.isHidden = option == 1
-//            }
-//        case repeatDropdownView.dropdownButton:
-//            options = DropdownOptions.yesOrNo
-//            dropdownMenu.selectedOption = repeatDropdownOption
-//            dropdownMenu.didSelectOption = { [unowned self] option in
-//                dismissMenu()
-//                repeatDropdownView.dropdownButton.text = options[option]
-//                repeatDropdownOption = option
-//            }
-//        case notificationDropdownView.dropdownButton:
-//            options = DropdownOptions.yesOrNo
-//            dropdownMenu.selectedOption = notificationDropdownOption
-//            dropdownMenu.didSelectOption = { [unowned self] option in
-//                dismissMenu()
-//                notificationDropdownView.dropdownButton.text = options[option]
-//                notificationDropdownOption = option
-//            }
-//        default:
-//            options = DropdownOptions.noIntervalRecurrence
-//            dropdownMenu.didSelectOption = { [unowned self] option in
-//                dismissMenu()
-//                timeDropdownView.dropdownButton.text = options[option]
-//            }
-//        }
-//        let frame = frameForDropdown(sender: sender, height: CGFloat(44 * options.count))
-//        dropdownMenu.frame = frame
-//        dropdownMenu.options = options
-//    }
-//}

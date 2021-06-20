@@ -13,23 +13,32 @@ struct Task: Codable {
     var orderID: Int
     var title: String
     var startDate: Date
-    var dueTime: String?
+    var time: String? {
+        let startDateStart = startDate.dayStart
+        var time: String?
+        if startDateStart != startDate {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .none
+            formatter.timeStyle = .short
+            time = formatter.string(from: startDate)
+        }
+        return time
+    }
     var recurrenceRule: RecurrenceRule?
     var executionLog: [Date] = []
-    var isNotificationOn: Bool
-    var notificationTime: String?
-    var color: Int
+    var notificationOption: Int?
+    var color: Int?
     var notes: String = ""
     
     func viewModel(isDone: Bool, date: Date) -> TaskViewModel {
-        return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: dueTime, color: color)
+        return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: time, color: color)
     }
     
     static var sample: [Task] { [
-        Task(id: 1, orderID: 1, title: "Task 1", startDate: Date(), recurrenceRule: RecurrenceRule.sample1,  isNotificationOn: false, color: 2),
-        Task(id: 2, orderID: 2, title: "Task 2", startDate: Date(), recurrenceRule: RecurrenceRule.sample2, isNotificationOn: false, color: 6),
-        Task(id: 3, orderID: 3, title: "Task 3", startDate: Date(), recurrenceRule: RecurrenceRule.sample3, isNotificationOn: false, color: 8),
-        Task(id: 4, orderID: 4, title: "Task 4", startDate: Date(), isNotificationOn: false, color: 2)
+        Task(id: 1, orderID: 1, title: "Task 1", startDate: Date(), recurrenceRule: RecurrenceRule.sample1,  color: 2),
+        Task(id: 2, orderID: 2, title: "Task 2", startDate: Date(), recurrenceRule: RecurrenceRule.sample2, color: 6),
+        Task(id: 3, orderID: 3, title: "Task 3", startDate: Date(), recurrenceRule: RecurrenceRule.sample3, color: 8),
+        Task(id: 4, orderID: 4, title: "Task 4", startDate: Date(), color: 2)
     ] }
     
     //MARK: Decoding and encoding
