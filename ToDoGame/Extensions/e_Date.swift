@@ -42,7 +42,7 @@ extension Date {
     
     func matches(startDate: Date, recurrenceRule: RecurrenceRule) -> Bool {
         if let weekdays = recurrenceRule.weekdays {
-            let dateWeekday = Calendar.current.component(.weekday, from: self)
+            let dateWeekday = Calendar.current.ordinality(of: .weekday, in: .weekOfYear, for: self)!
             return weekdays.contains(dateWeekday) && (startDate <=^ self)
         }
         if let recurrenceFrequency = recurrenceRule.recurrenceFrequency, let interval = recurrenceRule.interval {

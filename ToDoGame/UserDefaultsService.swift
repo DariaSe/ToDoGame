@@ -13,19 +13,19 @@ class UserDefaultsService {
     
     // MARK: - Values
     
-    static var selectedTags: [Int] {
-        get { defaults.object(forKey: selectedTagsKey) as? [Int] ?? [Int]() }
-        set(newValue) { defaults.set(newValue, forKey: selectedTagsKey)} }
+    static var lastColor: Int {
+        get { defaults.integer(forKey: lastColorKey) }
+        set(newValue) { defaults.set(newValue, forKey: lastColorKey)} }
     
     // MARK: - Keys
     
-    static let selectedTagsKey = "selectedTags"
+    static let lastColorKey = "lastColor"
     
     // MARK: - Setting default values
     
     static func setDefault() {
-        if defaults.value(forKey: selectedTagsKey) == nil {
-            defaults.set([Int](), forKey: selectedTagsKey)
+        if defaults.value(forKey: lastColorKey) == nil {
+            defaults.set(0, forKey: lastColorKey)
         }
     }
 }

@@ -11,6 +11,7 @@ class TaskCellView: UIView {
     
     var buttonPressed: (() -> Void)?
     
+    let underView = UIView()
     let roundedView = UIView()
     
     let colorView = UIView()
@@ -28,19 +29,17 @@ class TaskCellView: UIView {
     
     private func initialSetup() {
         setupLayout()
-        
-        roundedView.backgroundColor = UIColor.backgroundColor
+        self.backgroundColor = UIColor.clear
+        underView.layer.cornerRadius = 16
+        underView.backgroundColor = UIColor.white
         roundedView.layer.cornerRadius = 16
-        roundedView.layer.borderWidth = 1.0
-        roundedView.layer.borderColor = UIColor.borderColor.cgColor
         roundedView.clipsToBounds = true
-        
-        colorView.backgroundColor = UIColor.tagColor(index: 2)
-    
+       
         checkButton.addTarget(self, action: #selector(checkButtonPressed), for: .touchUpInside)
     }
  
     func setupLayout() {
+        self.pinToEdges(subview: underView, leading: 10, trailing: 10, top: 5, bottom: 5)
         self.pinToEdges(subview: roundedView, leading: 10, trailing: 10, top: 5, bottom: 5)
         roundedView.pinToEdges(subview: colorView, trailing: nil)
         
@@ -60,19 +59,25 @@ class TaskCellView: UIView {
         if isDone {
             let titleString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.strikethroughStyle : 1])
             label.attributedText = titleString
-            label.layer.opacity = 0.7
-            checkButton.tintColor = UIColor.lightGray
+            label.layer.opacity = 0.8
         }
         else {
             label.attributedText = NSAttributedString(string: title)
             label.layer.opacity = 1.0
-            checkButton.tintColor = UIColor.gray
+            checkButton.tintColor = UIColor.TagColors.darkGreen
         }
         label.textColor = UIColor.textColor
         label.font = UIFont.normalTextFont
         
         if let color = color {
             colorView.backgroundColor = UIColor.tagColor(index: color)
+            roundedView.backgroundColor = UIColor.tagColor(index: color).withAlphaComponent(0.3)
+            checkButton.tintColor = UIColor.tagColor(index: color)
+        }
+        else {
+            colorView.backgroundColor = UIColor.noColorColor
+            roundedView.backgroundColor = UIColor.white
+            checkButton.tintColor = UIColor.noColorColor
         }
 
         let buttonImageName = isDone ? "Round - on" : "Round - off"

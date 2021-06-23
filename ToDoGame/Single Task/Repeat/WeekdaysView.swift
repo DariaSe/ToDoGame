@@ -53,7 +53,7 @@ extension WeekdaysView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WeekdayCollectionViewCell.reuseIdentifier, for: indexPath) as! WeekdayCollectionViewCell
         let weekdaySymbol = weekdaySymbols[indexPath.row]
-        let isSelected = selectedWeekdays.contains(indexPath.row)
+        let isSelected = selectedWeekdays.contains(indexPath.row + 1)
         cell.update(with: weekdaySymbol, isSelected: isSelected)
         return cell
     }
@@ -71,6 +71,6 @@ extension WeekdaysView: UICollectionViewDelegateFlowLayout {
 
 extension WeekdaysView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        didSelectWeekday?(indexPath.row)
+        didSelectWeekday?(indexPath.row + 1)
     }
 }

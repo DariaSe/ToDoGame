@@ -10,7 +10,7 @@ import UIKit
 class TextViewContainer: UIView {
     
     var textView = AppTextView()
-    // to assign
+    
     var text: String? {
         didSet {
             textView.text = self.text

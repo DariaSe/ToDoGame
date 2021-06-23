@@ -24,6 +24,7 @@ class TimePickerView: UIView {
     var date: Date = Date() {
         didSet {
             checkboxView.date = date
+            timePickerView.date = date
         }
     }
     
@@ -34,10 +35,6 @@ class TimePickerView: UIView {
                 self.timePickerView.isHidden = !self.isTimePickerShown
                 self.timePickerHeightConstraint.constant = self.isTimePickerShown ? 216 : 0
             }
-//            UIView.animate(withDuration: 0.2) {
-//                self.timePickerView.alpha = self.isTimePickerShown ? 1.0 : 0.0
-//                self.timePickerHeightConstraint.constant = self.isTimePickerShown ? 216 : 0
-//            }
         }
     }
     

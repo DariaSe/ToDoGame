@@ -58,6 +58,7 @@ class RepeatingChoiceView: UIView {
         
         firstRadioButton.setDimensions(width: 40, height: 40)
         firstRadioButton.addTarget(self, action: #selector(radioButtonPressed(sender:)), for: .touchUpInside)
+        firstRadioButton.isSelected = true
         firstRadioButton.tag = 0
         secondRadioButton.setDimensions(width: 40, height: 40)
         secondRadioButton.addTarget(self, action: #selector(radioButtonPressed(sender:)), for: .touchUpInside)

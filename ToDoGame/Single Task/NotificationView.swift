@@ -27,6 +27,8 @@ class NotificationView: CheckboxView {
     }
     
     let dropdownButton = DropdownButton()
+    
+    var didToggleCheckbox: (() -> ())?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,8 +50,9 @@ class NotificationView: CheckboxView {
         dropdownButton.alpha = 0.0
         dropdownButton.text = DropdownOptions.notificationOptions[0]
         dropdownButton.addTarget(self, action: #selector(dropdownButtonPressed), for: .touchUpInside)
-        checkboxToggled = {
-            self.isNotificationOn = !self.isNotificationOn
+        checkboxToggled = { [unowned self] in
+            didToggleCheckbox?()
+//            self.isNotificationOn = !self.isNotificationOn
         }
     }
     

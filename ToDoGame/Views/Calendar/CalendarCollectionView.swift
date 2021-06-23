@@ -53,7 +53,7 @@ class CalendarCollectionView: UIView {
     }
     
     func toggleConstraints() {
-        interSpacingConstraint.constant = isCalendarShown ? 4 : 0
+        interSpacingConstraint.constant = isCalendarShown ? -4 : 0
         weekdaySymbolsHeightConstraint.constant = isCalendarShown ? 12 : 0
     }
 

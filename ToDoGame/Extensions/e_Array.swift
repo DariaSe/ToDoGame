@@ -11,6 +11,16 @@ import Foundation
 
 extension Array where Element: Equatable {
     
+    func index(of element: Element) -> Int? {
+        var index: Int?
+        for (arrayIndex, arrayElement) in self.enumerated() {
+            if element == arrayElement {
+                index = arrayIndex
+            }
+        }
+        return index
+    }
+    
     func containsOneOrMoreOf(array: [Element]) -> Bool {
         guard !array.isEmpty else { return true }
         for item in array {
@@ -23,18 +33,11 @@ extension Array where Element: Equatable {
         return self.filter { $0 != element }
     }
     
-    func replace(_ sourceElement: Element, with newElement: Element) -> Self {
-        var arrayIndex: Int?
-        for (index, element) in self.enumerated() {
-            if element == sourceElement {
-                arrayIndex = index
-            }
-        }
+    mutating func replace(_ sourceElement: Element, with newElement: Element) {
+        guard let index = self.index(of: sourceElement) else { return }
         var newArray = self
-        guard let index = arrayIndex else { return self }
         newArray.remove(at: index)
         newArray.insert(newElement, at: index)
-        return newArray
+        self = newArray
     }
 }
-

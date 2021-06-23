@@ -69,4 +69,7 @@ struct Strings {
     static let save = "Save".localized
     static let deleteTask = "Delete task".localized
     
+    static let emptyTitleAlert = "A task should have a title".localized
+    static let setTimeAlert = "Set time first".localized
+    
 }

@@ -44,7 +44,8 @@ class ColorCheckboxView: CheckboxView {
         colorButton.setDimensions(width: 40, height: 40)
         label.text = Strings.color
         colorButton.layer.cornerRadius = 10
-        colorButton.backgroundColor = UIColor.tagColor(index: color)
+        let savedColor = UserDefaultsService.lastColor
+        colorButton.backgroundColor = UIColor.tagColor(index: savedColor)
         colorButton.alpha = 0.0
     }
 }

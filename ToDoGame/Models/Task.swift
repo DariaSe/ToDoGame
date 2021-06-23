@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Task: Codable {
+struct Task: Codable, Orderable {
     
     var id: Int
     var orderID: Int
@@ -32,6 +32,12 @@ struct Task: Codable {
     
     func viewModel(isDone: Bool, date: Date) -> TaskViewModel {
         return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: time, color: color)
+    }
+    
+    func withChangedOrderID(newOrderID: Int) -> Task {
+        var changedTask = self
+        changedTask.orderID = newOrderID
+        return self
     }
     
     static var sample: [Task] { [
@@ -69,4 +75,8 @@ extension Task: Comparable {
         return lhs.id == rhs.id
     }
     
+}
+
+protocol Orderable {
+    var orderID: Int { get set }
 }

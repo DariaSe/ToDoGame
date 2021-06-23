@@ -24,7 +24,7 @@ class TaskTableViewCell: UITableViewCell {
     }
     
     private func initialSetup() {
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = UIColor.backgroundColor
         contentView.pinToEdges(subview: placeholderView, leading: 10, trailing: 10, top: 5, bottom: 5)
         placeholderView.backgroundColor = UIColor.lightGray.withAlphaComponent(0.2)
         placeholderView.layer.cornerRadius = 16
@@ -39,5 +39,4 @@ class TaskTableViewCell: UITableViewCell {
         view.backgroundColor = .clear
         selectedBackgroundView = view
     }
-
 }

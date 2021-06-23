@@ -54,7 +54,7 @@ class DatePickerView: UIView {
         dateButton.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(dateButton)
         dateButton.centerYAnchor.constraint(equalTo: label.centerYAnchor).isActive = true
-        dateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 60).isActive = true
+        dateButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 80).isActive = true
         self.pinToEdges(subview: calendarHeaderView, leading: 40, trailing: 40, top: nil, bottom: nil)
         calendarHeaderView.topAnchor.constraint(equalTo: dateButton.bottomAnchor, constant: 5).isActive = true
         calendarHeaderView.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
@@ -81,8 +81,9 @@ class DatePickerView: UIView {
         calendarHeaderView.delegate = self
         
         calendarView.didSelectDate = { [unowned self] newDate in
-            date = newDate
-            temporaryDate = newDate
+            didSelectDate?(newDate)
+            date = newDate.dayStart
+            temporaryDate = newDate.dayStart
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 isCalendarShown = false
             }

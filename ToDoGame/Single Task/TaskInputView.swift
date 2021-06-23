@@ -16,6 +16,8 @@ class TaskInputView: UIView {
     let notificationView = NotificationView()
     let colorView = ColorComposedView()
     let notesTextViewContainer = TextViewContainer()
+    
+    var showTimeAlert: (() -> ())?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,6 +46,30 @@ class TaskInputView: UIView {
         
         titleTextViewContainer.placeholder = Strings.taskTitle
         notesTextViewContainer.placeholder = Strings.notes
+        datePickerView.didSelectDate = { [unowned self] date in
+            var components = Calendar.current.dateComponents([.day, .month, .year], from: date)
+            let hours = Calendar.current.component(.hour, from: timePickerView.date)
+            let minutes = Calendar.current.component(.minute, from: timePickerView.date)
+            components.hour = hours
+            components.minute = minutes
+            timePickerView.date = Calendar.current.date(from: components)!
+        }
+        repeatView.repeating = { [unowned self] isRepeating in
+            datePickerView.label.text = isRepeating ? Strings.startDate : Strings.date
+        }
+        notificationView.didToggleCheckbox = { [unowned self] in
+            if notificationView.isNotificationOn {
+                notificationView.isNotificationOn = false
+            }
+            else {
+                if timePickerView.isTimeSet {
+                    notificationView.isNotificationOn = true
+                }
+                else {
+                    showTimeAlert?()
+                }
+            }
+        }
         setupEmptyTask()
     }
     

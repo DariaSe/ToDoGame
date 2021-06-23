@@ -12,8 +12,11 @@ class RepeatComposedView: UIView {
     var isRepeating: Bool = false {
         didSet {
             showHideUIElements()
+            repeating?(isRepeating)
         }
     }
+    
+    var repeating: ((Bool) -> ())?
     
     var selectedRepeatingOption: Int = 0 {
         didSet {

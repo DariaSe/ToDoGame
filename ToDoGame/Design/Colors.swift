@@ -18,7 +18,8 @@ extension UIColor {
 
 extension UIColor {
     
-    static var backgroundColor: UIColor = UIColor.white
+    static var backgroundColor: UIColor = UIColor(netHex: 0xf5f5f5)
+    
     static var borderColor: UIColor = UIColor.lightGray
     
     static var textColor: UIColor = UIColor.darkGray
@@ -28,6 +29,8 @@ extension UIColor {
     static var textControlsBGColor = UIColor(netHex: 0xF2F2F7)
     
     static var destructiveColor = UIColor(netHex: 0xbe4c48)
+    
+    static var noColorColor = UIColor(netHex: 0xc7c7c7)
     
     struct TagColors {
         //1

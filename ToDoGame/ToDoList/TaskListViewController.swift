@@ -95,7 +95,7 @@ class TaskListViewController: UIViewController {
     }
     
     @objc func addTask() {
-        coordinator?.showAddTaskScreen()
+        coordinator?.showAddTaskScreen(date: date)
     }
     
     func showCalendar() {
@@ -149,6 +149,7 @@ extension TaskListViewController: CalendarDelegate {
         isCalendarShown = !isCalendarShown
         if isCalendarShown {
             calendarView.dataSource = CalendarService.makeCalendarDays(containing: date, selected: true)
+            temporaryDate = date
         }
     }
 }

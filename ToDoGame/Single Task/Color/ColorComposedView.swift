@@ -60,6 +60,7 @@ class ColorComposedView: UIView {
         checkboxView.colorButton.addTarget(self, action: #selector(colorButtonPressed), for: .touchUpInside)
         colorCollectionView.didSelectColor = { [unowned self] colorIndex in
             color = colorIndex
+            isColorPickerShown = false
         }
     }
     

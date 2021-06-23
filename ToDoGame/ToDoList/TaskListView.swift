@@ -75,12 +75,13 @@ class TaskListView: UIView {
                 recognizer.cancel()
                 return
             }
+            swapDelegate?.beginSwapping()
             tableView.bringSubviewToFront(snapshotView)
             sourceIndexPath = indexPath
             let task = tasksManager.activeTasks[indexPath.row]
             firstTaskID = task.id
             let cell = self.tableView.cellForRow(at: indexPath) as! TaskTableViewCell
-            let snapshot = cell.snapshot
+            let snapshot = cell.taskView.snapshot
             snapshotView.image = snapshot
             snapshotView.frame = cell.frame
             UIView.animate(withDuration: 0.1) {
@@ -101,15 +102,14 @@ class TaskListView: UIView {
             if indexPath != sourceIndexPath {
                 tableView.moveRow(at: sourceIndexPath!, to: indexPath)
                 secondTaskID = tasksManager.activeTasks[indexPath.row].id
+                if let firstID = firstTaskID, let secondID = secondTaskID, firstID != secondID {
+                    swapDelegate?.swap(firstID: firstID, secondID: secondID)
+                }
                 sourceIndexPath = indexPath
             }
             
         case .ended:
-            if let firstID = firstTaskID,
-               let secondID = secondTaskID,
-               firstID != secondTaskID {
-                swapDelegate?.swapTasks(firstID: firstID, secondID: secondID)
-            }
+            swapDelegate?.endSwapping()
             cleanUp(at: indexPath)
             
         default:
@@ -220,5 +220,7 @@ extension UIGestureRecognizer {
 }
 
 protocol SwapDelegate {
-    func swapTasks(firstID: Int, secondID: Int)
+    func beginSwapping()
+    func swap(firstID: Int, secondID: Int)
+    func endSwapping()
 }

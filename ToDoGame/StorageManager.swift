@@ -24,12 +24,4 @@ class StorageManager {
     func save(tags: [Tag]) {
         Tag.saveToFile(tags: tags)
     }
-    
-    func getSelectedTags() -> [Int] {
-        return UserDefaultsService.selectedTags
-    }
-    
-    func saveSelectedTags(_ tagIDs: [Int]) {
-        UserDefaultsService.selectedTags = tagIDs
-    }
 }
