@@ -48,6 +48,8 @@ class TaskListViewController: UIViewController {
     var addButton = UIButton()
     let plusImage = UIImage(named: "Plus")?.withRenderingMode(.alwaysTemplate)
     
+    let gamificationOverview = GamificationOverviewView()
+    
     var taskListView = TaskListView()
 
     override func viewDidLoad() {
@@ -59,9 +61,11 @@ class TaskListViewController: UIViewController {
         addButton.setDimensions(width: 50, height: 50)
         calendarView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(calendarView)
-        view.pinToEdges(subview: taskListView, top: nil)
+        view.pinToLayoutMargins(subview: gamificationOverview, top: nil, bottom: nil)
         calendarView.topAnchor.constraint(equalTo: calendarHeaderView.bottomAnchor, constant: 10).isActive = true
-        calendarView.bottomAnchor.constraint(equalTo: taskListView.topAnchor, constant: 10).isActive = true
+        calendarView.bottomAnchor.constraint(equalTo: gamificationOverview.topAnchor, constant: 10).isActive = true
+        view.pinToEdges(subview: taskListView, top: nil)
+        gamificationOverview.bottomAnchor.constraint(equalTo: taskListView.topAnchor).isActive = true
         calendarView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         calendarView.widthAnchor.constraint(equalToConstant: 320).isActive = true
         calendarHeightConstraint = calendarView.heightAnchor.constraint(equalToConstant: 0)

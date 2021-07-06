@@ -18,6 +18,8 @@ struct Strings {
     static let yesterday = "Yesterday".localized
     static let tomorrow = "Tomorrow".localized
     
+    static let level = "Level".localized
+    
     static let yes = "Yes".localized
     static let no = "No".localized
     

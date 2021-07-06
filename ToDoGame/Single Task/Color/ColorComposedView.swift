@@ -15,7 +15,7 @@ class ColorComposedView: UIView {
         }
     }
     
-    var color: Int = 0 {
+    var color: Int = UserDefaultsService.lastColor {
         didSet {
             checkboxView.color = color
         }

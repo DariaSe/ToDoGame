@@ -34,10 +34,17 @@ struct Task: Codable, Orderable {
         return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: time, color: color)
     }
     
-    func withChangedOrderID(newOrderID: Int) -> Task {
-        var changedTask = self
-        changedTask.orderID = newOrderID
-        return self
+    var closestDate: Date {
+        if let recurrenceRule = self.recurrenceRule {
+            var date = Date()
+            while !date.matches(startDate: startDate, recurrenceRule: recurrenceRule) {
+                date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+            }
+            return date
+        }
+        else {
+            return startDate
+        }
     }
     
     static var sample: [Task] { [

@@ -8,5 +8,6 @@
 import Foundation
 
 extension Int {
-    var string: String { return String(self) }
+    var string: String { String(self) }
+    var double: Double { Double(self) }
 }

@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="CDRecurrenceRule" representedClassName="CDRecurrenceRule" syncable="YES">
+        <attribute name="interval" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="recurrenceFrequency" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="weekdays" optional="YES" attributeType="Transformable" customClassName="[Int]"/>
+    </entity>
+    <entity name="CDTask" representedClassName="CDTask" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="executionLog" optional="YES" attributeType="Transformable" customClassName="[Date]"/>
+        <attribute name="id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="notificationOption" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="orderID" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="startDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="recurrenceRule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDRecurrenceRule"/>
+    </entity>
+    <elements>
+        <element name="CDRecurrenceRule" positionX="-54" positionY="9" width="128" height="74"/>
+        <element name="CDTask" positionX="-63" positionY="-18" width="128" height="164"/>
+    </elements>
 </model>

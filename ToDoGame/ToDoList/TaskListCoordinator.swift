@@ -16,6 +16,9 @@ class TaskListCoordinator {
     
     lazy var singleToDoVC = ViewController()
     
+    let gameCoordinator = GameCoordinator()
+    let gamificationOverviewService = GamificationOverviewService()
+    
     var tasks: [Task] = [] {
         didSet {
             taskListVC.tasks = taskModels
@@ -37,11 +40,12 @@ class TaskListCoordinator {
     func start() {
         taskListVC.coordinator = self
         taskListVC.taskListView.swapDelegate = self
+        gameCoordinator.taskCoordinator = self
+        gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: UserDefaultsService.experience, gold: UserDefaultsService.gold)
     }
     
     func getTasks() {
-//        let tasks = storageManager.loadTasks()
-        let tasks = Task.sample
+        let tasks = storageManager.loadTasks()
         self.tasks = tasks.sorted()
     }
     
@@ -69,7 +73,7 @@ class TaskListCoordinator {
                 topController.dismiss(animated: true, completion: nil)
             }
         }
-//        storageManager.save(tasks: tasks)
+        storageManager.save(tasks: tasks)
     }
     
     func setCompletedOrCancel(taskID: Int) {
@@ -80,8 +84,12 @@ class TaskListCoordinator {
         }
         else {
             newTask.executionLog.append(date.dayStart)
+            gameCoordinator.didSetCompleted { experience, gold in
+                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, gold: gold)
+            }
         }
         tasks.replace(task, with: newTask)
+        storageManager.save(tasks: tasks)
     }
     
     func openTask(id: Int) {
@@ -110,7 +118,8 @@ class TaskListCoordinator {
         else {
             tasks.append(task)
         }
-        // save
+        storageManager.save(tasks: tasks)
+        taskListVC.date = task.closestDate
     }
 }
 
@@ -147,5 +156,6 @@ extension TaskListCoordinator: SwapDelegate {
             })
         }
         tasks = changedTasks.sorted()
+        storageManager.save(tasks: tasks)
     }
 }

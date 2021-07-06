@@ -16,12 +16,4 @@ class StorageManager {
     func save(tasks: [Task]) {
         Task.saveToFile(tasks: tasks)
     }
-    
-    func loadTags() -> [Tag] {
-        return Tag.loadFromFile() ?? []
-    }
-    
-    func save(tags: [Tag]) {
-        Tag.saveToFile(tags: tags)
-    }
 }
