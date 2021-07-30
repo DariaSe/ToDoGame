@@ -50,11 +50,11 @@ class RepeatWithIntervalView: UIView {
         label.textColor = UIColor.textColor
         textField.setDimensions(width: 60)
         textField.keyboardType = .decimalPad
+        textField.pasteDelegate = self
         textField.setLeftPaddingPoints(16)
         textField.setRightPaddingPoints(16)
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        dropdownButton.text = Strings.daysCount.localizedForCount(5)
     }
     
     func updateDropdownButtonText(interval: Int) {
@@ -75,10 +75,23 @@ class RepeatWithIntervalView: UIView {
 
 extension RepeatWithIntervalView: UITextFieldDelegate {
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textDidChange?()
+        if let text = textField.text, let count = Int(text), count == 0 {
+            textField.text = ""
+        }
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         textDidChange?()
-        if let text = textField.text, let count = Int(text) {
+        if let text = textField.text, let count = Int(text), count >= 0 {
             interval = count
         }
+    }
+}
+
+extension RepeatWithIntervalView: UITextPasteDelegate {
+    override func canPaste(_ itemProviders: [NSItemProvider]) -> Bool {
+        return false
     }
 }

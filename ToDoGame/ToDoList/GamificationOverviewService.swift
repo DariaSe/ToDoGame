@@ -9,9 +9,9 @@ import Foundation
 
 class GamificationOverviewService {
     
-    func setup(view: GamificationOverviewView, experience: Int, gold: Int) {
+    func setup(view: GamificationOverviewView, experience: Int, water: Int, gold: Int) {
         let level = LevelManager.level(for: experience)
         let nextLevelExp = LevelManager.nextLevelExp(currentExp: experience)
-        view.setup(level: level, currentExp: experience, nextLevelExp: nextLevelExp, gold: gold)
+        view.setup(level: level, currentExp: experience, nextLevelExp: nextLevelExp, water: water, gold: gold)
     }
 }

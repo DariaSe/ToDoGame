@@ -13,12 +13,15 @@ class GoldManager {
     
     var buffs: [Buff] = []
     
+    var multiplier: Double { buffs.isEmpty ? 1 : buffs.map{$0.multiplier}.reduce(0){$0 * $1} }
+    
+    var goldToAdd: Int { Int(defaultGoldAmount * multiplier) }
+    
     func incrementGold() {
-        var multiplier = 1.0
-        if !buffs.isEmpty {
-            multiplier = buffs.map{$0.multiplier}.reduce(0){$0 * $1}
-        }
-        let goldToAdd = Int(defaultGoldAmount * multiplier)
         UserDefaultsService.gold += goldToAdd
+    }
+    
+    func decrementGold() {
+        UserDefaultsService.gold -= goldToAdd
     }
 }

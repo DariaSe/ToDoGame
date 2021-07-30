@@ -251,6 +251,11 @@ extension SingleTaskViewController {
             self.present(warning, animated: true, completion: nil)
             return
         }
+        if repeatingOption == 1 && interval == 0 {
+            let warning = UIAlertController.simpleAlert(title: Strings.enterInterval, message: nil, handler: nil)
+            self.present(warning, animated: true, completion: nil)
+            return
+        }
         let date = isTimeSet ? timeDate : startDate.dayStart
         var recurrenceRule: RecurrenceRule?
         if isRepeating {

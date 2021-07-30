@@ -73,5 +73,6 @@ struct Strings {
     
     static let emptyTitleAlert = "A task should have a title".localized
     static let setTimeAlert = "Set time first".localized
+    static let enterInterval = "Enter repeat interval".localized
     
 }

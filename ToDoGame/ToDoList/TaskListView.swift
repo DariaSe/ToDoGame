@@ -54,6 +54,27 @@ class TaskListView: UIView {
         tableView.addSubview(snapshotView)
     }
     
+    func animateCompletion(at indexPath: IndexPath, completion: @escaping (() -> Void)) {
+        guard indexPath.section == 0 else { completion(); return }
+        let cell = self.tableView.cellForRow(at: indexPath) as! TaskTableViewCell
+        let task = tasksManager.activeTasks[indexPath.row]
+        cell.taskView.update(title: task.title, isDone: true, color: task.color)
+        let snapshot = cell.taskView.snapshot
+        snapshotView.image = snapshot
+        snapshotView.frame = cell.frame
+        UIView.animate(withDuration: 0.1) {
+            self.snapshotView.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+        } completion: { (_) in
+            UIView.animate(withDuration: 0.1) {
+                self.snapshotView.transform = CGAffineTransform.identity
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.snapshotView.frame = CGRect.zero
+            completion()
+        }
+    }
+    
     @objc func handleLongPressGesture(_ recognizer: UILongPressGestureRecognizer) {
         
         let location = recognizer.location(in: tableView)
@@ -155,7 +176,9 @@ extension TaskListView: UITableViewDataSource {
             task = tasksManager.completedTasks[indexPath.row]
         }
         cell.taskView.buttonPressed = { [unowned self] in
-            self.setCompletedOrCancel?(task.id)
+            self.animateCompletion(at: indexPath) {
+                self.setCompletedOrCancel?(task.id)
+            }
         }
         cell.taskView.update(title: task.title, isDone: task.isDone, color: task.color)
         cell.showsReorderControl = false

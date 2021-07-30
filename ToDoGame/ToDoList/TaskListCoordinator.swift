@@ -41,7 +41,7 @@ class TaskListCoordinator {
         taskListVC.coordinator = self
         taskListVC.taskListView.swapDelegate = self
         gameCoordinator.taskCoordinator = self
-        gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: UserDefaultsService.experience, gold: UserDefaultsService.gold)
+        gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: UserDefaultsService.experience, water: UserDefaultsService.water, gold: UserDefaultsService.gold)
     }
     
     func getTasks() {
@@ -81,11 +81,14 @@ class TaskListCoordinator {
         var newTask = task
         if newTask.executionLog.contains(date.dayStart) {
             newTask.executionLog = newTask.executionLog.without(date.dayStart)
+            gameCoordinator.didCancel { experience, water, gold in
+                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, water: water, gold: gold)
+            }
         }
         else {
             newTask.executionLog.append(date.dayStart)
-            gameCoordinator.didSetCompleted { experience, gold in
-                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, gold: gold)
+            gameCoordinator.didSetCompleted { experience, water, gold in
+                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, water: water, gold: gold)
             }
         }
         tasks.replace(task, with: newTask)

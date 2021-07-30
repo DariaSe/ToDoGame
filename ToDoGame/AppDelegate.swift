@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import WatchConnectivity
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = coordinator.taskListVC
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
+        if WCSession.isSupported() {
+            let session = WCSession.default
+                    session.delegate = self
+                    session.activate()
+                }
         return true
     }
 
@@ -77,3 +83,45 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate: WCSessionDelegate {
+
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        print("Message received: ", message)
+        if message.keys.contains("Will activate") {
+            let activeTasks = coordinator.taskModels.filter {!$0.isDone}.map { $0.dict }
+            let completedTasks = coordinator.taskModels.filter {$0.isDone}.map { $0.dict }
+            let tasks = activeTasks + completedTasks
+            sendMessageToWatch(message: ["Tasks" : tasks])
+        }
+        
+        if message.keys.contains("ID") {
+            if let id = message["ID"] as? Int {
+                DispatchQueue.main.async {
+                    self.coordinator.setCompletedOrCancel(taskID: id)
+                    let tasks = self.coordinator.taskModels.map { $0.dict }
+                    self.sendMessageToWatch(message: ["Tasks" : tasks])
+                }
+            }
+        }
+    }
+    
+    func sendMessageToWatch(message: [String : Any]) {
+        if WCSession.isSupported() {
+            let session = WCSession.default
+//            session.delegate = self
+//            session.activate()
+            if session.isReachable {
+                session.sendMessage(message, replyHandler: nil, errorHandler: { error in
+                    print("Error sending message",error)
+                })
+            }
+        }
+    }
+
+    //below 3 functions are needed to be able to connect to several Watches
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
+
+    func sessionDidDeactivate(_ session: WCSession) {}
+
+    func sessionDidBecomeInactive(_ session: WCSession) {}
+}

@@ -60,3 +60,4 @@
 
 "A task should have a title" = "У задачи должно быть название";
 "Set time first" = "Сначала установите время";
+"Enter repeat interval" = "Укажите интервал повторения";

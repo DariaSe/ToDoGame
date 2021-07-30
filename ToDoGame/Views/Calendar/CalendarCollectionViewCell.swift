@@ -52,6 +52,7 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         }
         else {
             label.isHidden = true
+            todayCircle.isHidden = true
         }
     }
 }

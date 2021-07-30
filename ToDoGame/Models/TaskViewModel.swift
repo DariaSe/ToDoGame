@@ -23,6 +23,20 @@ struct TaskViewModel {
         TaskViewModel(id: 3, orderID: 3, title: "Task 3", isDone: false, date: Date(), color: 8),
         TaskViewModel(id: 4, orderID: 4, title: "Task 4", isDone: true, date: Date(), color: 2)
     ] }
+    
+    var dict: [String : Any] {
+        return ["id" : id, "orderID": orderID, "title" : title, "isDone" : isDone, "date" : date, "time" : time ?? "", "color" : color ?? 1]
+    }
+    
+    static func recreatedFromDict(_ dict: [String : Any]) -> TaskViewModel? {
+        guard let id = dict["id"] as? Int,
+              let orderID = dict["orderID"] as? Int,
+              let title = dict["title"] as? String,
+              let isDone = dict["isDone"] as? Bool,
+              let date = dict["date"] as? Date else { return nil }
+        let time = dict["time"] as? String
+        let color = dict["color"] as? Int
+        return TaskViewModel(id: id, orderID: orderID, title: title, isDone: isDone, date: date, time: time, color: color)}
 }
 
 extension TaskViewModel: Comparable {

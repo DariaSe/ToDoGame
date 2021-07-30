@@ -13,12 +13,15 @@ class ExperienceManager {
     
     var buffs: [Buff] = []
     
+    var multiplier: Double { buffs.isEmpty ? 1 : buffs.map{$0.multiplier}.reduce(0){$0 * $1} }
+    
+    var experienceToAdd: Int { Int(defaultExperienceAmount * multiplier) }
+    
     func incrementExperience() {
-        var multiplier = 1.0
-        if !buffs.isEmpty {
-            multiplier = buffs.map{$0.multiplier}.reduce(0){$0 * $1}
-        }
-        let experienceToAdd = Int(defaultExperienceAmount * multiplier)
         UserDefaultsService.experience += experienceToAdd
+    }
+    
+    func decrementExperience() {
+        UserDefaultsService.experience -= experienceToAdd
     }
 }
