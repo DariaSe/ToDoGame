@@ -38,6 +38,7 @@ class TaskListCoordinator {
     }
     
     func start() {
+        taskListVC.tabBarItem = UITabBarItem(title: "Tasks", image: UIImage(named: "TaskList"), tag: 0)
         taskListVC.coordinator = self
         taskListVC.taskListView.swapDelegate = self
         gameCoordinator.taskCoordinator = self

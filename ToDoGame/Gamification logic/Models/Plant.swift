@@ -7,40 +7,17 @@
 
 import Foundation
 
-struct PlantSpecies {
-    var id: Int
-    var title: String
-    var description: String
-    var buyCostGold: Int
-    var buyCostDonation: Int?
-    var sellCost: Int
-    var type: PlantType
-    var waterConsumption: Int
-    var fertilizerConsumption: Int
-    var fertilizerOutput: Int?
-    var firewoodOutput: Int?
-    var levelRequired: Int
-    var daysTilBlooming: Int
-    var daysTilHarvest: Int
-    var nominalYield: Int
-    var fruitingDuration: Int
-}
-
 struct Plant {
     var species: PlantSpecies
     var instanceID: Int
     var imageURL: String
-    var age: Int
+    var age: Int = 0
     var plantingDate: Date?
     var wateringDates: [Date] = []
-    var state: PlantState
+    var fertilizerDates: [Date] = []
+    var state: PlantState = .seed
     var magic: Magic?
     var specialAttribute: SpecialAttribute?
-}
-
-enum PlantType: Int {
-    case bush
-    case tree
 }
 
 enum PlantState: Int {
@@ -62,6 +39,7 @@ enum Magic: Int {
     case water
     case wind
     case earth
+    case frost
     case electricity
     case poison
 }
@@ -71,16 +49,3 @@ enum SpecialAttribute {
     case teleportation
     case soulTranslocation
 }
-
-
-//— стоимость покупки в золоте -
-//— стоимость покупки в донатной валюте -
-//— стоимость продажи (семечки) -
-//— расход воды за раз -
-//— расход удобрения -
-//— получится удобрения из куста -
-//— необходимый уровень персонажа -
-//— дней до плодоношения -
-//— номинальное количество плодов в день -
-//— длительность плодоношения (дней) -
-

@@ -1,0 +1,27 @@
+/* 
+  Game.strings
+  ToDoGame
+
+  Created by Дарья Селезнёва on 30.07.2021.
+  
+*/
+
+"Tomato" = "Tomato";
+"Strawberry" = "Strawberry";
+"Apple" = "Apple";
+"Sunflower" = "Sunflower";
+"Walnut" = "Walnut";
+"Watermelon" = "Watermelon";
+"Cherry" = "Cherry";
+"Pineapple" = "Pineapple";
+"Avocado" = "Avocado";
+"Coconut" = "Coconut";
+"Chili pepper" = "Chili pepper";
+"Dragonfruit" = "Dragonfruit";
+
+"Fertilizer" = "Fertilizer";
+"Firewood" = "Firewood";
+"Oil" = "Oil";
+
+"Buy?" = "Buy?";
+"Required level: " = "Required level: ";

@@ -17,6 +17,10 @@ extension String {
         let resultString : String = String.localizedStringWithFormat(formatString, count)
         return resultString
     }
+    
+    var localizedGame: String {
+        return NSLocalizedString(self, tableName: "Game", comment: "")
+    }
 }
 
 extension String {

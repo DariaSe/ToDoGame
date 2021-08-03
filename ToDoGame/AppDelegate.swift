@@ -14,15 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let coordinator = TaskListCoordinator()
+    let tabBarVC = MainTabBarController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         UserDefaultsService.setDefault()
-        coordinator.start()
-        coordinator.getTasks()
-        let vc = coordinator.taskListVC
-        window?.rootViewController = vc
+        window?.rootViewController = tabBarVC
         window?.makeKeyAndVisible()
         if WCSession.isSupported() {
             let session = WCSession.default
@@ -34,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        coordinator.taskListVC.date = Date()
+        tabBarVC.taskListCoordinator.taskListVC.date = Date()
     }
     // MARK: - Core Data stack
 
@@ -88,8 +85,8 @@ extension AppDelegate: WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("Message received: ", message)
         if message.keys.contains("Will activate") {
-            let activeTasks = coordinator.taskModels.filter {!$0.isDone}.map { $0.dict }
-            let completedTasks = coordinator.taskModels.filter {$0.isDone}.map { $0.dict }
+            let activeTasks = tabBarVC.taskListCoordinator.taskModels.filter {!$0.isDone}.map { $0.dict }
+            let completedTasks = tabBarVC.taskListCoordinator.taskModels.filter {$0.isDone}.map { $0.dict }
             let tasks = activeTasks + completedTasks
             sendMessageToWatch(message: ["Tasks" : tasks])
         }
@@ -97,8 +94,8 @@ extension AppDelegate: WCSessionDelegate {
         if message.keys.contains("ID") {
             if let id = message["ID"] as? Int {
                 DispatchQueue.main.async {
-                    self.coordinator.setCompletedOrCancel(taskID: id)
-                    let tasks = self.coordinator.taskModels.map { $0.dict }
+                    self.tabBarVC.taskListCoordinator.setCompletedOrCancel(taskID: id)
+                    let tasks = self.tabBarVC.taskListCoordinator.taskModels.map { $0.dict }
                     self.sendMessageToWatch(message: ["Tasks" : tasks])
                 }
             }

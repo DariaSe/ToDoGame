@@ -81,6 +81,14 @@
 		DA76BF8A269EEF07009BAFD1 /* e_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F11D265D11AD00F6D4E9 /* e_Array.swift */; };
 		DA76BFC226B06A69009BAFD1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFC126B06A68009BAFD1 /* Plant.swift */; };
 		DA76BFC926B2B8A8009BAFD1 /* WaterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFC826B2B8A7009BAFD1 /* WaterManager.swift */; };
+		DA76BFD626B411E1009BAFD1 /* Game.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA76BFD826B411E1009BAFD1 /* Game.strings */; };
+		DA76BFDB26B412C2009BAFD1 /* e_Strings Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */; };
+		DA76BFE726B41817009BAFD1 /* PlantSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */; };
+		DA76BFEF26B81487009BAFD1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFEE26B81486009BAFD1 /* MainTabBarController.swift */; };
+		DA76BFF726B816E8009BAFD1 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */; };
+		DA76C00526B81743009BAFD1 /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76C00426B81743009BAFD1 /* ShopViewController.swift */; };
+		DA76C01126B8175E009BAFD1 /* QuestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76C01026B8175E009BAFD1 /* QuestsViewController.swift */; };
+		DA76C01826B817AC009BAFD1 /* InventoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76C01726B817AC009BAFD1 /* InventoryCoordinator.swift */; };
 		DA95978326736B2500D88CAC /* RadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95978226736B2500D88CAC /* RadioButton.swift */; };
 		DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95978C2676280A00D88CAC /* TimePickerView.swift */; };
 		DA95979226765D3800D88CAC /* TaskInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95979126765D3800D88CAC /* TaskInputView.swift */; };
@@ -121,6 +129,14 @@
 		DA9598952691DE4500D88CAC /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598942691DE4500D88CAC /* ExperienceManager.swift */; };
 		DA95989A2691DE5B00D88CAC /* GoldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598992691DE5B00D88CAC /* GoldManager.swift */; };
 		DA9598A02691DF5000D88CAC /* Buff.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95989F2691DF5000D88CAC /* Buff.swift */; };
+		DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */; };
+		DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */; };
+		DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCFF26B867580067069D /* p_ShopItem.swift */; };
+		DAF3CD0726B86B3C0067069D /* GardenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD0626B86B3C0067069D /* GardenView.swift */; };
+		DAF3CD0E26B86C1B0067069D /* GardenCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */; };
+		DAF3CD1526B86F820067069D /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD1426B86F820067069D /* ShopCollectionViewCell.swift */; };
+		DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD2226B95A550067069D /* ShopHeaderReusableView.swift */; };
+		DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD2E26B966D60067069D /* BuyAlertView.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -260,6 +276,15 @@
 		DA76BF73269C6200009BAFD1 /* e_Date TaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "e_Date TaskFactory.swift"; sourceTree = "<group>"; };
 		DA76BFC126B06A68009BAFD1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		DA76BFC826B2B8A7009BAFD1 /* WaterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterManager.swift; sourceTree = "<group>"; };
+		DA76BFD726B411E1009BAFD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Game.strings; sourceTree = "<group>"; };
+		DA76BFD926B411E7009BAFD1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Game.strings; sourceTree = "<group>"; };
+		DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "e_Strings Game.swift"; sourceTree = "<group>"; };
+		DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantSpecies.swift; sourceTree = "<group>"; };
+		DA76BFEE26B81486009BAFD1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		DA76C00426B81743009BAFD1 /* ShopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
+		DA76C01026B8175E009BAFD1 /* QuestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsViewController.swift; sourceTree = "<group>"; };
+		DA76C01726B817AC009BAFD1 /* InventoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCoordinator.swift; sourceTree = "<group>"; };
 		DA95978226736B2500D88CAC /* RadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioButton.swift; sourceTree = "<group>"; };
 		DA95978C2676280A00D88CAC /* TimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
 		DA95979126765D3800D88CAC /* TaskInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInputView.swift; sourceTree = "<group>"; };
@@ -300,6 +325,14 @@
 		DA9598942691DE4500D88CAC /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
 		DA9598992691DE5B00D88CAC /* GoldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldManager.swift; sourceTree = "<group>"; };
 		DA95989F2691DF5000D88CAC /* Buff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buff.swift; sourceTree = "<group>"; };
+		DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCoordinator.swift; sourceTree = "<group>"; };
+		DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsCoordinator.swift; sourceTree = "<group>"; };
+		DAF3CCFF26B867580067069D /* p_ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_ShopItem.swift; sourceTree = "<group>"; };
+		DAF3CD0626B86B3C0067069D /* GardenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenView.swift; sourceTree = "<group>"; };
+		DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenCollectionViewCell.swift; sourceTree = "<group>"; };
+		DAF3CD1426B86F820067069D /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
+		DAF3CD2226B95A550067069D /* ShopHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHeaderReusableView.swift; sourceTree = "<group>"; };
+		DAF3CD2E26B966D60067069D /* BuyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAlertView.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -479,6 +512,46 @@
 			path = "ToDoGameWatchApp Extension";
 			sourceTree = "<group>";
 		};
+		DA76BFED26B81427009BAFD1 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				DA76BFEE26B81486009BAFD1 /* MainTabBarController.swift */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
+		DA76BFF526B816B5009BAFD1 /* Inventory */ = {
+			isa = PBXGroup;
+			children = (
+				DA76C01726B817AC009BAFD1 /* InventoryCoordinator.swift */,
+				DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */,
+				DAF3CD0626B86B3C0067069D /* GardenView.swift */,
+				DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */,
+			);
+			path = Inventory;
+			sourceTree = "<group>";
+		};
+		DA76C00226B81707009BAFD1 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */,
+				DA76C00426B81743009BAFD1 /* ShopViewController.swift */,
+				DAF3CD1426B86F820067069D /* ShopCollectionViewCell.swift */,
+				DAF3CD2226B95A550067069D /* ShopHeaderReusableView.swift */,
+				DAF3CD2E26B966D60067069D /* BuyAlertView.swift */,
+			);
+			path = Shop;
+			sourceTree = "<group>";
+		};
+		DA76C00326B81720009BAFD1 /* Quests */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */,
+				DA76C01026B8175E009BAFD1 /* QuestsViewController.swift */,
+			);
+			path = Quests;
+			sourceTree = "<group>";
+		};
 		DA9597A026767A4200D88CAC /* Repeat */ = {
 			isa = PBXGroup;
 			children = (
@@ -592,7 +665,9 @@
 			children = (
 				DA95989F2691DF5000D88CAC /* Buff.swift */,
 				DA76BEE0269391B6009BAFD1 /* Level.swift */,
+				DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */,
 				DA76BFC126B06A68009BAFD1 /* Plant.swift */,
+				DAF3CCFF26B867580067069D /* p_ShopItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -630,8 +705,12 @@
 				DA22F0A9265565B200F6D4E9 /* p_KeyboardHandler.swift */,
 				DA22EFC82645772B00F6D4E9 /* StorageManager.swift */,
 				DA22F115265CE58500F6D4E9 /* UserDefaultsService.swift */,
+				DA76BFED26B81427009BAFD1 /* TabBarController */,
 				DA22EF8626344B6E00F6D4E9 /* ToDoList */,
 				DA22EF8826344B9E00F6D4E9 /* Single Task */,
+				DA76BFF526B816B5009BAFD1 /* Inventory */,
+				DA76C00226B81707009BAFD1 /* Shop */,
+				DA76C00326B81720009BAFD1 /* Quests */,
 				DAF91496262B4E1500ACF14D /* ViewController.swift */,
 				DA959871268752F500D88CAC /* Gamification logic */,
 				DA9598552680940E00D88CAC /* Accessory Views */,
@@ -642,8 +721,10 @@
 				DAF914A3262B4E1700ACF14D /* Info.plist */,
 				DA22F096265563D700F6D4E9 /* Design */,
 				DA22F08C26555BE900F6D4E9 /* Strings.swift */,
+				DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */,
 				DA22F1432662416C00F6D4E9 /* Localizable.stringsdict */,
 				DA22F07D26555AE600F6D4E9 /* Localizable.strings */,
+				DA76BFD826B411E1009BAFD1 /* Game.strings */,
 				DA22EF9326344C9100F6D4E9 /* Extensions */,
 				DA9597D5267A229000D88CAC /* Archive */,
 			);
@@ -850,6 +931,7 @@
 				DA22F0DB2657A69A00F6D4E9 /* Nunito-Black.ttf in Resources */,
 				DA22F0E02657A69E00F6D4E9 /* Nunito-Bold.ttf in Resources */,
 				DA22F1042657A6C200F6D4E9 /* Nunito-LightItalic.ttf in Resources */,
+				DA76BFD626B411E1009BAFD1 /* Game.strings in Resources */,
 				DA22F0DF2657A69C00F6D4E9 /* Nunito-BlackItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -898,6 +980,8 @@
 				DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */,
 				DA95981F267BCF3400D88CAC /* TimeCheckboxView.swift in Sources */,
 				DA22F0BF26564F5900F6D4E9 /* TagsView.swift in Sources */,
+				DA76C01826B817AC009BAFD1 /* InventoryCoordinator.swift in Sources */,
+				DA76C00526B81743009BAFD1 /* ShopViewController.swift in Sources */,
 				DA9597E4267A636400D88CAC /* e_UITextField.swift in Sources */,
 				DA22F0AF265569F100F6D4E9 /* DatePickerView.swift in Sources */,
 				DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */,
@@ -909,20 +993,24 @@
 				DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */,
 				DA95978326736B2500D88CAC /* RadioButton.swift in Sources */,
 				DA95987F268C8C5600D88CAC /* CDTask+CoreDataClass.swift in Sources */,
+				DAF3CD0E26B86C1B0067069D /* GardenCollectionViewCell.swift in Sources */,
 				DA95985F2680961B00D88CAC /* e_UIViewController.swift in Sources */,
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
 				DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */,
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
+				DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
 				DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */,
 				DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */,
 				DA76BFC926B2B8A8009BAFD1 /* WaterManager.swift in Sources */,
+				DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */,
 				DA22EFA326455DFA00F6D4E9 /* TaskListCoordinator.swift in Sources */,
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
 				DA95984C267F77A600D88CAC /* ColorCollectionView.swift in Sources */,
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
 				DA959847267F777100D88CAC /* ColorCheckboxView.swift in Sources */,
+				DA76BFEF26B81487009BAFD1 /* MainTabBarController.swift in Sources */,
 				DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */,
 				DA9598762687539800D88CAC /* GameCoordinator.swift in Sources */,
 				DA9597AC267A0C3100D88CAC /* RepeatChoiceView.swift in Sources */,
@@ -931,6 +1019,7 @@
 				DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */,
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
 				DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */,
+				DA76C01126B8175E009BAFD1 /* QuestsViewController.swift in Sources */,
 				DA76BEEB2694647B009BAFD1 /* GamificationOverviewService.swift in Sources */,
 				DA9598952691DE4500D88CAC /* ExperienceManager.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
@@ -939,6 +1028,7 @@
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
 				DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */,
 				DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */,
+				DA76BFDB26B412C2009BAFD1 /* e_Strings Game.swift in Sources */,
 				DA9598572680946100D88CAC /* WarningViewController.swift in Sources */,
 				DA959851267F78FF00D88CAC /* ColorCollectionViewCell.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
@@ -951,17 +1041,22 @@
 				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
 				DA9597FE267B4BAE00D88CAC /* CalendarHeaderView.swift in Sources */,
+				DA76BFE726B41817009BAFD1 /* PlantSpecies.swift in Sources */,
 				DA76BFC226B06A69009BAFD1 /* Plant.swift in Sources */,
+				DAF3CD1526B86F820067069D /* ShopCollectionViewCell.swift in Sources */,
 				DA9597DF267A5B7500D88CAC /* e_Int.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
 				DA959829267CA25200D88CAC /* NotificationView.swift in Sources */,
 				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
+				DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */,
 				DA95989A2691DE5B00D88CAC /* GoldManager.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */,
 				DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */,
+				DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */,
 				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
 				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,
+				DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */,
 				DA22F0C42656509400F6D4E9 /* TagCollectionViewCell.swift in Sources */,
 				DA22F0A02655642200F6D4E9 /* Colors.swift in Sources */,
 				DA22F098265563E900F6D4E9 /* SizeConstants.swift in Sources */,
@@ -976,7 +1071,9 @@
 				DA22F0A52655649A00F6D4E9 /* Fonts.swift in Sources */,
 				DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */,
 				DA9597F3267A67ED00D88CAC /* e_Calendar.swift in Sources */,
+				DA76BFF726B816E8009BAFD1 /* InventoryViewController.swift in Sources */,
 				DA22F11E265D11AD00F6D4E9 /* e_Array.swift in Sources */,
+				DAF3CD0726B86B3C0067069D /* GardenView.swift in Sources */,
 				DA22F12A265F941D00F6D4E9 /* TaskCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1047,6 +1144,15 @@
 				DA76BEF4269C3F52009BAFD1 /* Base */,
 			);
 			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+		DA76BFD826B411E1009BAFD1 /* Game.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA76BFD726B411E1009BAFD1 /* en */,
+				DA76BFD926B411E7009BAFD1 /* ru */,
+			);
+			name = Game.strings;
 			sourceTree = "<group>";
 		};
 		DAF914A0262B4E1700ACF14D /* LaunchScreen.storyboard */ = {

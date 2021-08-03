@@ -42,6 +42,11 @@ class LevelManager {
         30 : 300000
     ]
     
+    static var currentLevel: Int {
+        let currentExp = UserDefaultsService.experience
+        return level(for: currentExp)
+    }
+    
     static func level(for currentExp: Int) -> Int {
         let filteredLevels = levels.filter{$0.value <= currentExp}
         let levelExp = filteredLevels.map{$0.value}.sorted(by: >).first ?? 0
