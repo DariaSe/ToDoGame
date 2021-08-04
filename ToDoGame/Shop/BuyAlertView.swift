@@ -28,6 +28,9 @@ class BuyAlertView: UIView {
     
     var buyGoldWidthConstraint = NSLayoutConstraint()
     var buyDonationWidthConstraint = NSLayoutConstraint()
+    
+    var didBuyGold: (() -> ())?
+    var didBuyDonation: (() -> ())?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -94,6 +97,7 @@ class BuyAlertView: UIView {
         donationImageView.image = UIImage(named: "Crystal ball")
         donationLabel.font = UIFont.normalTextFont
         donationLabel.textColor = UIColor.textColor
+        buyDonationButton.addTarget(self, action: #selector(buyDonation), for: .touchUpInside)
         
         alertView.pinToEdges(subview: buyGoldButton, leading: nil, top: nil)
         buyGoldButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
@@ -113,6 +117,17 @@ class BuyAlertView: UIView {
         goldImageView.image = UIImage(named: "Coin")
         goldLabel.font = UIFont.normalTextFont
         goldLabel.textColor = UIColor.textColor
+        buyGoldButton.addTarget(self, action: #selector(buyGold), for: .touchUpInside)
+    }
+    
+    @objc func buyGold() {
+        buyGoldButton.animateScale(duration: 0.1, scale: 1.1)
+        didBuyGold?()
+    }
+    
+    @objc func buyDonation() {
+        buyDonationButton.animateScale(duration: 0.1, scale: 1.1)
+        didBuyDonation?()
     }
     
     func update(with item: ShopItem) {
@@ -124,7 +139,7 @@ class BuyAlertView: UIView {
         goldLabel.text = item.buyCostGold.string
         let currentLevel = LevelManager.currentLevel
         let gold = UserDefaultsService.gold
-        let donationBalls = UserDefaultsService.donationBalls
+        let donationBalls = UserDefaultsService.donationCurrency
         if currentLevel < levelRequired {
             buyLabel.isHidden = true
             levelRequiredLabel.textColor = UIColor.destructiveColor
@@ -149,6 +164,7 @@ class BuyAlertView: UIView {
             buyDonationWidthConstraint.constant = 0
             buyDonationButton.isHidden = true
             buyGoldWidthConstraint.constant = width
+            buyGoldButton.layoutIfNeeded()
         }
         else {
             buyDonationWidthConstraint.constant = width / 2

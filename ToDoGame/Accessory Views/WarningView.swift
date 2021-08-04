@@ -28,6 +28,7 @@ class WarningView: UIView {
         container.backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         label.textColor = UIColor.textColor
         label.font = UIFont.buttonFont
+        label.numberOfLines = 0
         self.isHidden = true
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController {
+class TaskListViewController: UIViewController, ErrorPresenter {
     
     weak var coordinator: TaskListCoordinator?
     
@@ -51,6 +51,7 @@ class TaskListViewController: UIViewController {
     let gamificationOverview = GamificationOverviewView()
     
     var taskListView = TaskListView()
+    var errorView = WarningView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -96,6 +97,8 @@ class TaskListViewController: UIViewController {
         taskListView.didSelectTask = { [unowned self] taskID in
             coordinator?.openTask(id: taskID)
         }
+        
+        setupErrorView()
     }
     
     @objc func addTask() {

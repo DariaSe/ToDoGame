@@ -11,14 +11,14 @@ class TaskListView: UIView {
     
     var swapDelegate: SwapDelegate?
     
-    var tasksManager = TasksManager()
-    
     var tasks: [TaskViewModel] = [] {
         didSet {
-            tasksManager.tasks = tasks
             tableView.reloadData()
         }
     }
+    
+    var activeTasks: [TaskViewModel] { tasks.filter { !$0.isDone } }
+    var completedTasks: [TaskViewModel] { tasks.filter { $0.isDone } }
  
     var setCompletedOrCancel: ((Int) -> Void)?
     var deleteTask: ((Int) -> Void)?
@@ -57,7 +57,7 @@ class TaskListView: UIView {
     func animateCompletion(at indexPath: IndexPath, completion: @escaping (() -> Void)) {
         guard indexPath.section == 0 else { completion(); return }
         let cell = self.tableView.cellForRow(at: indexPath) as! TaskTableViewCell
-        let task = tasksManager.activeTasks[indexPath.row]
+        let task = activeTasks[indexPath.row]
         cell.taskView.update(title: task.title, isDone: true, color: task.color)
         let snapshot = cell.taskView.snapshot
         snapshotView.image = snapshot
@@ -99,7 +99,7 @@ class TaskListView: UIView {
             swapDelegate?.beginSwapping()
             tableView.bringSubviewToFront(snapshotView)
             sourceIndexPath = indexPath
-            let task = tasksManager.activeTasks[indexPath.row]
+            let task = activeTasks[indexPath.row]
             firstTaskID = task.id
             let cell = self.tableView.cellForRow(at: indexPath) as! TaskTableViewCell
             let snapshot = cell.taskView.snapshot
@@ -122,7 +122,7 @@ class TaskListView: UIView {
             snapshotView.center.y = location.y
             if indexPath != sourceIndexPath {
                 tableView.moveRow(at: sourceIndexPath!, to: indexPath)
-                secondTaskID = tasksManager.activeTasks[indexPath.row].id
+                secondTaskID = activeTasks[indexPath.row].id
                 if let firstID = firstTaskID, let secondID = secondTaskID, firstID != secondID {
                     swapDelegate?.swap(firstID: firstID, secondID: secondID)
                 }
@@ -154,15 +154,15 @@ class TaskListView: UIView {
 extension TaskListView: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return tasksManager.completedTasks.isEmpty ? 1 : 2
+        return completedTasks.isEmpty ? 1 : 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return tasksManager.activeTasks.count
+            return activeTasks.count
         }
         else {
-            return tasksManager.completedTasks.count
+            return completedTasks.count
         }
     }
     
@@ -170,10 +170,10 @@ extension TaskListView: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as! TaskTableViewCell
         var task: TaskViewModel
         if indexPath.section == 0 {
-            task = tasksManager.activeTasks[indexPath.row]
+            task = activeTasks[indexPath.row]
         }
         else {
-            task = tasksManager.completedTasks[indexPath.row]
+            task = completedTasks[indexPath.row]
         }
         cell.taskView.buttonPressed = { [unowned self] in
             self.animateCompletion(at: indexPath) {
@@ -188,7 +188,7 @@ extension TaskListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-            if !tasksManager.activeTasks.isEmpty {
+            if !activeTasks.isEmpty {
                 return Strings.active
             }
             else {
@@ -207,10 +207,10 @@ extension TaskListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var task: TaskViewModel
         if indexPath.section == 0 {
-            task = tasksManager.activeTasks[indexPath.row]
+            task = activeTasks[indexPath.row]
         }
         else {
-            task = tasksManager.completedTasks[indexPath.row]
+            task = completedTasks[indexPath.row]
         }
         didSelectTask?(task.id)
     }
@@ -223,10 +223,10 @@ extension TaskListView: UITableViewDelegate {
         let deleteAction = UITableViewRowAction(style: .destructive, title: Strings.delete) { [unowned self] (_, indexPath) in
             var task: TaskViewModel
             if indexPath.section == 0 {
-                task = tasksManager.activeTasks[indexPath.row]
+                task = activeTasks[indexPath.row]
             }
             else {
-                task = tasksManager.completedTasks[indexPath.row]
+                task = completedTasks[indexPath.row]
             }
             deleteTask?(task.id)
         }

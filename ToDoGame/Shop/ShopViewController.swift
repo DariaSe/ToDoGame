@@ -36,7 +36,7 @@ class ShopViewController: UIViewController {
         view.pinToEdges(subview: shadowingView)
         shadowingView.backgroundColor = UIColor.gray.withAlphaComponent(0.4)
         buyAlertView.center(in: view)
-        buyAlertView.setDimensions(width: 200, height: 300)
+        buyAlertView.setDimensions(width: 240, height: 300)
         let tapRecognizer = UITapGestureRecognizer()
         tapRecognizer.addTarget(self, action: #selector(tapped))
         shadowingView.addGestureRecognizer(tapRecognizer)
@@ -113,5 +113,8 @@ extension ShopViewController: UICollectionViewDelegate {
         buyAlertView.isHidden = false
         let item = shopItems[indexPath.section][indexPath.row]
         buyAlertView.update(with: item)
+        buyAlertView.didBuyGold = { [unowned self] in
+            
+        }
     }
 }

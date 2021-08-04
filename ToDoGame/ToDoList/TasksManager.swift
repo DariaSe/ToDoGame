@@ -9,10 +9,46 @@ import Foundation
 
 class TasksManager {
     
-    var tasks: [TaskViewModel] = []
+    let apiService = TasksAPIServiceMock()
     
-    var activeTasks: [TaskViewModel] { tasks.filter { !$0.isDone } }
-    var completedTasks: [TaskViewModel] { tasks.filter { $0.isDone } }
+    weak var coordinator: TaskListCoordinator?
     
+    var tasks: [Task] = []
+    
+    func loadTasks(completion: @escaping ([Task], String?) -> Void) {
+        apiService.getTasks { (tasks, error) in
+            if let tasks = tasks, error == nil {
+                self.tasks = tasks
+                completion(tasks, nil)
+            }
+            else if let error = error {
+                completion(Task.loadFromFile() ?? [], error)
+            }
+        }
+    }
+    
+    func newTask(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
+        apiService.newTask(task) { (success, error) in
+            if success, error == nil {
+                
+            }
+        }
+    }
+    
+    func editTask(_ editedTask: Task, completion: @escaping (Bool, String?) -> Void) {
+        
+    }
+    
+    func deleteTask(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
+        
+    }
+    
+    func setCompletedOrCancel(taskID: Int, date: Date, completion: @escaping (Bool, String?) -> Void) {
+        
+    }
+    
+    func save(tasks: [Task]) {
+        Task.saveToFile(tasks: tasks)
+    }
 }
 

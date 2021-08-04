@@ -10,6 +10,7 @@ import UIKit
 class TaskListCoordinator {
     
     let storageManager = StorageManager()
+    let tasksManager = TasksManager()
     let viewModelFactory = TaskViewModelFactory()
     
     let taskListVC = TaskListViewController()
@@ -43,11 +44,25 @@ class TaskListCoordinator {
         taskListVC.taskListView.swapDelegate = self
         gameCoordinator.taskCoordinator = self
         gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: UserDefaultsService.experience, water: UserDefaultsService.water, gold: UserDefaultsService.gold)
+        tasksManager.coordinator = self
+        loadCachedTasks()
+        getTasks()
+    }
+    
+    func loadCachedTasks() {
+        let cachedTasks = Task.loadFromFile() ?? []
+        tasks = cachedTasks.sorted()
     }
     
     func getTasks() {
-        let tasks = storageManager.loadTasks()
-        self.tasks = tasks.sorted()
+        tasksManager.loadTasks { tasks, error in
+            DispatchQueue.main.async {
+                self.tasks = tasks.sorted()
+                if let error = error {
+                    print(error)
+                }
+            }
+        }
     }
     
     func askForDeletion(taskID: Int) {
@@ -124,6 +139,10 @@ class TaskListCoordinator {
         }
         storageManager.save(tasks: tasks)
         taskListVC.date = task.closestDate
+    }
+    
+    func showError(_ error: String) {
+        
     }
 }
 

@@ -17,7 +17,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         taskListCoordinator.start()
-        taskListCoordinator.getTasks()
         inventoryCoordinator.start()
         shopCoordinator.start()
         questsCoordinator.start()

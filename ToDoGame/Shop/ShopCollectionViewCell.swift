@@ -35,7 +35,7 @@ class ShopCollectionViewCell: UICollectionViewCell {
         containerView.layer.cornerRadius = 18
         containerView.layer.shadowOffset = CGSize(width: 0, height: 3)
         containerView.layer.shadowRadius = 4
-        containerView.layer.shadowColor = UIColor.blue.cgColor
+        containerView.layer.shadowColor = UIColor.black.cgColor
         containerView.layer.shadowOpacity = 0.16
         containerView.layer.borderWidth = 1.0
         containerView.layer.borderColor = UIColor(netHex: 0xf5f5f5).cgColor

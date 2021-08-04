@@ -137,6 +137,16 @@
 		DAF3CD1526B86F820067069D /* ShopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD1426B86F820067069D /* ShopCollectionViewCell.swift */; };
 		DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD2226B95A550067069D /* ShopHeaderReusableView.swift */; };
 		DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD2E26B966D60067069D /* BuyAlertView.swift */; };
+		DAF3CD3626BAB63B0067069D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD3526BAB63B0067069D /* User.swift */; };
+		DAF3CD3E26BAB8820067069D /* App URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD3D26BAB8820067069D /* App URLs.swift */; };
+		DAF3CD4B26BAB8BB0067069D /* p_UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD4A26BAB8BB0067069D /* p_UserAPIService.swift */; };
+		DAF3CD5726BABA900067069D /* UserAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD5626BABA900067069D /* UserAPIServiceMock.swift */; };
+		DAF3CD5E26BABB8D0067069D /* UserAPIServiceMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD5D26BABB8D0067069D /* UserAPIServiceMain.swift */; };
+		DAF3CD6626BABCA80067069D /* p_TasksAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD6526BABCA80067069D /* p_TasksAPIService.swift */; };
+		DAF3CD7226BAF6500067069D /* TasksAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD7126BAF6500067069D /* TasksAPIServiceMock.swift */; };
+		DAF3CD7926BAF6DB0067069D /* TasksAPIServiceMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD7826BAF6DB0067069D /* TasksAPIServiceMain.swift */; };
+		DAF3CD8426BAFA160067069D /* p_LoginAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD8326BAFA160067069D /* p_LoginAPIService.swift */; };
+		DAF3CD9526BB21150067069D /* p_ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -333,6 +343,16 @@
 		DAF3CD1426B86F820067069D /* ShopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAF3CD2226B95A550067069D /* ShopHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopHeaderReusableView.swift; sourceTree = "<group>"; };
 		DAF3CD2E26B966D60067069D /* BuyAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyAlertView.swift; sourceTree = "<group>"; };
+		DAF3CD3526BAB63B0067069D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DAF3CD3D26BAB8820067069D /* App URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App URLs.swift"; sourceTree = "<group>"; };
+		DAF3CD4A26BAB8BB0067069D /* p_UserAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_UserAPIService.swift; sourceTree = "<group>"; };
+		DAF3CD5626BABA900067069D /* UserAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIServiceMock.swift; sourceTree = "<group>"; };
+		DAF3CD5D26BABB8D0067069D /* UserAPIServiceMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPIServiceMain.swift; sourceTree = "<group>"; };
+		DAF3CD6526BABCA80067069D /* p_TasksAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_TasksAPIService.swift; sourceTree = "<group>"; };
+		DAF3CD7126BAF6500067069D /* TasksAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIServiceMock.swift; sourceTree = "<group>"; };
+		DAF3CD7826BAF6DB0067069D /* TasksAPIServiceMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIServiceMain.swift; sourceTree = "<group>"; };
+		DAF3CD8326BAFA160067069D /* p_LoginAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_LoginAPIService.swift; sourceTree = "<group>"; };
+		DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_ErrorPresenter.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +403,7 @@
 		DA22EF8626344B6E00F6D4E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				DA22F110265B95A900F6D4E9 /* TasksManager.swift */,
 				DA22EFA226455DFA00F6D4E9 /* TaskListCoordinator.swift */,
 				DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */,
 				DA76BED32691F5D4009BAFD1 /* GamificationOverviewView.swift */,
@@ -390,7 +411,6 @@
 				DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */,
 				DA22EF9C263452DA00F6D4E9 /* TaskTableViewCell.swift */,
 				DA22F129265F941D00F6D4E9 /* TaskCellView.swift */,
-				DA22F110265B95A900F6D4E9 /* TasksManager.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -663,6 +683,7 @@
 		DA95989E2691DF2500D88CAC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				DAF3CD3526BAB63B0067069D /* User.swift */,
 				DA95989F2691DF5000D88CAC /* Buff.swift */,
 				DA76BEE0269391B6009BAFD1 /* Level.swift */,
 				DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */,
@@ -670,6 +691,61 @@
 				DAF3CCFF26B867580067069D /* p_ShopItem.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		DAF3CD3C26BAB8670067069D /* API Services */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CD3D26BAB8820067069D /* App URLs.swift */,
+				DAF3CD8226BAF9FE0067069D /* LoginAPIService */,
+				DAF3CD4926BAB8B10067069D /* UserAPIService */,
+				DAF3CD6426BABC8D0067069D /* TasksAPIService */,
+				DAF3CD8026BAF76D0067069D /* InventoryAPIService */,
+				DAF3CD7F26BAF72F0067069D /* ShopAPIService */,
+			);
+			path = "API Services";
+			sourceTree = "<group>";
+		};
+		DAF3CD4926BAB8B10067069D /* UserAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CD4A26BAB8BB0067069D /* p_UserAPIService.swift */,
+				DAF3CD5626BABA900067069D /* UserAPIServiceMock.swift */,
+				DAF3CD5D26BABB8D0067069D /* UserAPIServiceMain.swift */,
+			);
+			path = UserAPIService;
+			sourceTree = "<group>";
+		};
+		DAF3CD6426BABC8D0067069D /* TasksAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CD6526BABCA80067069D /* p_TasksAPIService.swift */,
+				DAF3CD7126BAF6500067069D /* TasksAPIServiceMock.swift */,
+				DAF3CD7826BAF6DB0067069D /* TasksAPIServiceMain.swift */,
+			);
+			path = TasksAPIService;
+			sourceTree = "<group>";
+		};
+		DAF3CD7F26BAF72F0067069D /* ShopAPIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShopAPIService;
+			sourceTree = "<group>";
+		};
+		DAF3CD8026BAF76D0067069D /* InventoryAPIService */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InventoryAPIService;
+			sourceTree = "<group>";
+		};
+		DAF3CD8226BAF9FE0067069D /* LoginAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CD8326BAFA160067069D /* p_LoginAPIService.swift */,
+			);
+			path = LoginAPIService;
 			sourceTree = "<group>";
 		};
 		DAF91486262B4E1500ACF14D = {
@@ -703,8 +779,10 @@
 				DA95987A268C8C0200D88CAC /* Core Data */,
 				DAF91492262B4E1500ACF14D /* AppDelegate.swift */,
 				DA22F0A9265565B200F6D4E9 /* p_KeyboardHandler.swift */,
+				DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */,
 				DA22EFC82645772B00F6D4E9 /* StorageManager.swift */,
 				DA22F115265CE58500F6D4E9 /* UserDefaultsService.swift */,
+				DAF3CD3C26BAB8670067069D /* API Services */,
 				DA76BFED26B81427009BAFD1 /* TabBarController */,
 				DA22EF8626344B6E00F6D4E9 /* ToDoList */,
 				DA22EF8826344B9E00F6D4E9 /* Single Task */,
@@ -992,18 +1070,23 @@
 				DA95986A2680973400D88CAC /* WarningView.swift in Sources */,
 				DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */,
 				DA95978326736B2500D88CAC /* RadioButton.swift in Sources */,
+				DAF3CD6626BABCA80067069D /* p_TasksAPIService.swift in Sources */,
 				DA95987F268C8C5600D88CAC /* CDTask+CoreDataClass.swift in Sources */,
 				DAF3CD0E26B86C1B0067069D /* GardenCollectionViewCell.swift in Sources */,
 				DA95985F2680961B00D88CAC /* e_UIViewController.swift in Sources */,
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
+				DAF3CD8426BAFA160067069D /* p_LoginAPIService.swift in Sources */,
 				DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */,
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
+				DAF3CD5726BABA900067069D /* UserAPIServiceMock.swift in Sources */,
 				DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
 				DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */,
 				DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */,
+				DAF3CD7926BAF6DB0067069D /* TasksAPIServiceMain.swift in Sources */,
 				DA76BFC926B2B8A8009BAFD1 /* WaterManager.swift in Sources */,
+				DAF3CD3626BAB63B0067069D /* User.swift in Sources */,
 				DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */,
 				DA22EFA326455DFA00F6D4E9 /* TaskListCoordinator.swift in Sources */,
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
@@ -1011,11 +1094,13 @@
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
 				DA959847267F777100D88CAC /* ColorCheckboxView.swift in Sources */,
 				DA76BFEF26B81487009BAFD1 /* MainTabBarController.swift in Sources */,
+				DAF3CD9526BB21150067069D /* p_ErrorPresenter.swift in Sources */,
 				DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */,
 				DA9598762687539800D88CAC /* GameCoordinator.swift in Sources */,
 				DA9597AC267A0C3100D88CAC /* RepeatChoiceView.swift in Sources */,
 				DA95979226765D3800D88CAC /* TaskInputView.swift in Sources */,
 				DA22EFD92645A6DA00F6D4E9 /* RecurrenceRule.swift in Sources */,
+				DAF3CD5E26BABB8D0067069D /* UserAPIServiceMain.swift in Sources */,
 				DA22F09226555E8000F6D4E9 /* DropdownButton.swift in Sources */,
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
 				DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */,
@@ -1055,15 +1140,18 @@
 				DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */,
 				DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */,
 				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
+				DAF3CD3E26BAB8820067069D /* App URLs.swift in Sources */,
 				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,
 				DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */,
 				DA22F0C42656509400F6D4E9 /* TagCollectionViewCell.swift in Sources */,
+				DAF3CD7226BAF6500067069D /* TasksAPIServiceMock.swift in Sources */,
 				DA22F0A02655642200F6D4E9 /* Colors.swift in Sources */,
 				DA22F098265563E900F6D4E9 /* SizeConstants.swift in Sources */,
 				DA9597B6267A0CBF00D88CAC /* RadioSwitchTableViewCell.swift in Sources */,
 				DA959808267B4BDA00D88CAC /* CalendarCollectionViewCell.swift in Sources */,
 				DA9597F8267A7F4400D88CAC /* AppTextField.swift in Sources */,
 				DA959817267BAE9A00D88CAC /* WeekdaySymbolsView.swift in Sources */,
+				DAF3CD4B26BAB8BB0067069D /* p_UserAPIService.swift in Sources */,
 				DA959880268C8C5600D88CAC /* CDTask+CoreDataProperties.swift in Sources */,
 				DA76BF74269C6200009BAFD1 /* e_Date TaskFactory.swift in Sources */,
 				DA959839267F5C4800D88CAC /* RepeatingChoiceView.swift in Sources */,

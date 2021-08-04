@@ -21,4 +21,12 @@ class ShopCoordinator {
         let plants = PlantSpecies.plants
         shopVC.shopItems = [plants]
     }
+    
+    func buyItemGold(itemID: Int) {
+        
+    }
+    
+    func buyItemDonation(itemID: Int) {
+        
+    }
 }

@@ -41,9 +41,9 @@ class UserDefaultsService {
         get { defaults.integer(forKey: firewoodKey) }
         set(newValue) { defaults.set(newValue, forKey: firewoodKey) } }
     
-    static var donationBalls: Int {
-        get { defaults.integer(forKey: donationBallsKey) }
-        set(newValue) { defaults.set(newValue, forKey: donationBallsKey) } }
+    static var donationCurrency: Int {
+        get { defaults.integer(forKey: donationCurrencyKey) }
+        set(newValue) { defaults.set(newValue, forKey: donationCurrencyKey) } }
 
     
     // MARK: - Keys
@@ -55,7 +55,7 @@ class UserDefaultsService {
     static let goldKey = "gold"
     static let fertilizerKey = "fertilizer"
     static let firewoodKey = "firewood"
-    static let donationBallsKey = "donationBalls"
+    static let donationCurrencyKey = "donationCurrency"
     
     // MARK: - Setting default values
     
@@ -79,8 +79,8 @@ class UserDefaultsService {
         if defaults.value(forKey: firewoodKey) == nil {
             defaults.set(0, forKey: firewoodKey)
         }
-        if defaults.value(forKey: donationBallsKey) == nil {
-            defaults.set(0, forKey: donationBallsKey)
+        if defaults.value(forKey: donationCurrencyKey) == nil {
+            defaults.set(0, forKey: donationCurrencyKey)
         }
     }
 }
