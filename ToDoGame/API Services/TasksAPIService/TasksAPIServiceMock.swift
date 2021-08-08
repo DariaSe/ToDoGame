@@ -13,15 +13,15 @@ class TasksAPIServiceMock: TasksAPIService {
         completion(Task.loadFromFile(), nil)
     }
     
-    func newTask(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
+    func new(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
         completion(true, nil)
     }
     
-    func editTask(_ editedTask: Task, completion: @escaping (Bool, String?) -> Void) {
+    func edit(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
         completion(true, nil)
     }
     
-    func deleteTask(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
+    func delete(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
         completion(true, nil)
     }
     

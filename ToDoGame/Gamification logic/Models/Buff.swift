@@ -8,16 +8,8 @@
 import UIKit
 
 struct Buff {
-    var title: String
-    var image: UIImage?
-    var types: [BuffType]
+    var experience: Int
+    var gold: Int
+    var water: Int
     var multiplier: Double
-    var levelRequired: Int = 1
-}
-
-enum BuffType: Int {
-    case experience
-    case gold
-    case growth
-    case yield
 }

@@ -138,8 +138,8 @@ class BuyAlertView: UIView {
         donationLabel.text = item.buyCostDonation.string
         goldLabel.text = item.buyCostGold.string
         let currentLevel = LevelManager.currentLevel
-        let gold = UserDefaultsService.gold
-        let donationBalls = UserDefaultsService.donationCurrency
+        let gold = UserService.shared.user.gold
+        let donationBalls = UserService.shared.user.donationCurrency
         if currentLevel < levelRequired {
             buyLabel.isHidden = true
             levelRequiredLabel.textColor = UIColor.destructiveColor

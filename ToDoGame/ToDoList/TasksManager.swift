@@ -10,34 +10,59 @@ import Foundation
 class TasksManager {
     
     let apiService = TasksAPIServiceMock()
+//    let coreDataManager = TaskCoreDataManager()
     
     weak var coordinator: TaskListCoordinator?
     
-    var tasks: [Task] = []
-    
-    func loadTasks(completion: @escaping ([Task], String?) -> Void) {
-        apiService.getTasks { (tasks, error) in
-            if let tasks = tasks, error == nil {
-                self.tasks = tasks
-                completion(tasks, nil)
-            }
-            else if let error = error {
-                completion(Task.loadFromFile() ?? [], error)
+    var tasks: [Task] = [] {
+        didSet {
+            coordinator?.tasks = tasks
+        }
+    }
+  
+    func loadTasks() {
+        apiService.getTasks { [unowned self] (tasks, error) in
+            DispatchQueue.main.async {
+                if let tasks = tasks, error == nil {
+                    self.tasks = tasks
+                }
+                else if let error = error {
+                    self.tasks = Task.loadFromFile() ?? []
+                    coordinator?.showError(error)
+                }
             }
         }
     }
     
-    func newTask(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
-        apiService.newTask(task) { (success, error) in
-            if success, error == nil {
-                
+    func save(_ task: Task) {
+        if let existingTask = tasks.filter({$0.id == task.id}).first {
+            apiService.edit(task) { [unowned self] (success, error) in
+                DispatchQueue.main.async {
+                    if success, error == nil {
+                        tasks.replace(existingTask, with: task)
+                        Task.saveToFile(tasks: tasks)
+                    }
+                    else if let error = error {
+                        coordinator?.showError(error)
+                    }
+                }
+            }
+        }
+        else {
+            apiService.new(task) { [unowned self] (success, error) in
+                DispatchQueue.main.async {
+                    if success, error == nil {
+                        tasks.append(task)
+                        Task.saveToFile(tasks: tasks)
+                    }
+                    else if let error = error {
+                        coordinator?.showError(error)
+                    }
+                }
             }
         }
     }
     
-    func editTask(_ editedTask: Task, completion: @escaping (Bool, String?) -> Void) {
-        
-    }
     
     func deleteTask(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
         
@@ -45,10 +70,6 @@ class TasksManager {
     
     func setCompletedOrCancel(taskID: Int, date: Date, completion: @escaping (Bool, String?) -> Void) {
         
-    }
-    
-    func save(tasks: [Task]) {
-        Task.saveToFile(tasks: tasks)
     }
 }
 

@@ -9,5 +9,5 @@ import Foundation
 
 protocol UserAPIService {
     func getUser(completion: @escaping (User?, String?) -> Void)
-    func post(user: User, completion: @escaping (Bool, String?) -> Void)
+    func save(user: User, completion: @escaping (Bool, String?) -> Void)
 }

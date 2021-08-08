@@ -11,11 +11,11 @@ import WatchConnectivity
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
     let tabBarVC = MainTabBarController()
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
         UserDefaultsService.setDefault()
@@ -23,31 +23,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         if WCSession.isSupported() {
             let session = WCSession.default
-                    session.delegate = self
-                    session.activate()
-                }
+            session.delegate = self
+            session.activate()
+        }
+        UserService.shared.getUser()
+        Reachability.initialize()
         return true
     }
-
+    
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         tabBarVC.taskListCoordinator.taskListVC.date = Date()
     }
     // MARK: - Core Data stack
-
+    
     lazy var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
-        */
+         */
         let container = NSPersistentContainer(name: "ToDoGame")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
                 // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                 
+                
                 /*
                  Typical reasons for an error here include:
                  * The parent directory does not exist, cannot be created, or disallows writing.
@@ -61,9 +63,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
-
+    
     // MARK: - Core Data Saving support
-
+    
     func saveContext () {
         let context = persistentContainer.viewContext
         if context.hasChanges {
@@ -77,11 +79,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 
 extension AppDelegate: WCSessionDelegate {
-
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("Message received: ", message)
         if message.keys.contains("Will activate") {
@@ -105,8 +106,6 @@ extension AppDelegate: WCSessionDelegate {
     func sendMessageToWatch(message: [String : Any]) {
         if WCSession.isSupported() {
             let session = WCSession.default
-//            session.delegate = self
-//            session.activate()
             if session.isReachable {
                 session.sendMessage(message, replyHandler: nil, errorHandler: { error in
                     print("Error sending message",error)
@@ -114,11 +113,11 @@ extension AppDelegate: WCSessionDelegate {
             }
         }
     }
-
+    
     //below 3 functions are needed to be able to connect to several Watches
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-
+    
     func sessionDidDeactivate(_ session: WCSession) {}
-
+    
     func sessionDidBecomeInactive(_ session: WCSession) {}
 }

@@ -13,15 +13,15 @@ class TasksAPIServiceMain: TasksAPIService {
         
     }
     
-    func newTask(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
+    func new(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
         
     }
     
-    func editTask(_ editedTask: Task, completion: @escaping (Bool, String?) -> Void) {
+    func edit(_ task: Task, completion: @escaping (Bool, String?) -> Void) {
         
     }
     
-    func deleteTask(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
+    func delete(taskID: Int, completion: @escaping (Bool, String?) -> Void) {
         
     }
     

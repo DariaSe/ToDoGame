@@ -101,6 +101,11 @@ class TaskListViewController: UIViewController, ErrorPresenter {
         setupErrorView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        coordinator?.updateGameUI()
+    }
+    
     @objc func addTask() {
         coordinator?.showAddTaskScreen(date: date)
     }

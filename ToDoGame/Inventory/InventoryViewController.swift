@@ -10,9 +10,9 @@ import UIKit
 class InventoryViewController: UIViewController {
     
     weak var coordinator: InventoryCoordinator?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = UIColor.backgroundColor
     }
 }

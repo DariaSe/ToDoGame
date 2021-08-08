@@ -60,7 +60,6 @@
 		DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEDB2691F844009BAFD1 /* Tag.swift */; };
 		DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEE0269391B6009BAFD1 /* Level.swift */; };
 		DA76BEE6269458D4009BAFD1 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEE5269458D4009BAFD1 /* LevelManager.swift */; };
-		DA76BEEB2694647B009BAFD1 /* GamificationOverviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEEA2694647A009BAFD1 /* GamificationOverviewService.swift */; };
 		DA76BEF5269C3F52009BAFD1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA76BEF3269C3F52009BAFD1 /* Interface.storyboard */; };
 		DA76BEF7269C3F56009BAFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA76BEF6269C3F56009BAFD1 /* Assets.xcassets */; };
 		DA76BEFE269C3F57009BAFD1 /* ToDoGameWatchApp Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DA76BEFD269C3F57009BAFD1 /* ToDoGameWatchApp Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -80,7 +79,6 @@
 		DA76BF7A269C6233009BAFD1 /* e_Date TaskFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BF73269C6200009BAFD1 /* e_Date TaskFactory.swift */; };
 		DA76BF8A269EEF07009BAFD1 /* e_Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F11D265D11AD00F6D4E9 /* e_Array.swift */; };
 		DA76BFC226B06A69009BAFD1 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFC126B06A68009BAFD1 /* Plant.swift */; };
-		DA76BFC926B2B8A8009BAFD1 /* WaterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFC826B2B8A7009BAFD1 /* WaterManager.swift */; };
 		DA76BFD626B411E1009BAFD1 /* Game.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA76BFD826B411E1009BAFD1 /* Game.strings */; };
 		DA76BFDB26B412C2009BAFD1 /* e_Strings Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */; };
 		DA76BFE726B41817009BAFD1 /* PlantSpecies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */; };
@@ -121,13 +119,10 @@
 		DA9598572680946100D88CAC /* WarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598562680946100D88CAC /* WarningViewController.swift */; };
 		DA95985F2680961B00D88CAC /* e_UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95985E2680961B00D88CAC /* e_UIViewController.swift */; };
 		DA95986A2680973400D88CAC /* WarningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598692680973400D88CAC /* WarningView.swift */; };
-		DA9598762687539800D88CAC /* GameCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598752687539800D88CAC /* GameCoordinator.swift */; };
 		DA95987F268C8C5600D88CAC /* CDTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987B268C8C5600D88CAC /* CDTask+CoreDataClass.swift */; };
 		DA959880268C8C5600D88CAC /* CDTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987C268C8C5600D88CAC /* CDTask+CoreDataProperties.swift */; };
 		DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987D268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift */; };
 		DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987E268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift */; };
-		DA9598952691DE4500D88CAC /* ExperienceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598942691DE4500D88CAC /* ExperienceManager.swift */; };
-		DA95989A2691DE5B00D88CAC /* GoldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA9598992691DE5B00D88CAC /* GoldManager.swift */; };
 		DA9598A02691DF5000D88CAC /* Buff.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95989F2691DF5000D88CAC /* Buff.swift */; };
 		DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */; };
 		DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */; };
@@ -147,6 +142,21 @@
 		DAF3CD7926BAF6DB0067069D /* TasksAPIServiceMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD7826BAF6DB0067069D /* TasksAPIServiceMain.swift */; };
 		DAF3CD8426BAFA160067069D /* p_LoginAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD8326BAFA160067069D /* p_LoginAPIService.swift */; };
 		DAF3CD9526BB21150067069D /* p_ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */; };
+		DAF3CD9C26BC12350067069D /* Potion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CD9B26BC12350067069D /* Potion.swift */; };
+		DAF3CDA326BC20910067069D /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDA226BC20910067069D /* Fruits.swift */; };
+		DAF3CDAA26BC25470067069D /* PotionRecipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDA926BC25470067069D /* PotionRecipe.swift */; };
+		DAF3CDB626BC262B0067069D /* Stone.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDB526BC262B0067069D /* Stone.swift */; };
+		DAF3CDBE26BD43AD0067069D /* TasksUserCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDBD26BD43AD0067069D /* TasksUserCoordinator.swift */; };
+		DAF3CDCA26BD43C70067069D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDC926BD43C70067069D /* UserService.swift */; };
+		DAF3CDD126BD527E0067069D /* BuffService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDD026BD527E0067069D /* BuffService.swift */; };
+		DAF3CDD926BD5BB80067069D /* p_BuffAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDD826BD5BB80067069D /* p_BuffAPIService.swift */; };
+		DAF3CDE526BD5E760067069D /* BuffAPIServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDE426BD5E760067069D /* BuffAPIServiceMock.swift */; };
+		DAF3CDEC26BD60080067069D /* BuffPotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDEB26BD60080067069D /* BuffPotion.swift */; };
+		DAF3CDF426BD84960067069D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDF326BD84960067069D /* Reachability.swift */; };
+		DAF3CDFB26BD84EB0067069D /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CDFA26BD84EB0067069D /* Network.swift */; };
+		DAF3CE0226BFD2960067069D /* ReachabilityTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CE0126BFD2960067069D /* ReachabilityTestViewController.swift */; };
+		DAF3CE0926BFF2480067069D /* e_NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CE0826BFF2480067069D /* e_NotificationName.swift */; };
+		DAF3CE1526BFF4E50067069D /* TaskListGameViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CE1426BFF4E50067069D /* TaskListGameViewCoordinator.swift */; };
 		DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91492262B4E1500ACF14D /* AppDelegate.swift */; };
 		DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF91496262B4E1500ACF14D /* ViewController.swift */; };
 		DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DAF9149B262B4E1500ACF14D /* ToDoGame.xcdatamodeld */; };
@@ -269,7 +279,6 @@
 		DA76BEDB2691F844009BAFD1 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
 		DA76BEE0269391B6009BAFD1 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DA76BEE5269458D4009BAFD1 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
-		DA76BEEA2694647A009BAFD1 /* GamificationOverviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamificationOverviewService.swift; sourceTree = "<group>"; };
 		DA76BEF1269C3F52009BAFD1 /* ToDoGameWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGameWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA76BEF4269C3F52009BAFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		DA76BEF6269C3F56009BAFD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -285,7 +294,6 @@
 		DA76BF32269C54D6009BAFD1 /* TableRowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableRowController.swift; sourceTree = "<group>"; };
 		DA76BF73269C6200009BAFD1 /* e_Date TaskFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "e_Date TaskFactory.swift"; sourceTree = "<group>"; };
 		DA76BFC126B06A68009BAFD1 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
-		DA76BFC826B2B8A7009BAFD1 /* WaterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterManager.swift; sourceTree = "<group>"; };
 		DA76BFD726B411E1009BAFD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Game.strings; sourceTree = "<group>"; };
 		DA76BFD926B411E7009BAFD1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Game.strings; sourceTree = "<group>"; };
 		DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "e_Strings Game.swift"; sourceTree = "<group>"; };
@@ -327,13 +335,10 @@
 		DA9598562680946100D88CAC /* WarningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningViewController.swift; sourceTree = "<group>"; };
 		DA95985E2680961B00D88CAC /* e_UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIViewController.swift; sourceTree = "<group>"; };
 		DA9598692680973400D88CAC /* WarningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningView.swift; sourceTree = "<group>"; };
-		DA9598752687539800D88CAC /* GameCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCoordinator.swift; sourceTree = "<group>"; };
 		DA95987B268C8C5600D88CAC /* CDTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA95987C268C8C5600D88CAC /* CDTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA95987D268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecurrenceRule+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA95987E268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecurrenceRule+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		DA9598942691DE4500D88CAC /* ExperienceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExperienceManager.swift; sourceTree = "<group>"; };
-		DA9598992691DE5B00D88CAC /* GoldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoldManager.swift; sourceTree = "<group>"; };
 		DA95989F2691DF5000D88CAC /* Buff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buff.swift; sourceTree = "<group>"; };
 		DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCoordinator.swift; sourceTree = "<group>"; };
 		DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsCoordinator.swift; sourceTree = "<group>"; };
@@ -353,6 +358,21 @@
 		DAF3CD7826BAF6DB0067069D /* TasksAPIServiceMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksAPIServiceMain.swift; sourceTree = "<group>"; };
 		DAF3CD8326BAFA160067069D /* p_LoginAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_LoginAPIService.swift; sourceTree = "<group>"; };
 		DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_ErrorPresenter.swift; sourceTree = "<group>"; };
+		DAF3CD9B26BC12350067069D /* Potion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Potion.swift; sourceTree = "<group>"; };
+		DAF3CDA226BC20910067069D /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
+		DAF3CDA926BC25470067069D /* PotionRecipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PotionRecipe.swift; sourceTree = "<group>"; };
+		DAF3CDB526BC262B0067069D /* Stone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stone.swift; sourceTree = "<group>"; };
+		DAF3CDBD26BD43AD0067069D /* TasksUserCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksUserCoordinator.swift; sourceTree = "<group>"; };
+		DAF3CDC926BD43C70067069D /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		DAF3CDD026BD527E0067069D /* BuffService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffService.swift; sourceTree = "<group>"; };
+		DAF3CDD826BD5BB80067069D /* p_BuffAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_BuffAPIService.swift; sourceTree = "<group>"; };
+		DAF3CDE426BD5E760067069D /* BuffAPIServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffAPIServiceMock.swift; sourceTree = "<group>"; };
+		DAF3CDEB26BD60080067069D /* BuffPotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuffPotion.swift; sourceTree = "<group>"; };
+		DAF3CDF326BD84960067069D /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DAF3CDFA26BD84EB0067069D /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		DAF3CE0126BFD2960067069D /* ReachabilityTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityTestViewController.swift; sourceTree = "<group>"; };
+		DAF3CE0826BFF2480067069D /* e_NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_NotificationName.swift; sourceTree = "<group>"; };
+		DAF3CE1426BFF4E50067069D /* TaskListGameViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListGameViewCoordinator.swift; sourceTree = "<group>"; };
 		DAF9148F262B4E1500ACF14D /* ToDoGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAF91492262B4E1500ACF14D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DAF91496262B4E1500ACF14D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -403,11 +423,12 @@
 		DA22EF8626344B6E00F6D4E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				DA22F110265B95A900F6D4E9 /* TasksManager.swift */,
 				DA22EFA226455DFA00F6D4E9 /* TaskListCoordinator.swift */,
+				DAF3CDBD26BD43AD0067069D /* TasksUserCoordinator.swift */,
+				DA22F110265B95A900F6D4E9 /* TasksManager.swift */,
+				DAF3CDD026BD527E0067069D /* BuffService.swift */,
 				DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */,
 				DA76BED32691F5D4009BAFD1 /* GamificationOverviewView.swift */,
-				DA76BEEA2694647A009BAFD1 /* GamificationOverviewService.swift */,
 				DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */,
 				DA22EF9C263452DA00F6D4E9 /* TaskTableViewCell.swift */,
 				DA22F129265F941D00F6D4E9 /* TaskCellView.swift */,
@@ -444,6 +465,7 @@
 				DA22F11D265D11AD00F6D4E9 /* e_Array.swift */,
 				DA22F122265D1D2B00F6D4E9 /* e_UIAlertController.swift */,
 				DA9597DE267A5B7500D88CAC /* e_Int.swift */,
+				DAF3CE0826BFF2480067069D /* e_NotificationName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -659,10 +681,7 @@
 		DA959871268752F500D88CAC /* Gamification logic */ = {
 			isa = PBXGroup;
 			children = (
-				DA9598752687539800D88CAC /* GameCoordinator.swift */,
-				DA9598942691DE4500D88CAC /* ExperienceManager.swift */,
-				DA9598992691DE5B00D88CAC /* GoldManager.swift */,
-				DA76BFC826B2B8A7009BAFD1 /* WaterManager.swift */,
+				DAF3CE1426BFF4E50067069D /* TaskListGameViewCoordinator.swift */,
 				DA76BEE5269458D4009BAFD1 /* LevelManager.swift */,
 				DA95989E2691DF2500D88CAC /* Models */,
 			);
@@ -688,7 +707,12 @@
 				DA76BEE0269391B6009BAFD1 /* Level.swift */,
 				DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */,
 				DA76BFC126B06A68009BAFD1 /* Plant.swift */,
+				DAF3CDA226BC20910067069D /* Fruits.swift */,
 				DAF3CCFF26B867580067069D /* p_ShopItem.swift */,
+				DAF3CD9B26BC12350067069D /* Potion.swift */,
+				DAF3CDEB26BD60080067069D /* BuffPotion.swift */,
+				DAF3CDA926BC25470067069D /* PotionRecipe.swift */,
+				DAF3CDB526BC262B0067069D /* Stone.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -699,6 +723,7 @@
 				DAF3CD3D26BAB8820067069D /* App URLs.swift */,
 				DAF3CD8226BAF9FE0067069D /* LoginAPIService */,
 				DAF3CD4926BAB8B10067069D /* UserAPIService */,
+				DAF3CDD726BD5BA00067069D /* BuffAPIService */,
 				DAF3CD6426BABC8D0067069D /* TasksAPIService */,
 				DAF3CD8026BAF76D0067069D /* InventoryAPIService */,
 				DAF3CD7F26BAF72F0067069D /* ShopAPIService */,
@@ -748,6 +773,33 @@
 			path = LoginAPIService;
 			sourceTree = "<group>";
 		};
+		DAF3CDBC26BC5A3E0067069D /* UserServices */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CDC926BD43C70067069D /* UserService.swift */,
+			);
+			path = UserServices;
+			sourceTree = "<group>";
+		};
+		DAF3CDD726BD5BA00067069D /* BuffAPIService */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CDD826BD5BB80067069D /* p_BuffAPIService.swift */,
+				DAF3CDE426BD5E760067069D /* BuffAPIServiceMock.swift */,
+			);
+			path = BuffAPIService;
+			sourceTree = "<group>";
+		};
+		DAF3CDF226BD84620067069D /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DAF3CDF326BD84960067069D /* Reachability.swift */,
+				DAF3CDFA26BD84EB0067069D /* Network.swift */,
+				DAF3CE0126BFD2960067069D /* ReachabilityTestViewController.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 		DAF91486262B4E1500ACF14D = {
 			isa = PBXGroup;
 			children = (
@@ -782,6 +834,7 @@
 				DAF3CD9426BB21150067069D /* p_ErrorPresenter.swift */,
 				DA22EFC82645772B00F6D4E9 /* StorageManager.swift */,
 				DA22F115265CE58500F6D4E9 /* UserDefaultsService.swift */,
+				DAF3CDBC26BC5A3E0067069D /* UserServices */,
 				DAF3CD3C26BAB8670067069D /* API Services */,
 				DA76BFED26B81427009BAFD1 /* TabBarController */,
 				DA22EF8626344B6E00F6D4E9 /* ToDoList */,
@@ -791,6 +844,7 @@
 				DA76C00326B81720009BAFD1 /* Quests */,
 				DAF91496262B4E1500ACF14D /* ViewController.swift */,
 				DA959871268752F500D88CAC /* Gamification logic */,
+				DAF3CDF226BD84620067069D /* Reachability */,
 				DA9598552680940E00D88CAC /* Accessory Views */,
 				DA22F054265556C100F6D4E9 /* Views */,
 				DA22EFBA2645612000F6D4E9 /* Models */,
@@ -1068,6 +1122,7 @@
 				DA22F0AA265565B200F6D4E9 /* p_KeyboardHandler.swift in Sources */,
 				DA22F1492662449900F6D4E9 /* e_String.swift in Sources */,
 				DA95986A2680973400D88CAC /* WarningView.swift in Sources */,
+				DAF3CDAA26BC25470067069D /* PotionRecipe.swift in Sources */,
 				DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */,
 				DA95978326736B2500D88CAC /* RadioButton.swift in Sources */,
 				DAF3CD6626BABCA80067069D /* p_TasksAPIService.swift in Sources */,
@@ -1079,24 +1134,26 @@
 				DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */,
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
 				DAF3CD5726BABA900067069D /* UserAPIServiceMock.swift in Sources */,
+				DAF3CDB626BC262B0067069D /* Stone.swift in Sources */,
 				DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
 				DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */,
 				DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */,
 				DAF3CD7926BAF6DB0067069D /* TasksAPIServiceMain.swift in Sources */,
-				DA76BFC926B2B8A8009BAFD1 /* WaterManager.swift in Sources */,
 				DAF3CD3626BAB63B0067069D /* User.swift in Sources */,
 				DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */,
 				DA22EFA326455DFA00F6D4E9 /* TaskListCoordinator.swift in Sources */,
 				DA22F116265CE58600F6D4E9 /* UserDefaultsService.swift in Sources */,
+				DAF3CDF426BD84960067069D /* Reachability.swift in Sources */,
 				DA95984C267F77A600D88CAC /* ColorCollectionView.swift in Sources */,
 				DA22F05E265557CF00F6D4E9 /* DropdownView.swift in Sources */,
 				DA959847267F777100D88CAC /* ColorCheckboxView.swift in Sources */,
+				DAF3CDD926BD5BB80067069D /* p_BuffAPIService.swift in Sources */,
 				DA76BFEF26B81487009BAFD1 /* MainTabBarController.swift in Sources */,
 				DAF3CD9526BB21150067069D /* p_ErrorPresenter.swift in Sources */,
 				DA22F1332661371300F6D4E9 /* TextViewContainer.swift in Sources */,
-				DA9598762687539800D88CAC /* GameCoordinator.swift in Sources */,
+				DAF3CDBE26BD43AD0067069D /* TasksUserCoordinator.swift in Sources */,
 				DA9597AC267A0C3100D88CAC /* RepeatChoiceView.swift in Sources */,
 				DA95979226765D3800D88CAC /* TaskInputView.swift in Sources */,
 				DA22EFD92645A6DA00F6D4E9 /* RecurrenceRule.swift in Sources */,
@@ -1105,10 +1162,9 @@
 				DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */,
 				DA9597EE267A65BE00D88CAC /* WeekdayCollectionViewCell.swift in Sources */,
 				DA76C01126B8175E009BAFD1 /* QuestsViewController.swift in Sources */,
-				DA76BEEB2694647B009BAFD1 /* GamificationOverviewService.swift in Sources */,
-				DA9598952691DE4500D88CAC /* ExperienceManager.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
 				DA22EFFD26528D3200F6D4E9 /* TaskViewModel.swift in Sources */,
+				DAF3CDFB26BD84EB0067069D /* Network.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
 				DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */,
@@ -1118,28 +1174,33 @@
 				DA959851267F78FF00D88CAC /* ColorCollectionViewCell.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
 				DA959803267B4BCD00D88CAC /* CalendarCollectionView.swift in Sources */,
+				DAF3CD9C26BC12350067069D /* Potion.swift in Sources */,
 				DA22F0B426556D7400F6D4E9 /* AppTextView.swift in Sources */,
 				DA76BEE6269458D4009BAFD1 /* LevelManager.swift in Sources */,
 				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
 				DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */,
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
 				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
+				DAF3CDA326BC20910067069D /* Fruits.swift in Sources */,
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
+				DAF3CDCA26BD43C70067069D /* UserService.swift in Sources */,
 				DA9597FE267B4BAE00D88CAC /* CalendarHeaderView.swift in Sources */,
 				DA76BFE726B41817009BAFD1 /* PlantSpecies.swift in Sources */,
 				DA76BFC226B06A69009BAFD1 /* Plant.swift in Sources */,
 				DAF3CD1526B86F820067069D /* ShopCollectionViewCell.swift in Sources */,
 				DA9597DF267A5B7500D88CAC /* e_Int.swift in Sources */,
+				DAF3CE1526BFF4E50067069D /* TaskListGameViewCoordinator.swift in Sources */,
 				DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */,
 				DA959829267CA25200D88CAC /* NotificationView.swift in Sources */,
 				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
 				DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */,
-				DA95989A2691DE5B00D88CAC /* GoldManager.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */,
 				DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */,
 				DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */,
 				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
+				DAF3CDD126BD527E0067069D /* BuffService.swift in Sources */,
+				DAF3CDEC26BD60080067069D /* BuffPotion.swift in Sources */,
 				DAF3CD3E26BAB8820067069D /* App URLs.swift in Sources */,
 				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,
 				DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */,
@@ -1152,7 +1213,9 @@
 				DA9597F8267A7F4400D88CAC /* AppTextField.swift in Sources */,
 				DA959817267BAE9A00D88CAC /* WeekdaySymbolsView.swift in Sources */,
 				DAF3CD4B26BAB8BB0067069D /* p_UserAPIService.swift in Sources */,
+				DAF3CE0226BFD2960067069D /* ReachabilityTestViewController.swift in Sources */,
 				DA959880268C8C5600D88CAC /* CDTask+CoreDataProperties.swift in Sources */,
+				DAF3CDE526BD5E760067069D /* BuffAPIServiceMock.swift in Sources */,
 				DA76BF74269C6200009BAFD1 /* e_Date TaskFactory.swift in Sources */,
 				DA959839267F5C4800D88CAC /* RepeatingChoiceView.swift in Sources */,
 				DA22EFC92645772B00F6D4E9 /* StorageManager.swift in Sources */,
@@ -1160,6 +1223,7 @@
 				DA22F08D26555BE900F6D4E9 /* Strings.swift in Sources */,
 				DA9597F3267A67ED00D88CAC /* e_Calendar.swift in Sources */,
 				DA76BFF726B816E8009BAFD1 /* InventoryViewController.swift in Sources */,
+				DAF3CE0926BFF2480067069D /* e_NotificationName.swift in Sources */,
 				DA22F11E265D11AD00F6D4E9 /* e_Array.swift in Sources */,
 				DAF3CD0726B86B3C0067069D /* GardenView.swift in Sources */,
 				DA22F12A265F941D00F6D4E9 /* TaskCellView.swift in Sources */,

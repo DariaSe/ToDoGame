@@ -11,6 +11,7 @@ struct PlantSpecies {
     var id: Int
     var title: String
     var description: String
+    var imageName: String
     var buyCostGold: Int
     var buyCostDonation: Int
     var sellCost: Int
@@ -29,6 +30,7 @@ struct PlantSpecies {
         PlantSpecies(id: 1,
                      title: Strings.tomato,
                      description: "",
+                     imageName: "",
                      buyCostGold: 3,
                      buyCostDonation: 0,
                      sellCost: 1,
@@ -44,6 +46,7 @@ struct PlantSpecies {
         PlantSpecies(id: 2,
                      title: Strings.strawberry,
                      description: "",
+                     imageName: "",
                      buyCostGold: 4,
                      buyCostDonation: 0,
                      sellCost: 1,
@@ -59,6 +62,7 @@ struct PlantSpecies {
         PlantSpecies(id: 3,
                      title: Strings.apple,
                      description: "",
+                     imageName: "",
                      buyCostGold: 5,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -74,6 +78,7 @@ struct PlantSpecies {
         PlantSpecies(id: 4,
                      title: Strings.sunflower,
                      description: "",
+                     imageName: "",
                      buyCostGold: 3,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -89,6 +94,7 @@ struct PlantSpecies {
         PlantSpecies(id: 5,
                      title: Strings.walnut,
                      description: "",
+                     imageName: "",
                      buyCostGold: 6,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -104,6 +110,7 @@ struct PlantSpecies {
         PlantSpecies(id: 6,
                      title: Strings.watermelon,
                      description: "",
+                     imageName: "",
                      buyCostGold: 6,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -119,6 +126,7 @@ struct PlantSpecies {
         PlantSpecies(id: 7,
                      title: Strings.cherry,
                      description: "",
+                     imageName: "",
                      buyCostGold: 6,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -134,6 +142,7 @@ struct PlantSpecies {
         PlantSpecies(id: 8,
                      title: Strings.pineapple,
                      description: "",
+                     imageName: "",
                      buyCostGold: 7,
                      buyCostDonation: 1,
                      sellCost: 1,
@@ -149,6 +158,7 @@ struct PlantSpecies {
         PlantSpecies(id: 9,
                      title: Strings.avocado,
                      description: "",
+                     imageName: "",
                      buyCostGold: 8,
                      buyCostDonation: 1,
                      sellCost: 2,
@@ -164,6 +174,7 @@ struct PlantSpecies {
         PlantSpecies(id: 10,
                      title: Strings.coconut,
                      description: "",
+                     imageName: "",
                      buyCostGold: 8,
                      buyCostDonation: 2,
                      sellCost: 2,
@@ -179,6 +190,7 @@ struct PlantSpecies {
         PlantSpecies(id: 11,
                      title: Strings.chiliPepper,
                      description: "",
+                     imageName: "",
                      buyCostGold: 7,
                      buyCostDonation: 2,
                      sellCost: 1,
@@ -194,6 +206,7 @@ struct PlantSpecies {
         PlantSpecies(id: 12,
                      title: Strings.dragonfruit,
                      description: "",
+                     imageName: "",
                      buyCostGold: 10,
                      buyCostDonation: 2,
                      sellCost: 2,

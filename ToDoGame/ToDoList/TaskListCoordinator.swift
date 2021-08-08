@@ -17,8 +17,7 @@ class TaskListCoordinator {
     
     lazy var singleToDoVC = ViewController()
     
-    let gameCoordinator = GameCoordinator()
-    let gamificationOverviewService = GamificationOverviewService()
+    let tasksUserCoordinator = TasksUserCoordinator()
     
     var tasks: [Task] = [] {
         didSet {
@@ -42,11 +41,18 @@ class TaskListCoordinator {
         taskListVC.tabBarItem = UITabBarItem(title: "Tasks", image: UIImage(named: "TaskList"), tag: 0)
         taskListVC.coordinator = self
         taskListVC.taskListView.swapDelegate = self
-        gameCoordinator.taskCoordinator = self
-        gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: UserDefaultsService.experience, water: UserDefaultsService.water, gold: UserDefaultsService.gold)
         tasksManager.coordinator = self
         loadCachedTasks()
         getTasks()
+        updateGameUI()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateGameUI), name: .userChanged, object: nil)
+    }
+    
+    @objc func updateGameUI() {
+        let user = UserService.shared.user
+        let level = LevelManager.currentLevel
+        let nextLevelExp = LevelManager.nextLevelExp
+        taskListVC.gamificationOverview.setup(level: level, currentExp: user.experience, nextLevelExp: nextLevelExp, water: user.water, gold: user.gold)
     }
     
     func loadCachedTasks() {
@@ -55,14 +61,7 @@ class TaskListCoordinator {
     }
     
     func getTasks() {
-        tasksManager.loadTasks { tasks, error in
-            DispatchQueue.main.async {
-                self.tasks = tasks.sorted()
-                if let error = error {
-                    print(error)
-                }
-            }
-        }
+        tasksManager.loadTasks()
     }
     
     func askForDeletion(taskID: Int) {
@@ -97,15 +96,11 @@ class TaskListCoordinator {
         var newTask = task
         if newTask.executionLog.contains(date.dayStart) {
             newTask.executionLog = newTask.executionLog.without(date.dayStart)
-            gameCoordinator.didCancel { experience, water, gold in
-                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, water: water, gold: gold)
-            }
+            tasksUserCoordinator.cancel()
         }
         else {
             newTask.executionLog.append(date.dayStart)
-            gameCoordinator.didSetCompleted { experience, water, gold in
-                gamificationOverviewService.setup(view: taskListVC.gamificationOverview, experience: experience, water: water, gold: gold)
-            }
+            tasksUserCoordinator.setCompleted()
         }
         tasks.replace(task, with: newTask)
         storageManager.save(tasks: tasks)
@@ -131,18 +126,12 @@ class TaskListCoordinator {
     }
     
     func save(task: Task) {
-        if let existingTask = tasks.filter({$0.id == task.id}).first {
-            tasks.replace(existingTask, with: task)
-        }
-        else {
-            tasks.append(task)
-        }
-        storageManager.save(tasks: tasks)
+        tasksManager.save(task)
         taskListVC.date = task.closestDate
     }
     
     func showError(_ error: String) {
-        
+        taskListVC.showError(error)
     }
 }
 
