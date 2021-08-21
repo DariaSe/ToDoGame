@@ -84,7 +84,7 @@ class TaskListView: UIView {
             recognizer.cancel()
             snapshotView.transform = CGAffineTransform.identity
             let cell = tableView.cellForRow(at: sourceIndexPath!) as! TaskTableViewCell
-            cell.taskView.isHidden = false
+            cell.containerView.isHidden = false
             cell.placeholderView.isHidden = true
             snapshotView.frame = CGRect.zero
             return
@@ -108,7 +108,7 @@ class TaskListView: UIView {
             UIView.animate(withDuration: 0.1) {
                 self.snapshotView.transform = CGAffineTransform(rotationAngle: 0.05)
             }
-            cell.taskView.isHidden = true
+            cell.containerView.isHidden = true
             cell.placeholderView.isHidden = false
             
         case .changed:
@@ -145,7 +145,7 @@ class TaskListView: UIView {
         guard indexPath.section != 1 else { return }
         snapshotView.transform = CGAffineTransform.identity
         let cell = tableView.cellForRow(at: indexPath) as! TaskTableViewCell
-        cell.taskView.isHidden = false
+        cell.containerView.isHidden = false
         cell.placeholderView.isHidden = true
         snapshotView.frame = CGRect.zero
     }
@@ -168,6 +168,7 @@ extension TaskListView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TaskTableViewCell.reuseIdentifier, for: indexPath) as! TaskTableViewCell
+        cell.restoreFrame()
         var task: TaskViewModel
         if indexPath.section == 0 {
             task = activeTasks[indexPath.row]
@@ -179,6 +180,16 @@ extension TaskListView: UITableViewDataSource {
             self.animateCompletion(at: indexPath) {
                 self.setCompletedOrCancel?(task.id)
             }
+        }
+        cell.deletePressed = { [unowned self] in
+            var task: TaskViewModel
+            if indexPath.section == 0 {
+                task = activeTasks[indexPath.row]
+            }
+            else {
+                task = completedTasks[indexPath.row]
+            }
+            deleteTask?(task.id)
         }
         cell.taskView.update(title: task.title, isDone: task.isDone, color: task.color)
         cell.showsReorderControl = false
@@ -216,19 +227,12 @@ extension TaskListView: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        return false
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: .destructive, title: Strings.delete) { [unowned self] (_, indexPath) in
-            var task: TaskViewModel
-            if indexPath.section == 0 {
-                task = activeTasks[indexPath.row]
-            }
-            else {
-                task = completedTasks[indexPath.row]
-            }
-            deleteTask?(task.id)
+            
         }
         deleteAction.backgroundColor = UIColor.destructiveColor
         return [deleteAction]

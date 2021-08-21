@@ -53,7 +53,7 @@ class TextViewContainer: UIView {
     
     @objc func showInvalidTextView() {
         if !isValid {
-            textView.layer.borderColor = UIColor.TagColors.red.cgColor
+            textView.layer.borderColor = UIColor.AppColors.red.cgColor
             textView.layer.borderWidth = 2
             textView.shake()
         }

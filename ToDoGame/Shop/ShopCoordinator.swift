@@ -19,7 +19,7 @@ class ShopCoordinator {
     
     func getShopItems() {
         let plants = PlantSpecies.plants
-        shopVC.shopItems = [plants]
+//        shopVC.shopItems = [plants]
     }
     
     func buyItemGold(itemID: Int) {

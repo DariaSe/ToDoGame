@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA20B76A26CFDA890048B500 /* Inventory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B76926CFDA890048B500 /* Inventory.swift */; };
+		DA20B77126CFE89A0048B500 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B77026CFE89A0048B500 /* Seed.swift */; };
+		DA20B78B26D160990048B500 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B78A26D160990048B500 /* GradientViewController.swift */; };
+		DA20B79D26D172DD0048B500 /* DraggableViewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B79C26D172DD0048B500 /* DraggableViewsCoordinator.swift */; };
 		DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */; };
 		DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */; };
 		DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF9426344CA400F6D4E9 /* e_UIView.swift */; };
@@ -223,6 +227,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA20B76926CFDA890048B500 /* Inventory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inventory.swift; sourceTree = "<group>"; };
+		DA20B77026CFE89A0048B500 /* Seed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
+		DA20B78A26D160990048B500 /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
+		DA20B79C26D172DD0048B500 /* DraggableViewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableViewsCoordinator.swift; sourceTree = "<group>"; };
 		DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		DA22EF9426344CA400F6D4E9 /* e_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIView.swift; sourceTree = "<group>"; };
@@ -420,6 +428,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA20B79B26D172BA0048B500 /* DraggableViews */ = {
+			isa = PBXGroup;
+			children = (
+				DA20B79C26D172DD0048B500 /* DraggableViewsCoordinator.swift */,
+			);
+			path = DraggableViews;
+			sourceTree = "<group>";
+		};
 		DA22EF8626344B6E00F6D4E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,6 +502,7 @@
 		DA22F054265556C100F6D4E9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DA20B78A26D160990048B500 /* GradientViewController.swift */,
 				DA22F0B326556D7400F6D4E9 /* AppTextView.swift */,
 				DA9597F7267A7F4400D88CAC /* AppTextField.swift */,
 				DA22F1322661371300F6D4E9 /* TextViewContainer.swift */,
@@ -707,12 +724,14 @@
 				DA76BEE0269391B6009BAFD1 /* Level.swift */,
 				DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */,
 				DA76BFC126B06A68009BAFD1 /* Plant.swift */,
+				DA20B77026CFE89A0048B500 /* Seed.swift */,
 				DAF3CDA226BC20910067069D /* Fruits.swift */,
 				DAF3CCFF26B867580067069D /* p_ShopItem.swift */,
 				DAF3CD9B26BC12350067069D /* Potion.swift */,
 				DAF3CDEB26BD60080067069D /* BuffPotion.swift */,
 				DAF3CDA926BC25470067069D /* PotionRecipe.swift */,
 				DAF3CDB526BC262B0067069D /* Stone.swift */,
+				DA20B76926CFDA890048B500 /* Inventory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -851,6 +870,7 @@
 				DAF9149E262B4E1700ACF14D /* Assets.xcassets */,
 				DAF914A0262B4E1700ACF14D /* LaunchScreen.storyboard */,
 				DAF914A3262B4E1700ACF14D /* Info.plist */,
+				DA20B79B26D172BA0048B500 /* DraggableViews */,
 				DA22F096265563D700F6D4E9 /* Design */,
 				DA22F08C26555BE900F6D4E9 /* Strings.swift */,
 				DA76BFDA26B412C2009BAFD1 /* e_Strings Game.swift */,
@@ -1108,6 +1128,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA20B79D26D172DD0048B500 /* DraggableViewsCoordinator.swift in Sources */,
 				DA22EF9D263452DA00F6D4E9 /* TaskTableViewCell.swift in Sources */,
 				DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */,
 				DA95981F267BCF3400D88CAC /* TimeCheckboxView.swift in Sources */,
@@ -1164,6 +1185,7 @@
 				DA76C01126B8175E009BAFD1 /* QuestsViewController.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
 				DA22EFFD26528D3200F6D4E9 /* TaskViewModel.swift in Sources */,
+				DA20B78B26D160990048B500 /* GradientViewController.swift in Sources */,
 				DAF3CDFB26BD84EB0067069D /* Network.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
@@ -1180,6 +1202,7 @@
 				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
 				DAF91493262B4E1500ACF14D /* AppDelegate.swift in Sources */,
 				DA22EFB12645606600F6D4E9 /* SingleTaskViewController.swift in Sources */,
+				DA20B76A26CFDA890048B500 /* Inventory.swift in Sources */,
 				DA9597C4267A19E000D88CAC /* CheckboxButton.swift in Sources */,
 				DAF3CDA326BC20910067069D /* Fruits.swift in Sources */,
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
@@ -1194,6 +1217,7 @@
 				DA959829267CA25200D88CAC /* NotificationView.swift in Sources */,
 				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
 				DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */,
+				DA20B77126CFE89A0048B500 /* Seed.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */,
 				DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */,

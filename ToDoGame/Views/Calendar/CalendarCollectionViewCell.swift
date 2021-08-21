@@ -29,10 +29,10 @@ class CalendarCollectionViewCell: UICollectionViewCell {
         contentView.pinToEdges(subview: todayCircle)
         label.center(in: contentView)
         selectedCircle.layer.cornerRadius = 20
-        selectedCircle.layer.backgroundColor = UIColor.TagColors.green.cgColor
+        selectedCircle.layer.backgroundColor = UIColor.AppColors.green.cgColor
         todayCircle.layer.cornerRadius = 20
         todayCircle.layer.borderWidth = 2.0
-        todayCircle.layer.borderColor = UIColor.TagColors.green.cgColor
+        todayCircle.layer.borderColor = UIColor.AppColors.green.cgColor
         label.font = UIFont(name: nunitoSemiBold, size: 16)
     }
     

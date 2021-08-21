@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct Fruits {
-    var species: PlantSpecies
+struct Fruit {
+    var type: PlantType
     var imageName: String
-    var quantity: Int
     var sellCost: Int
+    var pcsForFertilizer: Int
+    var quantity: Int
 }

@@ -9,11 +9,12 @@ import UIKit
 
 class GamificationOverviewView: UIView {
     
+    let levelLabel = UILabel()
     let experienceLabel = UILabel()
+    let experienceProgressView = UIProgressView()
+    
     let waterImageView = UIImageView()
     let waterLabel = UILabel()
-    let coinImageView = UIImageView()
-    let goldLabel = UILabel()
     
     let waterImage = UIImage(named: "Water")
     let coinImage = UIImage(named: "Coin")
@@ -28,40 +29,48 @@ class GamificationOverviewView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToLayoutMargins(subview: experienceLabel, trailing: nil)
-        self.pinToLayoutMargins(subview: goldLabel, leading: nil)
-        self.addSubview(coinImageView)
-        coinImageView.translatesAutoresizingMaskIntoConstraints = false
-        coinImageView.centerYAnchor.constraint(equalTo: goldLabel.centerYAnchor).isActive = true
-        coinImageView.trailingAnchor.constraint(equalTo: goldLabel.leadingAnchor, constant: -7).isActive = true
-        coinImageView.setDimensions(width: 30, height: 30)
-        self.addSubview(waterLabel)
-        waterLabel.translatesAutoresizingMaskIntoConstraints = false
-        waterLabel.centerYAnchor.constraint(equalTo: coinImageView.centerYAnchor).isActive = true
-        waterLabel.trailingAnchor.constraint(equalTo: coinImageView.leadingAnchor, constant: -15).isActive = true
+        self.pinToLayoutMargins(subview: levelLabel, trailing: nil, bottom: nil)
+        
+        self.pinToLayoutMargins(subview: experienceProgressView, trailing: nil, top: nil)
+        levelLabel.bottomAnchor.constraint(equalTo: experienceProgressView.topAnchor, constant: -5).isActive = true
+        experienceProgressView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        experienceProgressView.heightAnchor.constraint(equalToConstant: 8).isActive = true
+        
+        experienceLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(experienceLabel)
+        experienceLabel.trailingAnchor.constraint(equalTo: experienceProgressView.trailingAnchor).isActive = true
+        experienceLabel.bottomAnchor.constraint(equalTo: experienceProgressView.topAnchor, constant: -5).isActive = true
+        
+        self.pinToLayoutMargins(subview: waterLabel, leading: nil,top: nil, bottom: nil)
+        waterLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
         self.addSubview(waterImageView)
         waterImageView.translatesAutoresizingMaskIntoConstraints = false
         waterImageView.centerYAnchor.constraint(equalTo: waterLabel.centerYAnchor).isActive = true
         waterImageView.trailingAnchor.constraint(equalTo: waterLabel.leadingAnchor, constant: -7).isActive = true
         waterImageView.setDimensions(width: 25, height: 25)
-        experienceLabel.textColor = UIColor.textColor
+        
+        levelLabel.textColor = UIColor.AppColors.darkGreen
+        levelLabel.font = UIFont(name: nunitoBold, size: 18)!
+        
+        experienceLabel.textColor = UIColor.AppColors.darkGreen
         experienceLabel.font = UIFont.normalTextFont
-        experienceLabel.textAlignment = .left
+        experienceLabel.textAlignment = .right
         
-        waterLabel.textColor = UIColor.textColor
+        experienceProgressView.progressTintColor = UIColor.AppColors.mint
+        experienceProgressView.trackTintColor = UIColor.backgroundColor
+        experienceProgressView.layer.cornerRadius = 4
+        
+        waterLabel.textColor = UIColor.AppColors.darkGreen
         waterLabel.font = UIFont.normalTextFont
-        waterLabel.textAlignment = .left
+        waterLabel.textAlignment = .right
         waterImageView.image = waterImage
-        
-        goldLabel.textColor = UIColor.textColor
-        goldLabel.font = UIFont.normalTextFont
-        goldLabel.textAlignment = .left
-        coinImageView.image = coinImage
     }
     
-    func setup(level: Int, currentExp: Int, nextLevelExp: Int, water: Int, gold: Int) {
-        experienceLabel.text = Strings.level + " " + level.string + ": " + currentExp.string + "/" + nextLevelExp.string
-        waterLabel.text = water.string
-        goldLabel.text = gold.string
+    func setup(level: Int, currentExp: Int, nextLevelExp: Int, water: Int, maxWater: Int, gold: Int) {
+        levelLabel.text = Strings.level + " " + level.string + ": "
+        experienceLabel.text = currentExp.string + "/" + nextLevelExp.string
+        experienceProgressView.progress = Float(currentExp) / Float(nextLevelExp)
+        waterLabel.text = water.string  + "/" + maxWater.string
     }
 }

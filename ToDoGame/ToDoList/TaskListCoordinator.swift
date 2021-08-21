@@ -52,7 +52,7 @@ class TaskListCoordinator {
         let user = UserService.shared.user
         let level = LevelManager.currentLevel
         let nextLevelExp = LevelManager.nextLevelExp
-        taskListVC.gamificationOverview.setup(level: level, currentExp: user.experience, nextLevelExp: nextLevelExp, water: user.water, gold: user.gold)
+        taskListVC.gamificationOverview.setup(level: level, currentExp: user.experience, nextLevelExp: nextLevelExp, water: user.water, maxWater: user.waterCapacity, gold: user.gold)
     }
     
     func loadCachedTasks() {
@@ -79,15 +79,22 @@ class TaskListCoordinator {
     }
     
     func deleteTask(taskID: Int) {
-        tasks = tasks.filter { $0.id != taskID }
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
-            }
-            if topController != taskListVC {
-                topController.dismiss(animated: true, completion: nil)
+        tasksManager.deleteTask(taskID: taskID) { [unowned self] (success, error) in
+            if success, error == nil {
+                DispatchQueue.main.async {
+                    if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                        while let presentedViewController = topController.presentedViewController {
+                            topController = presentedViewController
+                        }
+                        if topController != taskListVC {
+                            topController.dismiss(animated: true, completion: nil)
+                        }
+                    }
+                }
             }
         }
+        tasks = tasks.filter { $0.id != taskID }
+        
         storageManager.save(tasks: tasks)
     }
     

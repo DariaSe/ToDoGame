@@ -14,7 +14,7 @@ struct PotionRecipe: ShopItem {
     var buyCostGold: Int
     var buyCostDonation: Int
     var levelRequired: Int
-    var fruits: [Fruits]
+    var fruits: [Fruit]
     var stone: Stone
     var firewood: Int
     var oil: Int

@@ -10,6 +10,6 @@ import Foundation
 struct BuffPotion {
     var title: String
     var imageName: String
-    var effect: [PotionEffect]
+//    var effect: PotionEffect
     var applicationDate: Date
 }

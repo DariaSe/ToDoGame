@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskListViewController: UIViewController, ErrorPresenter {
+class TaskListViewController: GradientViewController, ErrorPresenter {
     
     weak var coordinator: TaskListCoordinator?
     
@@ -38,7 +38,7 @@ class TaskListViewController: UIViewController, ErrorPresenter {
             isCalendarShown ? showCalendar() : hideCalendar()
         }
     }
-    
+   
     var emptyMessageView = UIView()
     
     var calendarHeaderView = CalendarHeaderView()
@@ -55,7 +55,6 @@ class TaskListViewController: UIViewController, ErrorPresenter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.backgroundColor
         view.pinToLayoutMargins(subview: calendarHeaderView, leading: 30, trailing: 30, top: 0, bottom: nil)
         calendarHeaderView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         view.pinToLayoutMargins(subview: addButton, leading: nil, trailing: -10, bottom: nil)
@@ -64,7 +63,7 @@ class TaskListViewController: UIViewController, ErrorPresenter {
         view.addSubview(calendarView)
         view.pinToLayoutMargins(subview: gamificationOverview, top: nil, bottom: nil)
         calendarView.topAnchor.constraint(equalTo: calendarHeaderView.bottomAnchor, constant: 10).isActive = true
-        calendarView.bottomAnchor.constraint(equalTo: gamificationOverview.topAnchor, constant: 10).isActive = true
+        calendarView.bottomAnchor.constraint(equalTo: gamificationOverview.topAnchor, constant: -5).isActive = true
         view.pinToEdges(subview: taskListView, top: nil)
         gamificationOverview.bottomAnchor.constraint(equalTo: taskListView.topAnchor).isActive = true
         calendarView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

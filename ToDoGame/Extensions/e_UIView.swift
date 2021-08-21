@@ -92,6 +92,14 @@ extension UIView {
         maskLayer.path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height), byRoundingCorners: corners, cornerRadii: CGSize(width: cornerRadius, height: cornerRadius)).cgPath
         self.layer.mask = maskLayer
     }
+    
+    func dropShadow(color: UIColor = UIColor.black, height: CGFloat = 3, shadowRadius: CGFloat = 6, opacity: Float = 0.25, cornerRadius: CGFloat) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = CGSize(width: 0, height: height)
+        layer.shadowRadius = shadowRadius
+        layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: cornerRadius).cgPath
+    }
 }
 
 extension UIView {

@@ -47,5 +47,4 @@ enum Magic: Int {
 enum SpecialAttribute {
     case invisibility
     case teleportation
-    case soulTranslocation
 }

@@ -18,13 +18,13 @@ extension UIColor {
 
 extension UIColor {
     
-    static var backgroundColor: UIColor = UIColor(netHex: 0xf5f5f5)
+    static var backgroundColor: UIColor = UIColor(netHex: 0xF7F6F0)
     
     static var borderColor: UIColor = UIColor.lightGray
     
     static var textColor: UIColor = UIColor.darkGray
     
-    static var buttonColor: UIColor = UIColor.TagColors.darkGreen
+    static var buttonColor: UIColor = UIColor.AppColors.darkGreen
     
     static var textControlsBGColor = UIColor(netHex: 0xF2F2F7)
     
@@ -32,7 +32,11 @@ extension UIColor {
     
     static var noColorColor = UIColor(netHex: 0xc7c7c7)
     
-    struct TagColors {
+    static var startGradientColor = UIColor(netHex: 0xD5F5FF)
+    static var middleGradientColor = UIColor(netHex: 0xA4E5C6)
+    static var endGradientColor = UIColor(netHex: 0x8EC4B2)
+    
+    struct AppColors {
         //1
         static let orange = UIColor(netHex: 0xf5932a)
         //2
@@ -60,7 +64,7 @@ extension UIColor {
      
     }
     
-    static var tagColors: [UIColor] { return [UIColor.TagColors.orange, UIColor.TagColors.brickRed, UIColor.TagColors.red, UIColor.TagColors.yellow, UIColor.TagColors.darkGreen, UIColor.TagColors.green, UIColor.TagColors.mint,  UIColor.TagColors.blue, UIColor.TagColors.purple, UIColor.TagColors.lilac, UIColor.TagColors.gray, UIColor.TagColors.brown] }
+    static var tagColors: [UIColor] { return [UIColor.AppColors.orange, UIColor.AppColors.brickRed, UIColor.AppColors.red, UIColor.AppColors.yellow, UIColor.AppColors.darkGreen, UIColor.AppColors.green, UIColor.AppColors.mint,  UIColor.AppColors.blue, UIColor.AppColors.purple, UIColor.AppColors.lilac, UIColor.AppColors.gray, UIColor.AppColors.brown] }
 
 }
 
