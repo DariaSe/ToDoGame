@@ -11,6 +11,8 @@ class TaskTableViewCell: UITableViewCell {
     
     static let reuseIdentifier = "ToDoListCell"
     
+    var isEditMode: Bool = false
+    
     let containerView = UIView()
     
     let taskView = TaskCellView()
@@ -58,6 +60,7 @@ class TaskTableViewCell: UITableViewCell {
         containerView.pinToEdges(subview: taskView)
         taskView.addGestureRecognizer(panGestureRecognizer)
         panGestureRecognizer.addTarget(self, action: #selector(dragged(sender:)))
+        panGestureRecognizer.delegate = self
     }
     
     @objc func delete(sender: UIButton) {
@@ -68,9 +71,11 @@ class TaskTableViewCell: UITableViewCell {
     @objc func dragged(sender: UIPanGestureRecognizer) {
         if sender.state == .changed {
             let translation = sender.translation(in: self.contentView)
+            guard abs(translation.x) > abs(translation.y) else { return }
             if taskView.center.x + translation.x < contentView.center.x && distance <= buttonWidth {
                 taskView.center = CGPoint(x: taskView.center.x + translation.x, y: taskView.center.y)
                 taskView.checkButton.isEnabled = false
+                isEditMode = true
             }
             let positionAdjustment = abs(self.contentView.center.x - taskView.center.x)
             distance = positionAdjustment
@@ -94,6 +99,7 @@ class TaskTableViewCell: UITableViewCell {
             self.taskView.frame = CGRect(x: 0, y: 0, width: self.taskView.frame.width, height: self.taskView.frame.height)
         }, completion: nil)
         taskView.checkButton.isEnabled = true
+        isEditMode = false
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -102,5 +108,9 @@ class TaskTableViewCell: UITableViewCell {
         view.frame = contentView.bounds
         view.backgroundColor = .clear
         selectedBackgroundView = view
+    }
+    
+    override func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
     }
 }

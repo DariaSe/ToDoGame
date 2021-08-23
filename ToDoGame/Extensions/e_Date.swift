@@ -58,5 +58,7 @@ extension Date {
             return formatter.string(from: self)
         }
     }
+    
+    static let oneDay: TimeInterval = 86400
 }
 

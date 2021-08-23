@@ -11,27 +11,93 @@ struct Plant {
     var species: PlantSpecies
     var instanceID: Int
     var imageURL: String
-    var age: Int = 0
+    var age: Int { return wateringDates.count + fertilizerDates.count - timesRestored }
     var plantingDate: Date?
     var wateringDates: [Date] = []
     var fertilizerDates: [Date] = []
-    var state: PlantState = .seed
+    var harvestDates: [Date] = []
+    var timesRestored: Int = 0
+    var isHibernated: Bool = false
+    var state: PlantState {
+        guard plantingDate != nil else { return .seed }
+        guard !wateringDates.isEmpty else { return .seed }
+        guard !isHibernated else { return .hibernated }
+        let daysSinceWatering = Calendar.current.dateComponents([.day], from: wateringDates.last!.dayStart, to: Date().dayStart).day ?? 0
+        switch daysSinceWatering {
+        case 4...6: return .withering
+        case 7...Int.max : return .dead
+        default: break
+        }
+        switch age {
+        case 0: return .seed
+        case 1, 2: return .sprout
+        case 3..<species.daysTilBlooming: return .growing
+        case species.daysTilBlooming..<species.daysTilFruiting: return .blooming
+        case species.daysTilFruiting..<species.maxAge: return .fruiting
+        case species.maxAge...Int.max: return .dead
+        default: break
+        }
+        return .unknown
+    }
+    var stateDescription: String {
+        switch state {
+        case .seed, .sprout, .growing, .blooming:
+            let daysRemaining = species.daysTilFruiting - age
+            return daysRemaining.string + " " + Strings.daysCount.localizedForCount(daysRemaining) + Strings.untilFruiting
+            
+        case .fruiting:
+            let daysRemaining = species.maxAge - age
+            return daysRemaining.string + " " + Strings.daysCount.localizedForCount(daysRemaining) + Strings.remaining
+        default: return ""
+        }
+    }
     var magic: Magic?
     var specialAttribute: SpecialAttribute?
+    
+    static let sampleOne = Plant(species: .tomato,
+                                 instanceID: 1, imageURL: "",
+                                 plantingDate: Date().addingTimeInterval(-(Date.oneDay * 2)),
+                                 wateringDates: [Date().addingTimeInterval(-(Date.oneDay * 2)),
+                                                 Date().addingTimeInterval(-(Date.oneDay)),
+                                                 Date()],
+                                 fertilizerDates: [],
+                                 magic: nil, specialAttribute: nil)
+    
+    static let sampleTwo = Plant(species: .strawberry,
+                                 instanceID: 2, imageURL: "",
+                                 plantingDate: Date().addingTimeInterval(-(Date.oneDay * 5)),
+                                 wateringDates: [Date().addingTimeInterval(-(Date.oneDay * 5)),
+                                                 Date().addingTimeInterval(-(Date.oneDay * 4)),
+                                                 Date().addingTimeInterval(-(Date.oneDay)),
+                                                 Date()],
+                                 fertilizerDates: [Date().addingTimeInterval(-(Date.oneDay * 5)),
+                                                   Date().addingTimeInterval(-(Date.oneDay * 4)),
+                                                   Date().addingTimeInterval(-(Date.oneDay)),
+                                                   Date()],
+                                 magic: nil, specialAttribute: nil)
+    
+    static let sampleThree = Plant(species: .chiliPepper,
+                                   instanceID: 3, imageURL: "",
+                                   plantingDate: Date().addingTimeInterval(-(Date.oneDay * 7)),
+                                   wateringDates: [Date().addingTimeInterval(-(Date.oneDay * 7)),
+                                                   Date().addingTimeInterval(-(Date.oneDay * 6)),
+                                                   Date().addingTimeInterval(-(Date.oneDay * 5))],
+                                   fertilizerDates: [Date().addingTimeInterval(-(Date.oneDay * 5))],
+                                   magic: nil, specialAttribute: nil)
+    
+    static let sample = [Plant.sampleOne, Plant.sampleTwo, Plant.sampleThree]
 }
 
-enum PlantState: Int {
+enum PlantState: String {
     case seed
     case sprout
     case growing
-    case adult
     case blooming
     case fruiting
-    case driedI
-    case driedII
+    case withering
     case dead
-    case restored
     case hibernated
+    case unknown
 }
 
 enum Magic: Int {

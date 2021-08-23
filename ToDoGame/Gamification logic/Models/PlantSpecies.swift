@@ -21,9 +21,11 @@ struct PlantSpecies {
     var firewoodOutput: Int?
     var levelRequired: Int
     var daysTilBlooming: Int
-    var daysTilHarvest: Int
+    var daysTilFruiting: Int
     var nominalYield: Int
+    var bloomingDuration: Int { daysTilFruiting - daysTilBlooming }
     var fruitingDuration: Int
+    var maxAge: Int { daysTilFruiting + fruitingDuration }
     
     static let tomato = PlantSpecies(id: 1,
                                      title: Strings.tomato,
@@ -37,7 +39,7 @@ struct PlantSpecies {
                                      fertilizerOutput: 2,
                                      levelRequired: 1,
                                      daysTilBlooming: 10,
-                                     daysTilHarvest: 12,
+                                     daysTilFruiting: 12,
                                      nominalYield: 3,
                                      fruitingDuration: 7)
     
@@ -53,7 +55,7 @@ struct PlantSpecies {
                                          fertilizerOutput: 1,
                                          levelRequired: 2,
                                          daysTilBlooming: 6,
-                                         daysTilHarvest: 8,
+                                         daysTilFruiting: 8,
                                          nominalYield: 2,
                                          fruitingDuration: 7)
     
@@ -69,7 +71,7 @@ struct PlantSpecies {
                                         firewoodOutput: 20,
                                         levelRequired: 3,
                                         daysTilBlooming: 36,
-                                        daysTilHarvest: 40,
+                                        daysTilFruiting: 40,
                                         nominalYield: 10,
                                         fruitingDuration: 10)
     
@@ -85,7 +87,7 @@ struct PlantSpecies {
                                         fertilizerOutput: 2,
                                         levelRequired: 4,
                                         daysTilBlooming: 14,
-                                        daysTilHarvest: 16,
+                                        daysTilFruiting: 16,
                                         nominalYield: 60,
                                         fruitingDuration: 1)
     
@@ -101,7 +103,7 @@ struct PlantSpecies {
                                      firewoodOutput: 24,
                                      levelRequired: 5,
                                      daysTilBlooming: 40,
-                                     daysTilHarvest: 45,
+                                     daysTilFruiting: 45,
                                      nominalYield: 7,
                                      fruitingDuration: 24)
     
@@ -117,7 +119,7 @@ struct PlantSpecies {
                                          fertilizerOutput: 2,
                                          levelRequired: 6,
                                          daysTilBlooming: 16,
-                                         daysTilHarvest: 18,
+                                         daysTilFruiting: 18,
                                          nominalYield: 1,
                                          fruitingDuration: 3)
     
@@ -133,7 +135,7 @@ struct PlantSpecies {
                                      firewoodOutput: 18,
                                      levelRequired: 7,
                                      daysTilBlooming: 30,
-                                     daysTilHarvest: 34,
+                                     daysTilFruiting: 34,
                                      nominalYield: 25,
                                      fruitingDuration: 7)
     
@@ -149,7 +151,7 @@ struct PlantSpecies {
                                         fertilizerOutput: 2,
                                         levelRequired: 8,
                                         daysTilBlooming: 14,
-                                        daysTilHarvest: 17,
+                                        daysTilFruiting: 17,
                                         nominalYield: 1,
                                         fruitingDuration: 4)
     
@@ -165,7 +167,7 @@ struct PlantSpecies {
                                       firewoodOutput: 22,
                                       levelRequired: 8,
                                       daysTilBlooming: 37,
-                                      daysTilHarvest: 42,
+                                      daysTilFruiting: 42,
                                       nominalYield: 6,
                                       fruitingDuration: 9)
     
@@ -181,7 +183,7 @@ struct PlantSpecies {
                                       firewoodOutput: 26,
                                       levelRequired: 9,
                                       daysTilBlooming: 42,
-                                      daysTilHarvest: 46,
+                                      daysTilFruiting: 46,
                                       nominalYield: 7,
                                       fruitingDuration: 8)
     
@@ -197,7 +199,7 @@ struct PlantSpecies {
                                           fertilizerOutput: 2,
                                           levelRequired: 9,
                                           daysTilBlooming: 14,
-                                          daysTilHarvest: 17,
+                                          daysTilFruiting: 17,
                                           nominalYield: 3,
                                           fruitingDuration: 5)
     
@@ -213,7 +215,7 @@ struct PlantSpecies {
                                           fertilizerOutput: 3,
                                           levelRequired: 10,
                                           daysTilBlooming: 20,
-                                          daysTilHarvest: 22,
+                                          daysTilFruiting: 22,
                                           nominalYield: 4,
                                           fruitingDuration: 6)
     

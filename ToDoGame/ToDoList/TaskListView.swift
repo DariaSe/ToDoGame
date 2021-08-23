@@ -216,6 +216,8 @@ extension TaskListView: UITableViewDataSource {
 extension TaskListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! TaskTableViewCell
+        guard !cell.isEditMode else { return }
         var task: TaskViewModel
         if indexPath.section == 0 {
             task = activeTasks[indexPath.row]
@@ -228,14 +230,6 @@ extension TaskListView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return false
-    }
-    
-    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: .destructive, title: Strings.delete) { [unowned self] (_, indexPath) in
-            
-        }
-        deleteAction.backgroundColor = UIColor.destructiveColor
-        return [deleteAction]
     }
 }
 

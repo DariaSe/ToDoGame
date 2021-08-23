@@ -48,7 +48,7 @@ class GamificationOverviewView: UIView {
         waterImageView.translatesAutoresizingMaskIntoConstraints = false
         waterImageView.centerYAnchor.constraint(equalTo: waterLabel.centerYAnchor).isActive = true
         waterImageView.trailingAnchor.constraint(equalTo: waterLabel.leadingAnchor, constant: -7).isActive = true
-        waterImageView.setDimensions(width: 25, height: 25)
+        waterImageView.setDimensions(width: 32, height: 32)
         
         levelLabel.textColor = UIColor.AppColors.darkGreen
         levelLabel.font = UIFont(name: nunitoBold, size: 18)!
@@ -62,7 +62,7 @@ class GamificationOverviewView: UIView {
         experienceProgressView.layer.cornerRadius = 4
         
         waterLabel.textColor = UIColor.AppColors.darkGreen
-        waterLabel.font = UIFont.normalTextFont
+        waterLabel.font = UIFont(name: nunitoRegular, size: 18)
         waterLabel.textAlignment = .right
         waterImageView.image = waterImage
     }

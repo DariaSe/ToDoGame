@@ -11,6 +11,13 @@
 		DA20B77126CFE89A0048B500 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B77026CFE89A0048B500 /* Seed.swift */; };
 		DA20B78B26D160990048B500 /* GradientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B78A26D160990048B500 /* GradientViewController.swift */; };
 		DA20B79D26D172DD0048B500 /* DraggableViewsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B79C26D172DD0048B500 /* DraggableViewsCoordinator.swift */; };
+		DA20B7A926D250CF0048B500 /* CountedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7A826D250CF0048B500 /* CountedImageView.swift */; };
+		DA20B7B026D25D2B0048B500 /* ButtonWithShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7AF26D25D2B0048B500 /* ButtonWithShadow.swift */; };
+		DA20B7B726D25FE80048B500 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7B626D25FE80048B500 /* ShadowView.swift */; };
+		DA20B7BE26D263810048B500 /* ButtonWithCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7BD26D263810048B500 /* ButtonWithCount.swift */; };
+		DA20B7D126D2DB110048B500 /* SegmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7D026D2DB110048B500 /* SegmentButton.swift */; };
+		DA20B7D826D2DE940048B500 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7D726D2DE940048B500 /* SegmentedView.swift */; };
+		DA20B7DF26D2E1270048B500 /* InventorySegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */; };
 		DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */; };
 		DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */; };
 		DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF9426344CA400F6D4E9 /* e_UIView.swift */; };
@@ -231,6 +238,13 @@
 		DA20B77026CFE89A0048B500 /* Seed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
 		DA20B78A26D160990048B500 /* GradientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientViewController.swift; sourceTree = "<group>"; };
 		DA20B79C26D172DD0048B500 /* DraggableViewsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableViewsCoordinator.swift; sourceTree = "<group>"; };
+		DA20B7A826D250CF0048B500 /* CountedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountedImageView.swift; sourceTree = "<group>"; };
+		DA20B7AF26D25D2B0048B500 /* ButtonWithShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithShadow.swift; sourceTree = "<group>"; };
+		DA20B7B626D25FE80048B500 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		DA20B7BD26D263810048B500 /* ButtonWithCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonWithCount.swift; sourceTree = "<group>"; };
+		DA20B7D026D2DB110048B500 /* SegmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentButton.swift; sourceTree = "<group>"; };
+		DA20B7D726D2DE940048B500 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
+		DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventorySegmentView.swift; sourceTree = "<group>"; };
 		DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		DA22EF9426344CA400F6D4E9 /* e_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIView.swift; sourceTree = "<group>"; };
@@ -503,6 +517,10 @@
 			isa = PBXGroup;
 			children = (
 				DA20B78A26D160990048B500 /* GradientViewController.swift */,
+				DA20B7AF26D25D2B0048B500 /* ButtonWithShadow.swift */,
+				DA20B7B626D25FE80048B500 /* ShadowView.swift */,
+				DA20B7D026D2DB110048B500 /* SegmentButton.swift */,
+				DA20B7D726D2DE940048B500 /* SegmentedView.swift */,
 				DA22F0B326556D7400F6D4E9 /* AppTextView.swift */,
 				DA9597F7267A7F4400D88CAC /* AppTextField.swift */,
 				DA22F1322661371300F6D4E9 /* TextViewContainer.swift */,
@@ -584,8 +602,11 @@
 			children = (
 				DA76C01726B817AC009BAFD1 /* InventoryCoordinator.swift */,
 				DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */,
+				DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */,
 				DAF3CD0626B86B3C0067069D /* GardenView.swift */,
 				DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */,
+				DA20B7A826D250CF0048B500 /* CountedImageView.swift */,
+				DA20B7BD26D263810048B500 /* ButtonWithCount.swift */,
 			);
 			path = Inventory;
 			sourceTree = "<group>";
@@ -1139,6 +1160,7 @@
 				DA22F0AF265569F100F6D4E9 /* DatePickerView.swift in Sources */,
 				DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */,
 				DA22F056265556FA00F6D4E9 /* LabelDropdownView.swift in Sources */,
+				DA20B7DF26D2E1270048B500 /* InventorySegmentView.swift in Sources */,
 				DA95983F267F774800D88CAC /* ColorComposedView.swift in Sources */,
 				DA22F0AA265565B200F6D4E9 /* p_KeyboardHandler.swift in Sources */,
 				DA22F1492662449900F6D4E9 /* e_String.swift in Sources */,
@@ -1146,6 +1168,7 @@
 				DAF3CDAA26BC25470067069D /* PotionRecipe.swift in Sources */,
 				DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */,
 				DA95978326736B2500D88CAC /* RadioButton.swift in Sources */,
+				DA20B7BE26D263810048B500 /* ButtonWithCount.swift in Sources */,
 				DAF3CD6626BABCA80067069D /* p_TasksAPIService.swift in Sources */,
 				DA95987F268C8C5600D88CAC /* CDTask+CoreDataClass.swift in Sources */,
 				DAF3CD0E26B86C1B0067069D /* GardenCollectionViewCell.swift in Sources */,
@@ -1156,6 +1179,7 @@
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
 				DAF3CD5726BABA900067069D /* UserAPIServiceMock.swift in Sources */,
 				DAF3CDB626BC262B0067069D /* Stone.swift in Sources */,
+				DA20B7D826D2DE940048B500 /* SegmentedView.swift in Sources */,
 				DAF3CD2F26B966D60067069D /* BuyAlertView.swift in Sources */,
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
@@ -1188,6 +1212,7 @@
 				DA20B78B26D160990048B500 /* GradientViewController.swift in Sources */,
 				DAF3CDFB26BD84EB0067069D /* Network.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
+				DA20B7D126D2DB110048B500 /* SegmentButton.swift in Sources */,
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
 				DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */,
 				DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */,
@@ -1197,6 +1222,7 @@
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
 				DA959803267B4BCD00D88CAC /* CalendarCollectionView.swift in Sources */,
 				DAF3CD9C26BC12350067069D /* Potion.swift in Sources */,
+				DA20B7A926D250CF0048B500 /* CountedImageView.swift in Sources */,
 				DA22F0B426556D7400F6D4E9 /* AppTextView.swift in Sources */,
 				DA76BEE6269458D4009BAFD1 /* LevelManager.swift in Sources */,
 				DA22F138266137F300F6D4E9 /* e_UITextView.swift in Sources */,
@@ -1217,6 +1243,7 @@
 				DA959829267CA25200D88CAC /* NotificationView.swift in Sources */,
 				DA9597DA267A27A300D88CAC /* RepeatWithIntervalView.swift in Sources */,
 				DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */,
+				DA20B7B726D25FE80048B500 /* ShadowView.swift in Sources */,
 				DA20B77126CFE89A0048B500 /* Seed.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */,
@@ -1224,6 +1251,7 @@
 				DAF3CD2326B95A550067069D /* ShopHeaderReusableView.swift in Sources */,
 				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
 				DAF3CDD126BD527E0067069D /* BuffService.swift in Sources */,
+				DA20B7B026D25D2B0048B500 /* ButtonWithShadow.swift in Sources */,
 				DAF3CDEC26BD60080067069D /* BuffPotion.swift in Sources */,
 				DAF3CD3E26BAB8820067069D /* App URLs.swift in Sources */,
 				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,

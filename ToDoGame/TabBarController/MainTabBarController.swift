@@ -11,18 +11,15 @@ class MainTabBarController: UITabBarController {
     
     let taskListCoordinator = TaskListCoordinator()
     let inventoryCoordinator = InventoryCoordinator()
-    let shopCoordinator = ShopCoordinator()
     let questsCoordinator = QuestsCoordinator()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         taskListCoordinator.start()
         inventoryCoordinator.start()
-        shopCoordinator.start()
         questsCoordinator.start()
         viewControllers = [taskListCoordinator.taskListVC,
                            inventoryCoordinator.inventoryVC,
-                           shopCoordinator.shopVC,
                            questsCoordinator.questsVC]
     }
 }

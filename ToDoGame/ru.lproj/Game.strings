@@ -6,6 +6,8 @@
   
 */
 
+"Inventory" = "Инвентарь";
+
 "Tomato" = "Помидор";
 "Strawberry" = "Клубника";
 "Apple" = "Яблоко";
@@ -18,6 +20,22 @@
 "Coconut" = "Кокос";
 "Chili pepper" = "Перец чили";
 "Dragonfruit" = "Драгонфрут";
+
+"seed" = "семечко";
+"sprout" = "росток";
+"growing" = "растёт";
+"blooming" = "цветёт";
+"fruiting" = "плодоносит";
+"withering" = "увядает";
+"dead" = "сухое";
+"hibernated" = "в гибернации";
+
+" until fruiting" = " до плодоношения";
+" remaining" = " осталось";
+
+"Plants" = "Растения";
+"Items" = "Предметы";
+"Recipes" = "Рецепты";
 
 "Fertilizer" = "Удобрение";
 "Firewood" = "Дрова";

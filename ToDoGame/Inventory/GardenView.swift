@@ -9,7 +9,7 @@ import UIKit
 
 class GardenView: UIView {
     
-    var plants: [[Plant]] = [[]] {
+    var plants: [[Plant]] = [Plant.sample] {
         didSet {
             collectionView.reloadData()
         }
@@ -48,6 +48,7 @@ extension GardenView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GardenCollectionViewCell.reuseIdentifier, for: indexPath) as! GardenCollectionViewCell
+        cell.restoreFrame()
         let plant = plants[indexPath.section][indexPath.row]
         cell.update(with: plant)
         return cell
@@ -57,20 +58,21 @@ extension GardenView: UICollectionViewDataSource {
 extension GardenView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 120, height: 180)
+        let width = (UIScreen.main.bounds.width - 20) / 2 - 1
+        return CGSize(width: width, height: 250)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 5
+        return 1
     }
 }
 
 extension GardenView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let plant = plants[indexPath.section][indexPath.row]
     }
 }
