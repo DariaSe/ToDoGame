@@ -23,7 +23,7 @@ class CountedImageView: UIView {
     
     let imageView = UIImageView()
     let circleView = UIView()
-    let s = CAShapeLayer()
+    let s = CALayer()
 
     let numberLabel = UILabel()
 
@@ -41,12 +41,14 @@ class CountedImageView: UIView {
         self.pinToEdges(subview: circleView, leading: nil, trailing: 2, top: 2, bottom: nil)
         circleView.setDimensions(width: 20, height: 20)
         circleView.layer.cornerRadius = 10
-        circleView.backgroundColor = UIColor.backgroundColor
-        s.fillColor = UIColor.backgroundColor.cgColor
+        s.backgroundColor = UIColor.backgroundColor.cgColor
+        s.cornerRadius = 10
         s.shadowColor = UIColor.black.cgColor
         s.shadowOffset = CGSize(width: 0, height: 0)
         s.shadowOpacity = 0.2
         s.shadowRadius = 6
+        s.shouldRasterize = true
+        s.rasterizationScale = UIScreen.main.scale
         circleView.layer.insertSublayer(s, at: 0)
         numberLabel.center(in: circleView)
         numberLabel.font = UIFont(name: nunitoRegular, size: 12)
@@ -55,7 +57,6 @@ class CountedImageView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        s.frame = bounds
-        s.path = UIBezierPath(roundedRect: circleView.bounds, cornerRadius: 10).cgPath
+        s.frame = circleView.bounds
     }
 }

@@ -38,10 +38,12 @@ class SegmentButton: UIButton {
     private func initialSetup() {
         label.center(in: self)
         label.textColor = UIColor.AppColors.darkGreen
+        label.isUserInteractionEnabled = false
         
         self.pinToEdges(subview: stripeView, leading: 24, trailing: 24, top: nil, bottom: 0)
         stripeView.heightAnchor.constraint(equalToConstant: 4).isActive = true
         stripeView.layer.cornerRadius = 2
         stripeView.backgroundColor = UIColor.AppColors.darkGreen
+        stripeView.isUserInteractionEnabled = false
     }
 }

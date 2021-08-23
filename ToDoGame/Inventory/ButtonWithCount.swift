@@ -7,7 +7,15 @@
 
 import UIKit
 
-class ButtonWithCount: ButtonWithShadow {
+class ButtonWithCount: UIButton {
+    
+    var isActive: Bool = true {
+        didSet {
+            isUserInteractionEnabled = isActive
+            upperView.isHidden = !isActive
+            label.alpha = isActive ? 1.0 : 0.5
+        }
+    }
     
     var axis: NSLayoutConstraint.Axis = .horizontal {
         didSet {
@@ -32,7 +40,7 @@ class ButtonWithCount: ButtonWithShadow {
             label.text = text
         }
     }
-    
+    let upperView = UIView()
     let stackView = UIStackView()
     let imageWithCount = CountedImageView()
     let label = UILabel()
@@ -47,6 +55,13 @@ class ButtonWithCount: ButtonWithShadow {
     }
     
     private func initialSetup() {
+        backgroundColor = UIColor(netHex: 0xDBDAD7)
+        layer.cornerRadius = 20
+        clipsToBounds = true
+        self.pinToEdges(subview: upperView, leading: 1, trailing: 2, bottom: 4)
+        upperView.layer.cornerRadius = 20
+        upperView.isUserInteractionEnabled = false
+        upperView.backgroundColor = .white
         stackView.center(in: self)
         stackView.axis = axis
         stackView.alignment = .center
@@ -56,5 +71,6 @@ class ButtonWithCount: ButtonWithShadow {
         imageWithCount.setDimensions(width: 50, height: 50)
         label.textColor = UIColor.textColor
         label.font = UIFont.normalTextFont
+        stackView.isUserInteractionEnabled = false
     }
 }

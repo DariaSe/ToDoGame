@@ -32,34 +32,37 @@ class InventorySegmentView: UIView {
     }
     
     private func initialSetup() {
+        self.pinToEdges(subview: stackView)
         stackView.axis = .horizontal
         stackView.spacing = 0
+        stackView.distribution = .fillProportionally
         stackView.addArrangedSubview(plantsButton)
         stackView.addArrangedSubview(leftSeparator)
         stackView.addArrangedSubview(itemsButton)
         stackView.addArrangedSubview(rightSeparator)
         stackView.addArrangedSubview(recipesButton)
-        leftSeparator.setDimensions(width: 1, height: 26)
+        leftSeparator.setDimensions(width: 1)
         leftSeparator.backgroundColor = UIColor.AppColors.darkGreen.withAlphaComponent(0.2)
-        rightSeparator.setDimensions(width: 1, height: 26)
+        rightSeparator.setDimensions(width: 1)
         rightSeparator.backgroundColor = UIColor.AppColors.darkGreen.withAlphaComponent(0.2)
-        let buttonWidth = (UIScreen.main.bounds.width - 22) / 3 - 1
-        plantsButton.setDimensions(width: buttonWidth, height: 44)
+        plantsButton.setDimensions(height: 44)
         plantsButton.text = Strings.plants
         plantsButton.tag = 0
         plantsButton.isActive = true
-        itemsButton.setDimensions(width: buttonWidth, height: 44)
+        plantsButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        itemsButton.setDimensions(height: 44)
         itemsButton.text = Strings.items
         itemsButton.tag = 1
         itemsButton.isActive = false
-        recipesButton.setDimensions(width: buttonWidth, height: 44)
+        itemsButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        recipesButton.setDimensions(height: 44)
         recipesButton.text = Strings.recipes
         recipesButton.tag = 2
         recipesButton.isActive = false
+        recipesButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
     }
     
     @objc func buttonPressed(sender: SegmentButton) {
-        sender.animateScale(duration: 0.1, scale: 1.1)
         didSelectSegment?(sender.tag)
         for button in buttons {
             button.isActive = button == sender

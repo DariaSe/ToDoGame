@@ -9,7 +9,7 @@ import UIKit
 
 class GardenView: UIView {
     
-    var plants: [[Plant]] = [Plant.sample] {
+    var plants: [[Plant]] = [Plant.sample, Plant.sample] {
         didSet {
             collectionView.reloadData()
         }
@@ -51,6 +51,15 @@ extension GardenView: UICollectionViewDataSource {
         cell.restoreFrame()
         let plant = plants[indexPath.section][indexPath.row]
         cell.update(with: plant)
+        cell.waterPressed = { [unowned self] in
+            
+        }
+        cell.fertilizePressed = { [unowned self] in
+            
+        }
+        cell.pickFruitsPressed = { [unowned self] in
+            
+        }
         return cell
     }
 }
@@ -59,7 +68,7 @@ extension GardenView: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width - 20) / 2 - 1
-        return CGSize(width: width, height: 250)
+        return CGSize(width: width, height: 260)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

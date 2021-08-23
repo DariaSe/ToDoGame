@@ -37,6 +37,9 @@
 "Items" = "Предметы";
 "Recipes" = "Рецепты";
 
+"Water" = "Полить";
+"Fertilize" = "Удобрить";
+
 "Fertilizer" = "Удобрение";
 "Firewood" = "Дрова";
 "Oil" = "Масло";

@@ -25,10 +25,10 @@ class InventoryViewController: GradientViewController {
         titleLabel.text = Strings.inventory
         
         view.pinToEdges(subview: segmentView, leading: 11, trailing: 11, top: nil, bottom: nil)
-        segmentView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: -5).isActive = true
+        segmentView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5).isActive = true
         segmentView.heightAnchor.constraint(equalToConstant: 44).isActive = true
         view.pinToEdges(subview: gardenView, leading: 10, trailing: 10, top: nil, bottom: nil)
         gardenView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
-        gardenView.topAnchor.constraint(equalTo: segmentView.bottomAnchor, constant: -10).isActive = true
+        gardenView.topAnchor.constraint(equalTo: segmentView.bottomAnchor, constant: 10).isActive = true
     }
 }

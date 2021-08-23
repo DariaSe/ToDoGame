@@ -104,7 +104,7 @@ extension UIView {
 
 extension UIView {
     func animateScale(duration: Double, scale: CGFloat) {
-        UIView.animate(withDuration: duration) {
+        UIView.animate(withDuration: duration, delay: 0.07, options: [.curveEaseInOut]) {
             self.transform = CGAffineTransform(scaleX: scale, y: scale)
         } completion: { (_) in
             self.transform = CGAffineTransform.identity

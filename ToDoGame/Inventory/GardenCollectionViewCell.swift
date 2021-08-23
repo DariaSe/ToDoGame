@@ -14,8 +14,11 @@ class GardenCollectionViewCell: UICollectionViewCell {
     var isEditMode: Bool = false
     
     let upperContainerView = UIView()
+    let backgroundColorView = UIView()
+    
     let imageView = UIImageView()
     let titleLabel = UILabel()
+    let stateLabel = UILabel()
     let descriptionLabel = UILabel()
     let pickFruitsButton = UIButton()
     let pickFruitsView = CountedImageView()
@@ -23,8 +26,6 @@ class GardenCollectionViewCell: UICollectionViewCell {
     let lowerContainerView = UIView()
     let waterButton = ButtonWithCount()
     let fertilizeButton = ButtonWithCount()
-    
-    let shadowView = ShadowView()
     
     let panGestureRecognizer = UIPanGestureRecognizer()
     
@@ -46,22 +47,33 @@ class GardenCollectionViewCell: UICollectionViewCell {
     }
     
     private func initialSetup() {
-        contentView.pinToEdges(subview: shadowView, leading: 5, trailing: 5, top: 5, bottom: 5)
-        contentView.pinToEdges(subview: lowerContainerView, leading: 5, trailing: 5, top: 5, bottom: 5)
-        lowerContainerView.backgroundColor = UIColor(netHex: 0xE0DFDC)
+        contentView.pinToEdges(subview: lowerContainerView, leading: 3, trailing: 3, top: 3, bottom: 3)
+        lowerContainerView.backgroundColor = UIColor(netHex: 0xEBEBEB)
         lowerContainerView.layer.cornerRadius = 20
         lowerContainerView.pinToEdges(subview: waterButton, leading: nil, trailing: 0, top: 0, bottom: nil)
-        waterButton.setDimensions(width: 80, height: 119)
+        waterButton.setDimensions(width: 80, height: 125)
         waterButton.image = UIImage(named: "Water")
+        waterButton.text = Strings.waterVerb
+        waterButton.axis = .vertical
         waterButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         lowerContainerView.pinToEdges(subview: fertilizeButton, leading: nil, trailing: 0, top: nil, bottom: 0)
-        fertilizeButton.setDimensions(width: 80, height: 119)
+        fertilizeButton.setDimensions(width: 80, height: 125)
         fertilizeButton.image = UIImage(named: "Fertilizer")
+        fertilizeButton.text = Strings.fertilize
+        fertilizeButton.axis = .vertical
+        fertilizeButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         
-        contentView.pinToEdges(subview: upperContainerView, leading: 5, trailing: 5, top: 5, bottom: 5)
-        upperContainerView.backgroundColor = UIColor.backgroundColor
-        upperContainerView.layer.cornerRadius = 20
-        upperContainerView.pinToEdges(subview: imageView, leading: nil, trailing: nil, top: 21, bottom: nil)
+        contentView.pinToEdges(subview: upperContainerView, leading: 3, trailing: 3, top: 3, bottom: 3)
+        upperContainerView.layer.shadowRadius = 5
+        upperContainerView.layer.shadowOpacity = 0.2
+        upperContainerView.layer.shadowOffset = CGSize(width: 0, height: 1)
+        upperContainerView.layer.shadowColor = UIColor.black.cgColor
+        
+        upperContainerView.pinToEdges(subview: backgroundColorView)
+        backgroundColorView.backgroundColor = UIColor.backgroundColor
+        backgroundColorView.layer.cornerRadius = 20
+        
+        upperContainerView.pinToEdges(subview: imageView, leading: nil, trailing: nil, top: 20, bottom: nil)
         imageView.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
         imageView.setDimensions(width: 140, height: 140)
         imageView.image = UIImage(named: "Seed placeholder")
@@ -71,22 +83,32 @@ class GardenCollectionViewCell: UICollectionViewCell {
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 11).isActive = true
         titleLabel.textColor = UIColor.AppColors.darkGreen
         titleLabel.font = UIFont(name: nunitoBold, size: 18)!
+        stateLabel.translatesAutoresizingMaskIntoConstraints = false
+        upperContainerView.addSubview(stateLabel)
+        stateLabel.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
+        stateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3).isActive = true
+        stateLabel.textColor = UIColor.AppColors.darkGreen
+        stateLabel.font = UIFont(name: nunitoRegular, size: 14)!
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         upperContainerView.addSubview(descriptionLabel)
         descriptionLabel.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
-        descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3).isActive = true
+        descriptionLabel.topAnchor.constraint(equalTo: stateLabel.bottomAnchor, constant: 1).isActive = true
         descriptionLabel.textColor = UIColor.AppColors.darkGreen
-        descriptionLabel.font = UIFont.normalTextFont
+        descriptionLabel.font = UIFont(name: nunitoRegular, size: 12)!
         
         upperContainerView.pinToLayoutMargins(subview: pickFruitsButton, leading: nil, trailing: 2, top: 2, bottom: nil)
         pickFruitsButton.setDimensions(width: 70, height: 70)
-        pickFruitsButton.pinToEdges(subview: pickFruitsView)
+        pickFruitsButton.backgroundColor = UIColor.white
+        pickFruitsButton.layer.cornerRadius = 12
+        pickFruitsButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
+        pickFruitsButton.pinToEdges(subview: pickFruitsView, leading: 3, trailing: 3, top: 3, bottom: 3)
         pickFruitsView.isUserInteractionEnabled = false
         
         upperContainerView.addGestureRecognizer(panGestureRecognizer)
         panGestureRecognizer.delegate = self
         panGestureRecognizer.addTarget(self, action: #selector(dragged(sender:)))
     }
+    
     
     @objc func buttonPressed(sender: UIButton) {
         sender.animateScale(duration: 0.1, scale: 1.1)
@@ -115,7 +137,7 @@ class GardenCollectionViewCell: UICollectionViewCell {
         if sender.state == .ended {
             if showFullWidth {
                 UIView.animate(withDuration: 0.2, delay: 0.1, options: [.curveEaseOut], animations: {
-                    self.upperContainerView.frame = CGRect(x: -self.buttonWidth + 5, y: 5, width: self.upperContainerView.frame.width, height: self.upperContainerView.frame.height)
+                    self.upperContainerView.frame = CGRect(x: -self.buttonWidth + 3, y: 3, width: self.upperContainerView.frame.width, height: self.upperContainerView.frame.height)
                 }, completion: nil)
             }
             else {
@@ -126,20 +148,23 @@ class GardenCollectionViewCell: UICollectionViewCell {
     
     func restoreFrame() {
         UIView.animate(withDuration: 0.3, delay: 0.1, options: [.curveEaseOut], animations: {
-            self.upperContainerView.frame = CGRect(x: 5, y: 5, width: self.upperContainerView.frame.width, height: self.upperContainerView.frame.height)
+            self.upperContainerView.frame = CGRect(x: 3, y: 3, width: self.upperContainerView.frame.width, height: self.upperContainerView.frame.height)
         }, completion: nil)
         pickFruitsButton.isEnabled = true
         isEditMode = false
     }
     
     func update(with plant: Plant) {
-        titleLabel.text = plant.species.title + " (" + NSLocalizedString(plant.state.rawValue, comment: "") + ")"
+        titleLabel.text = plant.species.title
+        stateLabel.text = NSLocalizedString(plant.state.rawValue, tableName: "Game", comment: "").capitalized
         descriptionLabel.text = plant.stateDescription
         waterButton.count = plant.species.waterConsumption
         fertilizeButton.count = plant.species.fertilizerConsumption
         pickFruitsButton.isHidden = plant.state != .fruiting || plant.harvestDates.contains(Date().dayStart)
         pickFruitsView.image = UIImage(named: "Seed placeholder")
         pickFruitsView.count = plant.species.nominalYield
+        waterButton.isActive = !plant.wateringDates.contains(Date().dayStart)
+        fertilizeButton.isActive = !plant.fertilizerDates.contains(Date().dayStart) && plant.wateringDates.contains(Date().dayStart)
     }
 }
 
