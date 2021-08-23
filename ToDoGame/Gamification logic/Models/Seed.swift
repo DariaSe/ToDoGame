@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Seed {
+struct Seed: InventoryItem {
     
     var species: PlantSpecies
     var title: String { species.title }

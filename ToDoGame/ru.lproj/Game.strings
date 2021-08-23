@@ -37,6 +37,9 @@
 "Items" = "Предметы";
 "Recipes" = "Рецепты";
 
+"Regular plants" = "Обычные растения";
+"Magic plants" = "Магические растения";
+
 "Water" = "Полить";
 "Fertilize" = "Удобрить";
 

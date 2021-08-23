@@ -15,3 +15,4 @@ protocol ShopItem {
     var buyCostDonation: Int { get set }
     var levelRequired: Int { get set }
 }
+

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Potion {
+struct Potion: InventoryItem {
     var id: Int
     var title: String
     var description: String

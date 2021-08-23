@@ -163,8 +163,13 @@ class GardenCollectionViewCell: UICollectionViewCell {
         pickFruitsButton.isHidden = plant.state != .fruiting || plant.harvestDates.contains(Date().dayStart)
         pickFruitsView.image = UIImage(named: "Seed placeholder")
         pickFruitsView.count = plant.species.nominalYield
-        waterButton.isActive = !plant.wateringDates.contains(Date().dayStart)
-        fertilizeButton.isActive = !plant.fertilizerDates.contains(Date().dayStart) && plant.wateringDates.contains(Date().dayStart)
+        let user = UserService.shared.user
+        let wasWateredToday = plant.wateringDates.contains(Date().dayStart)
+        let isEnoughWater = user.water >= plant.species.waterConsumption
+        waterButton.isActive = !wasWateredToday && isEnoughWater
+        let wasFertilizedToday = plant.fertilizerDates.contains(Date().dayStart)
+        let isEnoughFertilizer = user.fertilizer >= plant.species.fertilizerConsumption
+        fertilizeButton.isActive = !wasFertilizedToday && wasWateredToday && isEnoughFertilizer
     }
 }
 

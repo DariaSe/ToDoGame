@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Stone: ShopItem {
+struct Stone: ShopItem, InventoryItem {
     var id: Int
     var title: String
     var description: String

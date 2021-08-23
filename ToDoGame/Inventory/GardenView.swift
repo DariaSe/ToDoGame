@@ -15,6 +15,8 @@ class GardenView: UIView {
         }
     }
     
+    let resourcesView = GardenResourcesView()
+    
     lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
     let collectionViewLayout = UICollectionViewFlowLayout()
     
@@ -28,11 +30,14 @@ class GardenView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: collectionView)
+        self.pinToEdges(subview: resourcesView, trailing: 10, bottom: nil)
+        resourcesView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        self.pinToEdges(subview: collectionView, top: 50)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.register(GardenCollectionViewCell.self, forCellWithReuseIdentifier: GardenCollectionViewCell.reuseIdentifier)
+        collectionView.register(InventoryCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InventoryCollectionReusableView.reuseIdentifier)
     }
 }
 
@@ -62,9 +67,28 @@ extension GardenView: UICollectionViewDataSource {
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InventoryCollectionReusableView.reuseIdentifier, for: indexPath) as! InventoryCollectionReusableView
+            if indexPath.section == 0 {
+                reusableview.title = Strings.regularPlants
+            }
+            else {
+                reusableview.title = Strings.magicPlants
+            }
+            return reusableview
+        default:  fatalError("Unexpected element kind")
+        }
+    }
 }
 
 extension GardenView: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            return CGSize(width: collectionView.frame.width, height: 60)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width - 20) / 2 - 1

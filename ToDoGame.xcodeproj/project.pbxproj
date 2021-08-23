@@ -18,6 +18,13 @@
 		DA20B7D126D2DB110048B500 /* SegmentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7D026D2DB110048B500 /* SegmentButton.swift */; };
 		DA20B7D826D2DE940048B500 /* SegmentedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7D726D2DE940048B500 /* SegmentedView.swift */; };
 		DA20B7DF26D2E1270048B500 /* InventorySegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */; };
+		DA20B7E726D3D9CC0048B500 /* ItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7E626D3D9CC0048B500 /* ItemsView.swift */; };
+		DA20B7F326D3DAFF0048B500 /* p_InventoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7F226D3DAFF0048B500 /* p_InventoryItem.swift */; };
+		DA20B7FA26D3DD120048B500 /* InventoryItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B7F926D3DD120048B500 /* InventoryItemCollectionViewCell.swift */; };
+		DA20B80226D414E70048B500 /* RecipesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B80126D414E70048B500 /* RecipesView.swift */; };
+		DA20B80E26D4155B0048B500 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B80D26D4155B0048B500 /* RecipeCollectionViewCell.swift */; };
+		DA20B81526D4254E0048B500 /* InventoryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */; };
+		DA20B81C26D428020048B500 /* GardenResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B81B26D428020048B500 /* GardenResourcesView.swift */; };
 		DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */; };
 		DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */; };
 		DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF9426344CA400F6D4E9 /* e_UIView.swift */; };
@@ -245,6 +252,13 @@
 		DA20B7D026D2DB110048B500 /* SegmentButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentButton.swift; sourceTree = "<group>"; };
 		DA20B7D726D2DE940048B500 /* SegmentedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedView.swift; sourceTree = "<group>"; };
 		DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventorySegmentView.swift; sourceTree = "<group>"; };
+		DA20B7E626D3D9CC0048B500 /* ItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsView.swift; sourceTree = "<group>"; };
+		DA20B7F226D3DAFF0048B500 /* p_InventoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_InventoryItem.swift; sourceTree = "<group>"; };
+		DA20B7F926D3DD120048B500 /* InventoryItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA20B80126D414E70048B500 /* RecipesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesView.swift; sourceTree = "<group>"; };
+		DA20B80D26D4155B0048B500 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
+		DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionReusableView.swift; sourceTree = "<group>"; };
+		DA20B81B26D428020048B500 /* GardenResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenResourcesView.swift; sourceTree = "<group>"; };
 		DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		DA22EF9426344CA400F6D4E9 /* e_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIView.swift; sourceTree = "<group>"; };
@@ -450,6 +464,24 @@
 			path = DraggableViews;
 			sourceTree = "<group>";
 		};
+		DA20B7E526D3D9AD0048B500 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				DA20B7E626D3D9CC0048B500 /* ItemsView.swift */,
+				DA20B7F926D3DD120048B500 /* InventoryItemCollectionViewCell.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		DA20B80026D414D10048B500 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				DA20B80126D414E70048B500 /* RecipesView.swift */,
+				DA20B80D26D4155B0048B500 /* RecipeCollectionViewCell.swift */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
 		DA22EF8626344B6E00F6D4E9 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
@@ -604,7 +636,11 @@
 				DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */,
 				DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */,
 				DAF3CD0626B86B3C0067069D /* GardenView.swift */,
+				DA20B81B26D428020048B500 /* GardenResourcesView.swift */,
 				DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */,
+				DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */,
+				DA20B7E526D3D9AD0048B500 /* Items */,
+				DA20B80026D414D10048B500 /* Recipes */,
 				DA20B7A826D250CF0048B500 /* CountedImageView.swift */,
 				DA20B7BD26D263810048B500 /* ButtonWithCount.swift */,
 			);
@@ -748,6 +784,7 @@
 				DA20B77026CFE89A0048B500 /* Seed.swift */,
 				DAF3CDA226BC20910067069D /* Fruits.swift */,
 				DAF3CCFF26B867580067069D /* p_ShopItem.swift */,
+				DA20B7F226D3DAFF0048B500 /* p_InventoryItem.swift */,
 				DAF3CD9B26BC12350067069D /* Potion.swift */,
 				DAF3CDEB26BD60080067069D /* BuffPotion.swift */,
 				DAF3CDA926BC25470067069D /* PotionRecipe.swift */,
@@ -1174,6 +1211,7 @@
 				DAF3CD0E26B86C1B0067069D /* GardenCollectionViewCell.swift in Sources */,
 				DA95985F2680961B00D88CAC /* e_UIViewController.swift in Sources */,
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
+				DA20B81C26D428020048B500 /* GardenResourcesView.swift in Sources */,
 				DAF3CD8426BAFA160067069D /* p_LoginAPIService.swift in Sources */,
 				DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */,
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
@@ -1209,6 +1247,7 @@
 				DA76C01126B8175E009BAFD1 /* QuestsViewController.swift in Sources */,
 				DA22EFBC2645612F00F6D4E9 /* Task.swift in Sources */,
 				DA22EFFD26528D3200F6D4E9 /* TaskViewModel.swift in Sources */,
+				DA20B7F326D3DAFF0048B500 /* p_InventoryItem.swift in Sources */,
 				DA20B78B26D160990048B500 /* GradientViewController.swift in Sources */,
 				DAF3CDFB26BD84EB0067069D /* Network.swift in Sources */,
 				DA22F00226528F1900F6D4E9 /* TaskViewModelFactory.swift in Sources */,
@@ -1220,6 +1259,8 @@
 				DA9598572680946100D88CAC /* WarningViewController.swift in Sources */,
 				DA959851267F78FF00D88CAC /* ColorCollectionViewCell.swift in Sources */,
 				DAF9149D262B4E1500ACF14D /* ToDoGame.xcdatamodeld in Sources */,
+				DA20B80E26D4155B0048B500 /* RecipeCollectionViewCell.swift in Sources */,
+				DA20B80226D414E70048B500 /* RecipesView.swift in Sources */,
 				DA959803267B4BCD00D88CAC /* CalendarCollectionView.swift in Sources */,
 				DAF3CD9C26BC12350067069D /* Potion.swift in Sources */,
 				DA20B7A926D250CF0048B500 /* CountedImageView.swift in Sources */,
@@ -1234,6 +1275,7 @@
 				DA9597BF267A191700D88CAC /* CheckboxView.swift in Sources */,
 				DAF3CDCA26BD43C70067069D /* UserService.swift in Sources */,
 				DA9597FE267B4BAE00D88CAC /* CalendarHeaderView.swift in Sources */,
+				DA20B81526D4254E0048B500 /* InventoryCollectionReusableView.swift in Sources */,
 				DA76BFE726B41817009BAFD1 /* PlantSpecies.swift in Sources */,
 				DA76BFC226B06A69009BAFD1 /* Plant.swift in Sources */,
 				DAF3CD1526B86F820067069D /* ShopCollectionViewCell.swift in Sources */,
@@ -1245,6 +1287,7 @@
 				DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */,
 				DA20B7B726D25FE80048B500 /* ShadowView.swift in Sources */,
 				DA20B77126CFE89A0048B500 /* Seed.swift in Sources */,
+				DA20B7E726D3D9CC0048B500 /* ItemsView.swift in Sources */,
 				DA95978D2676280A00D88CAC /* TimePickerView.swift in Sources */,
 				DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */,
 				DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */,
@@ -1252,6 +1295,7 @@
 				DA95980D267B543700D88CAC /* CalendarDay.swift in Sources */,
 				DAF3CDD126BD527E0067069D /* BuffService.swift in Sources */,
 				DA20B7B026D25D2B0048B500 /* ButtonWithShadow.swift in Sources */,
+				DA20B7FA26D3DD120048B500 /* InventoryItemCollectionViewCell.swift in Sources */,
 				DAF3CDEC26BD60080067069D /* BuffPotion.swift in Sources */,
 				DAF3CD3E26BAB8820067069D /* App URLs.swift in Sources */,
 				DA959812267B658000D88CAC /* CalendarService.swift in Sources */,

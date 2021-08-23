@@ -18,6 +18,7 @@ struct User: Codable {
     var oil: Int
     
     static let zero = User(experience: 0, gold: 0, water: 0, waterCapacity: 10, donationCurrency: 0, fertilizer: 0, firewood: 0, oil: 0)
+   
     
     var dictionary: [String : Any] {
         var dict = [String : Int]()
