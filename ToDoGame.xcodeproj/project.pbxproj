@@ -25,6 +25,8 @@
 		DA20B80E26D4155B0048B500 /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B80D26D4155B0048B500 /* RecipeCollectionViewCell.swift */; };
 		DA20B81526D4254E0048B500 /* InventoryCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */; };
 		DA20B81C26D428020048B500 /* GardenResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B81B26D428020048B500 /* GardenResourcesView.swift */; };
+		DA20B82326D4E5460048B500 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B82226D4E5460048B500 /* EmptyView.swift */; };
+		DA20B83626E6A3CB0048B500 /* GardenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA20B83526E6A3CB0048B500 /* GardenButton.swift */; };
 		DA22EF8A26344BC300F6D4E9 /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */; };
 		DA22EF8F26344C1200F6D4E9 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */; };
 		DA22EF9526344CA400F6D4E9 /* e_UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22EF9426344CA400F6D4E9 /* e_UIView.swift */; };
@@ -76,7 +78,6 @@
 		DA22F1492662449900F6D4E9 /* e_String.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA22F1482662449900F6D4E9 /* e_String.swift */; };
 		DA76BED42691F5D4009BAFD1 /* GamificationOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BED32691F5D4009BAFD1 /* GamificationOverviewView.swift */; };
 		DA76BEDC2691F844009BAFD1 /* Tag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEDB2691F844009BAFD1 /* Tag.swift */; };
-		DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEE0269391B6009BAFD1 /* Level.swift */; };
 		DA76BEE6269458D4009BAFD1 /* LevelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA76BEE5269458D4009BAFD1 /* LevelManager.swift */; };
 		DA76BEF5269C3F52009BAFD1 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA76BEF3269C3F52009BAFD1 /* Interface.storyboard */; };
 		DA76BEF7269C3F56009BAFD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA76BEF6269C3F56009BAFD1 /* Assets.xcassets */; };
@@ -142,6 +143,7 @@
 		DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987D268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift */; };
 		DA959882268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95987E268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift */; };
 		DA9598A02691DF5000D88CAC /* Buff.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA95989F2691DF5000D88CAC /* Buff.swift */; };
+		DAEFCB69276101FB0079072D /* p_GardenDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEFCB68276101FB0079072D /* p_GardenDelegate.swift */; };
 		DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */; };
 		DAF3CCF426B82D740067069D /* QuestsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */; };
 		DAF3CD0026B867580067069D /* p_ShopItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF3CCFF26B867580067069D /* p_ShopItem.swift */; };
@@ -259,6 +261,8 @@
 		DA20B80D26D4155B0048B500 /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryCollectionReusableView.swift; sourceTree = "<group>"; };
 		DA20B81B26D428020048B500 /* GardenResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenResourcesView.swift; sourceTree = "<group>"; };
+		DA20B82226D4E5460048B500 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		DA20B83526E6A3CB0048B500 /* GardenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GardenButton.swift; sourceTree = "<group>"; };
 		DA22EF8926344BC300F6D4E9 /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DA22EF8E26344C1200F6D4E9 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		DA22EF9426344CA400F6D4E9 /* e_UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_UIView.swift; sourceTree = "<group>"; };
@@ -313,7 +317,6 @@
 		DA22F1482662449900F6D4E9 /* e_String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = e_String.swift; sourceTree = "<group>"; };
 		DA76BED32691F5D4009BAFD1 /* GamificationOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamificationOverviewView.swift; sourceTree = "<group>"; };
 		DA76BEDB2691F844009BAFD1 /* Tag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tag.swift; sourceTree = "<group>"; };
-		DA76BEE0269391B6009BAFD1 /* Level.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		DA76BEE5269458D4009BAFD1 /* LevelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelManager.swift; sourceTree = "<group>"; };
 		DA76BEF1269C3F52009BAFD1 /* ToDoGameWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoGameWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA76BEF4269C3F52009BAFD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -376,6 +379,7 @@
 		DA95987D268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecurrenceRule+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DA95987E268C8C5600D88CAC /* CDRecurrenceRule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDRecurrenceRule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		DA95989F2691DF5000D88CAC /* Buff.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buff.swift; sourceTree = "<group>"; };
+		DAEFCB68276101FB0079072D /* p_GardenDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_GardenDelegate.swift; sourceTree = "<group>"; };
 		DAF3CCE726B82CDE0067069D /* ShopCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopCoordinator.swift; sourceTree = "<group>"; };
 		DAF3CCF326B82D740067069D /* QuestsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestsCoordinator.swift; sourceTree = "<group>"; };
 		DAF3CCFF26B867580067069D /* p_ShopItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p_ShopItem.swift; sourceTree = "<group>"; };
@@ -549,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				DA20B78A26D160990048B500 /* GradientViewController.swift */,
+				DA20B82226D4E5460048B500 /* EmptyView.swift */,
 				DA20B7AF26D25D2B0048B500 /* ButtonWithShadow.swift */,
 				DA20B7B626D25FE80048B500 /* ShadowView.swift */,
 				DA20B7D026D2DB110048B500 /* SegmentButton.swift */,
@@ -633,11 +638,13 @@
 			isa = PBXGroup;
 			children = (
 				DA76C01726B817AC009BAFD1 /* InventoryCoordinator.swift */,
+				DAEFCB68276101FB0079072D /* p_GardenDelegate.swift */,
 				DA76BFF626B816E8009BAFD1 /* InventoryViewController.swift */,
 				DA20B7DE26D2E1270048B500 /* InventorySegmentView.swift */,
 				DAF3CD0626B86B3C0067069D /* GardenView.swift */,
 				DA20B81B26D428020048B500 /* GardenResourcesView.swift */,
 				DAF3CD0D26B86C1B0067069D /* GardenCollectionViewCell.swift */,
+				DA20B83526E6A3CB0048B500 /* GardenButton.swift */,
 				DA20B81426D4254E0048B500 /* InventoryCollectionReusableView.swift */,
 				DA20B7E526D3D9AD0048B500 /* Items */,
 				DA20B80026D414D10048B500 /* Recipes */,
@@ -778,7 +785,6 @@
 			children = (
 				DAF3CD3526BAB63B0067069D /* User.swift */,
 				DA95989F2691DF5000D88CAC /* Buff.swift */,
-				DA76BEE0269391B6009BAFD1 /* Level.swift */,
 				DA76BFE626B41817009BAFD1 /* PlantSpecies.swift */,
 				DA76BFC126B06A68009BAFD1 /* Plant.swift */,
 				DA20B77026CFE89A0048B500 /* Seed.swift */,
@@ -1190,6 +1196,7 @@
 				DA22EF9D263452DA00F6D4E9 /* TaskTableViewCell.swift in Sources */,
 				DA95979726767A0C00D88CAC /* RepeatComposedView.swift in Sources */,
 				DA95981F267BCF3400D88CAC /* TimeCheckboxView.swift in Sources */,
+				DA20B82326D4E5460048B500 /* EmptyView.swift in Sources */,
 				DA22F0BF26564F5900F6D4E9 /* TagsView.swift in Sources */,
 				DA76C01826B817AC009BAFD1 /* InventoryCoordinator.swift in Sources */,
 				DA76C00526B81743009BAFD1 /* ShopViewController.swift in Sources */,
@@ -1213,6 +1220,7 @@
 				DA22EFE8265101E600F6D4E9 /* RecurrenceFrequency.swift in Sources */,
 				DA20B81C26D428020048B500 /* GardenResourcesView.swift in Sources */,
 				DAF3CD8426BAFA160067069D /* p_LoginAPIService.swift in Sources */,
+				DAEFCB69276101FB0079072D /* p_GardenDelegate.swift in Sources */,
 				DA959881268C8C5600D88CAC /* CDRecurrenceRule+CoreDataClass.swift in Sources */,
 				DA9598A02691DF5000D88CAC /* Buff.swift in Sources */,
 				DAF3CD5726BABA900067069D /* UserAPIServiceMock.swift in Sources */,
@@ -1222,7 +1230,6 @@
 				DA22F123265D1D2B00F6D4E9 /* e_UIAlertController.swift in Sources */,
 				DA22F111265B95A900F6D4E9 /* TasksManager.swift in Sources */,
 				DA9597E9267A657200D88CAC /* WeekdaysView.swift in Sources */,
-				DA76BEE1269391B6009BAFD1 /* Level.swift in Sources */,
 				DAF3CD7926BAF6DB0067069D /* TasksAPIServiceMain.swift in Sources */,
 				DAF3CD3626BAB63B0067069D /* User.swift in Sources */,
 				DAF3CCE826B82CDE0067069D /* ShopCoordinator.swift in Sources */,
@@ -1255,6 +1262,7 @@
 				DA22F00726529D8700F6D4E9 /* e_Date.swift in Sources */,
 				DAF91497262B4E1500ACF14D /* ViewController.swift in Sources */,
 				DA9597B1267A0C8700D88CAC /* RadioSwitchTableView.swift in Sources */,
+				DA20B83626E6A3CB0048B500 /* GardenButton.swift in Sources */,
 				DA76BFDB26B412C2009BAFD1 /* e_Strings Game.swift in Sources */,
 				DA9598572680946100D88CAC /* WarningViewController.swift in Sources */,
 				DA959851267F78FF00D88CAC /* ColorCollectionViewCell.swift in Sources */,

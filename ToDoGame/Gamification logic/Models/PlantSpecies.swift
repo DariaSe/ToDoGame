@@ -27,22 +27,6 @@ struct PlantSpecies {
     var fruitingDuration: Int
     var maxAge: Int { daysTilFruiting + fruitingDuration }
     
-    static let tomato = PlantSpecies(id: 1,
-                                     title: Strings.tomato,
-                                     description: "",
-                                     buyCostGold: 3,
-                                     buyCostDonation: 0,
-                                     sellCost: 1,
-                                     growthType: .bush,
-                                     waterConsumption: 2,
-                                     fertilizerConsumption: 2,
-                                     fertilizerOutput: 2,
-                                     levelRequired: 1,
-                                     daysTilBlooming: 10,
-                                     daysTilFruiting: 12,
-                                     nominalYield: 3,
-                                     fruitingDuration: 7)
-    
     static let strawberry = PlantSpecies(id: 2,
                                          title: Strings.strawberry,
                                          description: "",
@@ -74,22 +58,6 @@ struct PlantSpecies {
                                         daysTilFruiting: 40,
                                         nominalYield: 10,
                                         fruitingDuration: 10)
-    
-    static let sunflower = PlantSpecies(id: 4,
-                                        title: Strings.sunflower,
-                                        description: "",
-                                        buyCostGold: 3,
-                                        buyCostDonation: 1,
-                                        sellCost: 1,
-                                        growthType: .bush,
-                                        waterConsumption: 2,
-                                        fertilizerConsumption: 2,
-                                        fertilizerOutput: 2,
-                                        levelRequired: 4,
-                                        daysTilBlooming: 14,
-                                        daysTilFruiting: 16,
-                                        nominalYield: 60,
-                                        fruitingDuration: 1)
     
     static let walnut = PlantSpecies(id: 5,
                                      title: Strings.walnut,
@@ -139,22 +107,6 @@ struct PlantSpecies {
                                      nominalYield: 25,
                                      fruitingDuration: 7)
     
-    static let pineapple = PlantSpecies(id: 8,
-                                        title: Strings.pineapple,
-                                        description: "",
-                                        buyCostGold: 7,
-                                        buyCostDonation: 1,
-                                        sellCost: 1,
-                                        growthType: .bush,
-                                        waterConsumption: 2,
-                                        fertilizerConsumption: 2,
-                                        fertilizerOutput: 2,
-                                        levelRequired: 8,
-                                        daysTilBlooming: 14,
-                                        daysTilFruiting: 17,
-                                        nominalYield: 1,
-                                        fruitingDuration: 4)
-    
     static let avocado = PlantSpecies(id: 9,
                                       title: Strings.avocado,
                                       description: "",
@@ -203,50 +155,10 @@ struct PlantSpecies {
                                           nominalYield: 3,
                                           fruitingDuration: 5)
     
-    static let dragonfruit = PlantSpecies(id: 12,
-                                          title: Strings.dragonfruit,
-                                          description: "",
-                                          buyCostGold: 10,
-                                          buyCostDonation: 2,
-                                          sellCost: 2,
-                                          growthType: .bush,
-                                          waterConsumption: 3,
-                                          fertilizerConsumption: 3,
-                                          fertilizerOutput: 3,
-                                          levelRequired: 10,
-                                          daysTilBlooming: 20,
-                                          daysTilFruiting: 22,
-                                          nominalYield: 4,
-                                          fruitingDuration: 6)
-    
-    static let plants: [PlantSpecies] = [.tomato, .strawberry, .apple, .sunflower, .walnut, .watermelon, .cherry, .pineapple, .avocado, .coconut, .chiliPepper, .dragonfruit]
+    static let plants: [PlantSpecies] = [.strawberry, .apple, .walnut, .watermelon, .cherry, .avocado, .coconut, .chiliPepper]
 }
 
 enum PlantGrowthType: Int {
     case bush
     case tree
-}
-
-enum PlantType: Int {
-    case tomato
-    case strawberry
-    case apple
-    case sunflower
-    case walnut
-    case watermelon
-    case cherry
-    case pineapple
-    case avocado
-    case coconut
-    case chiliPepper
-    case dragonfruit
-    
-    case firePlant
-    case waterPlant
-    case airPlant
-    case earthPlant
-    case humanPlant
-    case invisibilityPlant
-    case teleportationPlant
-    case portalPlant
 }

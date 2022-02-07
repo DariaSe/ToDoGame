@@ -18,11 +18,11 @@ extension UIColor {
 
 extension UIColor {
     
-    static var backgroundColor: UIColor = UIColor(netHex: 0xF7F6F0)
+    static var backgroundColor: UIColor = UIColor(netHex: 0xEFEDE2)
     
     static var borderColor: UIColor = UIColor.lightGray
     
-    static var textColor: UIColor = UIColor.darkGray
+    static var textColor: UIColor = UIColor.AppColors.darkGreen
     
     static var buttonColor: UIColor = UIColor.AppColors.darkGreen
     
@@ -32,9 +32,9 @@ extension UIColor {
     
     static var noColorColor = UIColor(netHex: 0xc7c7c7)
     
-    static var startGradientColor = UIColor(netHex: 0xD5F5FF)
-    static var middleGradientColor = UIColor(netHex: 0xA4E5C6)
-    static var endGradientColor = UIColor(netHex: 0x8EC4B2)
+    static var startGradientColor = UIColor(netHex: 0xF7F6F0)
+    static var middleGradientColor = UIColor(netHex: 0xEBEAE0)
+    static var endGradientColor = UIColor(netHex: 0xDEDDCF)
     
     struct AppColors {
         //1
@@ -46,7 +46,7 @@ extension UIColor {
         //4
         static let yellow = UIColor(netHex: 0xd8c55b)
         //5
-        static let darkGreen = UIColor(netHex: 0x014f34)
+        static let darkGreen = UIColor(netHex: 0x164031)
         //6
         static let green = UIColor(netHex: 0x216367)
         //7

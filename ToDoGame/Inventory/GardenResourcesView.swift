@@ -25,33 +25,32 @@ class GardenResourcesView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToLayoutMargins(subview: fertilizerLabel, leading: nil,top: nil, bottom: nil)
-        fertilizerLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        fertilizerLabel.textColor = UIColor.AppColors.darkGreen
-        fertilizerLabel.font = UIFont(name: nunitoRegular, size: 18)
+        self.pinToLayoutMargins(subview: fertilizerImageView, leading: nil,top: nil, bottom: nil)
+        fertilizerImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        
+        fertilizerLabel.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(fertilizerLabel)
+        fertilizerLabel.centerYAnchor.constraint(equalTo: fertilizerImageView.centerYAnchor).isActive = true
+        fertilizerLabel.trailingAnchor.constraint(equalTo: fertilizerImageView.trailingAnchor, constant: -10).isActive = true
+        fertilizerImageView.setDimensions(width: 80, height: 48)
+        fertilizerImageView.image = UIImage(named: "Fertilizer_horizontal")
+        
+        fertilizerLabel.textColor = UIColor.textColor
+        fertilizerLabel.font = UIFont(name: nunitoRegular, size: 18)!
         fertilizerLabel.textAlignment = .right
         
-        self.addSubview(fertilizerImageView)
-        fertilizerImageView.translatesAutoresizingMaskIntoConstraints = false
-        fertilizerImageView.centerYAnchor.constraint(equalTo: fertilizerLabel.centerYAnchor).isActive = true
-        fertilizerImageView.trailingAnchor.constraint(equalTo: fertilizerLabel.leadingAnchor, constant: -7).isActive = true
-        fertilizerImageView.setDimensions(width: 32, height: 32)
-        fertilizerImageView.image = UIImage(named: "Fertilizer")
+        self.pinToLayoutMargins(subview: waterImageView, trailing: nil, top: nil, bottom: nil)
+        waterImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        waterImageView.setDimensions(width: 100, height: 60)
+        waterImageView.image = UIImage(named: "Watering_horizontal")
         
         waterLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(waterLabel)
-        waterLabel.trailingAnchor.constraint(equalTo: fertilizerImageView.leadingAnchor, constant: -40).isActive = true
-        waterLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        waterLabel.textColor = UIColor.AppColors.darkGreen
-        waterLabel.font = UIFont(name: nunitoRegular, size: 18)
+        waterLabel.leadingAnchor.constraint(equalTo: waterImageView.trailingAnchor, constant: -10).isActive = true
+        waterLabel.centerYAnchor.constraint(equalTo: waterImageView.centerYAnchor).isActive = true
+        waterLabel.textColor = UIColor.textColor
+        waterLabel.font = UIFont(name: nunitoRegular, size: 18)!
         waterLabel.textAlignment = .right
-        
-        self.addSubview(waterImageView)
-        waterImageView.translatesAutoresizingMaskIntoConstraints = false
-        waterImageView.centerYAnchor.constraint(equalTo: waterLabel.centerYAnchor).isActive = true
-        waterImageView.trailingAnchor.constraint(equalTo: waterLabel.leadingAnchor, constant: -7).isActive = true
-        waterImageView.setDimensions(width: 32, height: 32)
-        waterImageView.image = UIImage(named: "Water")
     }
     
     func updateUI() {

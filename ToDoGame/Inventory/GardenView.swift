@@ -15,6 +15,9 @@ class GardenView: UIView {
         }
     }
     
+    var delegate: GardenDelegate?
+    
+    let emptyView = UIView()
     let resourcesView = GardenResourcesView()
     
     lazy var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: collectionViewLayout)
@@ -31,8 +34,8 @@ class GardenView: UIView {
     
     private func initialSetup() {
         self.pinToEdges(subview: resourcesView, trailing: 10, bottom: nil)
-        resourcesView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        self.pinToEdges(subview: collectionView, top: 50)
+        resourcesView.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        self.pinToEdges(subview: collectionView, top: 60, bottom: 10)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
@@ -57,30 +60,15 @@ extension GardenView: UICollectionViewDataSource {
         let plant = plants[indexPath.section][indexPath.row]
         cell.update(with: plant)
         cell.waterPressed = { [unowned self] in
-            
+            self.delegate?.water(plantID: plant.instanceID)
         }
         cell.fertilizePressed = { [unowned self] in
-            
+            self.delegate?.fertilize(plantID: plant.instanceID)
         }
         cell.pickFruitsPressed = { [unowned self] in
-            
+            self.delegate?.pickFruits(plantID: plant.instanceID)
         }
         return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        switch kind {
-        case UICollectionView.elementKindSectionHeader:
-            let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InventoryCollectionReusableView.reuseIdentifier, for: indexPath) as! InventoryCollectionReusableView
-            if indexPath.section == 0 {
-                reusableview.title = Strings.regularPlants
-            }
-            else {
-                reusableview.title = Strings.magicPlants
-            }
-            return reusableview
-        default:  fatalError("Unexpected element kind")
-        }
     }
 }
 

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TaskListViewController: GradientViewController, ErrorPresenter {
+class TaskListViewController: UIViewController, ErrorPresenter {
     
     weak var coordinator: TaskListCoordinator?
     
@@ -55,6 +55,7 @@ class TaskListViewController: GradientViewController, ErrorPresenter {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.backgroundColor
         view.pinToLayoutMargins(subview: calendarHeaderView, leading: 30, trailing: 30, top: 0, bottom: nil)
         calendarHeaderView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         view.pinToLayoutMargins(subview: addButton, leading: nil, trailing: -10, bottom: nil)

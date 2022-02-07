@@ -54,15 +54,7 @@ struct Plant {
     var magic: Magic?
     var specialAttribute: SpecialAttribute?
     
-    static let sampleOne = Plant(species: .tomato,
-                                 instanceID: 1, imageURL: "",
-                                 plantingDate: Date().dayStart.addingTimeInterval(-(Date.oneDay * 2)),
-                                 wateringDates: [Date().dayStart.addingTimeInterval(-(Date.oneDay * 2)),
-                                                 Date().dayStart.addingTimeInterval(-(Date.oneDay)),
-                                                 Date().dayStart],
-                                 fertilizerDates: [],
-                                 magic: nil, specialAttribute: nil)
-    
+   
     static let sampleTwo = Plant(species: .strawberry,
                                  instanceID: 2, imageURL: "",
                                  plantingDate: Date().dayStart.addingTimeInterval(-(Date.oneDay * 5)),
@@ -85,7 +77,7 @@ struct Plant {
                                    fertilizerDates: [Date().dayStart.addingTimeInterval(-(Date.oneDay * 5))],
                                    magic: nil, specialAttribute: nil)
     
-    static let sample = [Plant.sampleOne, Plant.sampleTwo, Plant.sampleThree]
+    static let sample = [Plant.sampleTwo, Plant.sampleThree]
 }
 
 enum PlantState: String {

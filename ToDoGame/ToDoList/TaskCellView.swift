@@ -31,7 +31,7 @@ class TaskCellView: UIView {
         self.backgroundColor = UIColor.clear
         roundedView.layer.cornerRadius = 16
         roundedView.clipsToBounds = true
-        roundedView.backgroundColor = UIColor.backgroundColor
+        roundedView.backgroundColor = UIColor.white
        
         checkButton.addTarget(self, action: #selector(checkButtonPressed), for: .touchUpInside)
     }

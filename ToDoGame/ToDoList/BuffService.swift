@@ -7,17 +7,17 @@
 
 import Foundation
 
-class BuffService {
-    
-    var shared = BuffService()
-    
-    private init() {}
-    
-    var level: Int { LevelManager.currentLevel }
-    var isSerie: Bool = false
-    var buffPotion: BuffPotion?
-    
-    func getBuffPotion() {
-        
-    }
-}
+//class BuffService {
+//
+//    var shared = BuffService()
+//
+//    private init() {}
+//
+//    var level: Int { LevelManager.currentLevel }
+//    var isSerie: Bool = false
+//    var buffPotion: BuffPotion?
+//
+//    func getBuffPotion() {
+//
+//    }
+//}

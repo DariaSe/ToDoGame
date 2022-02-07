@@ -9,7 +9,7 @@ import UIKit
 
 class ItemsView: UIView {
     
-    var items: [[InventoryItem]] = [[Seed(species: .watermelon, imageName: "", quantity: 2)], [Fruit(species: .avocado, imageName: "", sellCost: 2, pcsForFertilizer: 1, quantity: 3)]] {
+    var items: [[InventoryItem]] = [Seed.sample, Fruit.sample] {
         didSet {
             collectionView.reloadData()
         }
@@ -28,11 +28,12 @@ class ItemsView: UIView {
     }
     
     private func initialSetup() {
-        self.pinToEdges(subview: collectionView)
+        self.pinToEdges(subview: collectionView, bottom: 10)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.backgroundColor = .clear
         collectionView.register(InventoryItemCollectionViewCell.self, forCellWithReuseIdentifier: InventoryItemCollectionViewCell.reuseIdentifier)
+        collectionView.register(InventoryCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InventoryCollectionReusableView.reuseIdentifier)
     }
 
 }
@@ -53,13 +54,35 @@ extension ItemsView: UICollectionViewDataSource {
         cell.update(with: item)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            let reusableview = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: InventoryCollectionReusableView.reuseIdentifier, for: indexPath) as! InventoryCollectionReusableView
+            if items[indexPath.section].first is Seed {
+                reusableview.title = Strings.seeds
+            }
+            else if items[indexPath.section].first is Fruit  {
+                reusableview.title = Strings.fruits
+            }
+            else if items[indexPath.section].first is Stone {
+                reusableview.title = Strings.stones
+            }
+            return reusableview
+        default:  fatalError("Unexpected element kind")
+        }
+    }
 }
 
 extension ItemsView: UICollectionViewDelegateFlowLayout {
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            return CGSize(width: collectionView.frame.width, height: 60)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (UIScreen.main.bounds.width - 20) / 3 - 1
-        return CGSize(width: width, height: width)
+        return CGSize(width: width, height: width / 3 * 4)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {

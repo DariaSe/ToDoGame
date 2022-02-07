@@ -13,9 +13,9 @@ class InventoryItemCollectionViewCell: UICollectionViewCell {
     
     let shadowView = UIView()
     let upperView = UIView()
-    let stackView = UIStackView()
-    let imageWithCount = CountedImageView()
-    let label = UILabel()
+    let imageView = UIImageView()
+    let titleLabel = UILabel()
+    let countLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,22 +35,25 @@ class InventoryItemCollectionViewCell: UICollectionViewCell {
         shadowView.pinToEdges(subview: upperView)
         upperView.layer.cornerRadius = 20
         upperView.backgroundColor = UIColor.backgroundColor
-        stackView.center(in: contentView)
-        stackView.alignment = .center
-        stackView.spacing = 12
-        stackView.axis = .vertical
-        stackView.addArrangedSubview(imageWithCount)
-        stackView.addArrangedSubview(label)
-        let cellWidth = (UIScreen.main.bounds.width - 20) / 3 - 1
-        let imageWidth = cellWidth * 0.5
-        imageWithCount.setDimensions(width: imageWidth, height: imageWidth)
-        label.textColor = UIColor.AppColors.darkGreen
-        label.font = UIFont(name: nunitoBold, size: 16)!
+        contentView.pinToEdges(subview: imageView, leading: 3, trailing: 3, top: 3, bottom: 3)
+        contentView.pinToEdges(subview: titleLabel, leading: 10, trailing: 10, top: 20, bottom: nil)
+        titleLabel.textAlignment = .center
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        titleLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        titleLabel.font = UIFont(name: nunitoExtraBold, size: 12)!
+        countLabel.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(countLabel)
+        countLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        countLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor).isActive = true
+        countLabel.textAlignment = .center
+        countLabel.textColor = UIColor.white.withAlphaComponent(0.6)
+        countLabel.font = UIFont(name: nunitoBold, size: 12)
     }
     
     func update(with item: InventoryItem) {
-        imageWithCount.image = UIImage(named: "Seed placeholder")
-        imageWithCount.count = item.quantity
-        label.text = item.title
+        imageView.image = UIImage(named: item.imageName + "_large") ?? UIImage(named: item.imageName)
+        titleLabel.text = item.title.uppercased()
+        countLabel.text = "x" + item.quantity.string
     }
 }

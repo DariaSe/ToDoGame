@@ -43,6 +43,10 @@ extension Strings {
     static let regularPlants = "Regular plants".localizedGame
     static let magicPlants = "Magic plants".localizedGame
     
+    static let seeds = "Seeds".localizedGame
+    static let fruits = "Fruits".localizedGame
+    static let stones = "Stones".localizedGame
+    
     static let waterVerb = "Water".localizedGame
     static let fertilize = "Fertilize".localizedGame
     

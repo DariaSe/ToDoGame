@@ -16,7 +16,7 @@ class GamificationOverviewView: UIView {
     let waterImageView = UIImageView()
     let waterLabel = UILabel()
     
-    let waterImage = UIImage(named: "Water")
+    let waterImage = UIImage(named: "Watering_horizontal")
     let coinImage = UIImage(named: "Coin")
 
     override init(frame: CGRect) {
@@ -33,36 +33,36 @@ class GamificationOverviewView: UIView {
         
         self.pinToLayoutMargins(subview: experienceProgressView, trailing: nil, top: nil)
         levelLabel.bottomAnchor.constraint(equalTo: experienceProgressView.topAnchor, constant: -5).isActive = true
-        experienceProgressView.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        let width = UIScreen.main.bounds.width / 2 - self.layoutMargins.left * 2
+        experienceProgressView.widthAnchor.constraint(equalToConstant: width).isActive = true
         experienceProgressView.heightAnchor.constraint(equalToConstant: 8).isActive = true
         
         experienceLabel.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(experienceLabel)
-        experienceLabel.trailingAnchor.constraint(equalTo: experienceProgressView.trailingAnchor).isActive = true
-        experienceLabel.bottomAnchor.constraint(equalTo: experienceProgressView.topAnchor, constant: -5).isActive = true
+        experienceLabel.leadingAnchor.constraint(equalTo: levelLabel.trailingAnchor, constant: 5).isActive = true
+        experienceLabel.centerYAnchor.constraint(equalTo: levelLabel.centerYAnchor).isActive = true
         
-        self.pinToLayoutMargins(subview: waterLabel, leading: nil,top: nil, bottom: nil)
+        self.pinToLayoutMargins(subview: waterImageView, leading: nil, trailing: 10, top: nil, bottom: nil)
+        waterImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        waterImageView.setDimensions(width: 100, height: 60)
+        
+        self.pinToLayoutMargins(subview: waterLabel, leading: nil, trailing: 0, top: nil, bottom: nil)
         waterLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
         
-        self.addSubview(waterImageView)
-        waterImageView.translatesAutoresizingMaskIntoConstraints = false
-        waterImageView.centerYAnchor.constraint(equalTo: waterLabel.centerYAnchor).isActive = true
-        waterImageView.trailingAnchor.constraint(equalTo: waterLabel.leadingAnchor, constant: -7).isActive = true
-        waterImageView.setDimensions(width: 32, height: 32)
         
-        levelLabel.textColor = UIColor.AppColors.darkGreen
+        levelLabel.textColor = UIColor.textColor
         levelLabel.font = UIFont(name: nunitoBold, size: 18)!
         
-        experienceLabel.textColor = UIColor.AppColors.darkGreen
+        experienceLabel.textColor = UIColor.textColor
         experienceLabel.font = UIFont.normalTextFont
         experienceLabel.textAlignment = .right
         
         experienceProgressView.progressTintColor = UIColor.AppColors.mint
-        experienceProgressView.trackTintColor = UIColor.backgroundColor
+        experienceProgressView.trackTintColor = UIColor.white.withAlphaComponent(0.6)
         experienceProgressView.layer.cornerRadius = 4
         
-        waterLabel.textColor = UIColor.AppColors.darkGreen
-        waterLabel.font = UIFont(name: nunitoRegular, size: 18)
+        waterLabel.textColor = UIColor.textColor
+        waterLabel.font = UIFont(name: nunitoRegular, size: 18)!
         waterLabel.textAlignment = .right
         waterImageView.image = waterImage
     }

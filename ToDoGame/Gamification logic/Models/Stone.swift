@@ -22,5 +22,7 @@ struct Stone: ShopItem, InventoryItem {
 
 enum StoneType: Int {
     case garnet
-    case amber
+    case tourmaline
+    case rhinestone
+    case morion
 }

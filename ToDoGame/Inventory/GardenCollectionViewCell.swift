@@ -24,8 +24,8 @@ class GardenCollectionViewCell: UICollectionViewCell {
     let pickFruitsView = CountedImageView()
     
     let lowerContainerView = UIView()
-    let waterButton = ButtonWithCount()
-    let fertilizeButton = ButtonWithCount()
+    let waterButton = GardenButton()
+    let fertilizeButton = GardenButton()
     
     let panGestureRecognizer = UIPanGestureRecognizer()
     
@@ -52,15 +52,15 @@ class GardenCollectionViewCell: UICollectionViewCell {
         lowerContainerView.layer.cornerRadius = 20
         lowerContainerView.pinToEdges(subview: waterButton, leading: nil, trailing: 0, top: 0, bottom: nil)
         waterButton.setDimensions(width: 80, height: 125)
-        waterButton.image = UIImage(named: "Water")
+        waterButton.image = UIImage(named: "Watering_vertical")
         waterButton.text = Strings.waterVerb
-        waterButton.axis = .vertical
+        waterButton.layer.cornerRadius = 20
         waterButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         lowerContainerView.pinToEdges(subview: fertilizeButton, leading: nil, trailing: 0, top: nil, bottom: 0)
         fertilizeButton.setDimensions(width: 80, height: 125)
-        fertilizeButton.image = UIImage(named: "Fertilizer")
+        fertilizeButton.image = UIImage(named: "Fertilizer_vertical")
         fertilizeButton.text = Strings.fertilize
-        fertilizeButton.axis = .vertical
+        fertilizeButton.layer.cornerRadius = 20
         fertilizeButton.addTarget(self, action: #selector(buttonPressed(sender:)), for: .touchUpInside)
         
         contentView.pinToEdges(subview: upperContainerView, leading: 3, trailing: 3, top: 3, bottom: 3)
@@ -81,19 +81,19 @@ class GardenCollectionViewCell: UICollectionViewCell {
         upperContainerView.addSubview(titleLabel)
         titleLabel.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 11).isActive = true
-        titleLabel.textColor = UIColor.AppColors.darkGreen
+        titleLabel.textColor = UIColor.textColor
         titleLabel.font = UIFont(name: nunitoBold, size: 18)!
         stateLabel.translatesAutoresizingMaskIntoConstraints = false
         upperContainerView.addSubview(stateLabel)
         stateLabel.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
         stateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 3).isActive = true
-        stateLabel.textColor = UIColor.AppColors.darkGreen
+        stateLabel.textColor = UIColor.textColor
         stateLabel.font = UIFont(name: nunitoRegular, size: 14)!
         descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
         upperContainerView.addSubview(descriptionLabel)
         descriptionLabel.centerXAnchor.constraint(equalTo: upperContainerView.centerXAnchor).isActive = true
         descriptionLabel.topAnchor.constraint(equalTo: stateLabel.bottomAnchor, constant: 1).isActive = true
-        descriptionLabel.textColor = UIColor.AppColors.darkGreen
+        descriptionLabel.textColor = UIColor.textColor
         descriptionLabel.font = UIFont(name: nunitoRegular, size: 12)!
         
         upperContainerView.pinToLayoutMargins(subview: pickFruitsButton, leading: nil, trailing: 2, top: 2, bottom: nil)
@@ -161,7 +161,7 @@ class GardenCollectionViewCell: UICollectionViewCell {
         waterButton.count = plant.species.waterConsumption
         fertilizeButton.count = plant.species.fertilizerConsumption
         pickFruitsButton.isHidden = plant.state != .fruiting || plant.harvestDates.contains(Date().dayStart)
-        pickFruitsView.image = UIImage(named: "Seed placeholder")
+        pickFruitsView.image = UIImage(named: "tomato_fruit")
         pickFruitsView.count = plant.species.nominalYield
         let user = UserService.shared.user
         let wasWateredToday = plant.wateringDates.contains(Date().dayStart)

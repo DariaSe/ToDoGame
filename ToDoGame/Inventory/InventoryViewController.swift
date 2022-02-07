@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InventoryViewController: GradientViewController {
+class InventoryViewController: UIViewController {
     
     weak var coordinator: InventoryCoordinator?
     
@@ -22,7 +22,7 @@ class InventoryViewController: GradientViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.backgroundColor = UIColor.backgroundColor
         view.pinToLayoutMargins(subview: titleLabel, leading: nil, trailing: nil, top: 5, bottom: nil)
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         titleLabel.font = UIFont.screenTitleFont
@@ -39,18 +39,18 @@ class InventoryViewController: GradientViewController {
         }
         
         view.pinToEdges(subview: gardenView, leading: 10, trailing: 10, top: nil, bottom: nil)
-        gardenView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
+        gardenView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         gardenView.topAnchor.constraint(equalTo: segmentView.bottomAnchor, constant: 10).isActive = true
         gardenView.tag = 0
         
         view.pinToEdges(subview: itemsView, leading: 10, trailing: 10, top: nil, bottom: nil)
-        itemsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
+        itemsView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         itemsView.topAnchor.constraint(equalTo: segmentView.bottomAnchor, constant: 10).isActive = true
         itemsView.tag = 1
         itemsView.isHidden = true
         
         view.pinToEdges(subview: recipesView, leading: 10, trailing: 10, top: nil, bottom: nil)
-        recipesView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor, constant: 10).isActive = true
+        recipesView.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         recipesView.topAnchor.constraint(equalTo: segmentView.bottomAnchor, constant: 10).isActive = true
         recipesView.tag = 2
         recipesView.isHidden = true

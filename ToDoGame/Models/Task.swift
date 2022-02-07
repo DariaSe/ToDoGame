@@ -5,7 +5,7 @@
 //  Created by Дарья Селезнёва on 07.05.2021.
 //
 
-import UIKit
+import Foundation
 
 struct Task: Codable, Orderable {
     
@@ -26,6 +26,23 @@ struct Task: Codable, Orderable {
     }
     var recurrenceRule: RecurrenceRule?
     var executionLog: [Date] = []
+    var tasksCompleted: Int {
+        print(executionLog.count)
+        return executionLog.count
+    }
+    var tasksTotal: Int {
+        var date = startDate
+        var taskModels = [TaskViewModel]()
+        let factory = TaskViewModelFactory()
+        repeat {
+            if let taskModel = factory.makeTaskViewModel(from: self, date: date) {
+                taskModels.append(taskModel)
+            }
+            date = Calendar.current.date(byAdding: .day, value: 1, to: date)!
+        } while date <=^ Date()
+        print(taskModels.count)
+        return taskModels.count
+    }
     var notificationOption: Int?
     var color: Int?
     var notes: String = ""
@@ -86,4 +103,39 @@ extension Task: Comparable {
 
 protocol Orderable {
     var orderID: Int { get set }
+}
+
+class TaskViewModelFactory {
+    
+    func makeTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
+        guard task.recurrenceRule != nil else {
+            return singleTaskViewModel(from: task, date: date)
+        }
+        // search if there is executed task on that day
+        let executedOnDate = task.executionLog.map { $0.dayStart }.filter { $0 == date.dayStart }
+        if !executedOnDate.isEmpty {
+            return task.viewModel(isDone: true, date: executedOnDate.first!)
+        }
+        else {
+            return recurrenceTaskViewModel(from: task, date: date)
+        }
+        
+    }
+    
+    private func singleTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
+        // if task is already executed
+        if let executionDate = task.executionLog.first {
+            return executionDate ==^ date ? task.viewModel(isDone: true, date: executionDate) : nil
+        }
+        // if task is active
+        else {
+            return task.startDate ==^ date ? task.viewModel(isDone: false, date: task.startDate) : nil
+        }
+    }
+    
+    private func recurrenceTaskViewModel(from task: Task, date: Date) -> TaskViewModel? {
+        let startDate = task.startDate
+        guard let recurrenceRule = task.recurrenceRule else { return nil }
+        return date.matches(startDate: startDate, recurrenceRule: recurrenceRule) ? task.viewModel(isDone: false, date: date) : nil
+    }
 }
